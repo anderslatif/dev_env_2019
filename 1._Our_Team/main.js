@@ -3,7 +3,7 @@ const teamMembers = [
     "name": "Anders Latif",
     "url": "https://avatars3.githubusercontent.com/u/7512403?s=460&v=4",
     "skills": [{"name": "PHP", "level": 2}],
-    "background": ""
+    "background": "Coming from a humaniora background and with keen interest in languages Anders is a late-bloomer when it comes to programming. But once he discovered programming he embraced it and it has taken up most of his spare time."
 },
 {
     "name": "Cosmin",

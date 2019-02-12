@@ -39,10 +39,9 @@ $('#1').click(() => {
 function populateProfileFields(person) {
     const profile = $('.profile');
     profile.append('<div class="name">Name: <span class="name">' + person.name + '</span></div>');
+    profile.append('<div class="background">Background: <span class="background">' + person.background + '</span></div>');
+    profile.append('<div class="background">Skills: <span class="skills">' + person.skills + '</span></div>');
 
-    // <div class="name"></div>
-    // <div class="background"></div>
-    // <div class="skills"></div>
 }
 
 function clearProfileFields() {

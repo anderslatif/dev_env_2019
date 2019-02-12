@@ -1,8 +1,8 @@
 const teamMembers = [
 {
     "name": "Anders Latif",
-    "url": "https://avatars3.githubusercontent.com/u/7512403?s=460&v=4",
-    "skills": [{"name": "PHP", "level": 2}],
+    "url": "https://avatars3.   §.com/u/7512403?s=460&v=4",
+    "skills": [{"name": "Javascript", "level": 94}, {"name": "CSS and UI", "level": 30}, {"name": "MySQL", "level": 80},  {"name": "MySQL", "level": 80},  {"name": "MongoDB", "level": 75}],
     "background": "Coming from a humaniora background and with keen interest in languages Anders is a late-bloomer when it comes to programming. But once he discovered programming he embraced it and it has taken up most of his spare time."
 },
 {

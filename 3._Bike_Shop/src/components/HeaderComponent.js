@@ -20,7 +20,8 @@ class HeaderComponent extends Component {
     activateCartComponent = () => {
         this.setState((prevState) => ({ cartState: !prevState.cartState }))
     }
-    render() {
+    render(props) {
+        // let { search } = this.props;
         return (
         <div className="header__component">
             <div className="header__component--wrapper">
@@ -28,7 +29,7 @@ class HeaderComponent extends Component {
                     <h2>Bikes</h2>
                 </div>
                 <div className="interactions__division">
-                    { this.state.searchState && <SearchComponent/> }
+                    { this.state.searchState && <SearchComponent search={ this.props.search }/> }
                     <svg onClick={this.activateSearchProducts}>
                         <use href="./image/sprite.svg#icon-search"></use>
                     </svg>

@@ -20,6 +20,10 @@
         grid-template-rows: 9.5rem 1fr 9.5rem;
         // padding: 4.5rem 0 4.5rem 0;
 
+        @media screen and(max-width:$large) {
+            width:100vw;
+        }
+
         .cart__header {
             width: 90%;
             // border: 2px solid lightgrey;

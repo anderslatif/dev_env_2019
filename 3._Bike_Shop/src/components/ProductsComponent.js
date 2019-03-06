@@ -13,6 +13,7 @@ class ProductsComponent extends Component {
                                 key={product.productId}
                                 data-id={product.productId}
                                 product={product}
+                                views={this.props.views}
                            />
                 })
             }

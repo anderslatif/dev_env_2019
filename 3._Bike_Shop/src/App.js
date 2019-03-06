@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HeaderComponent from './components/HeaderComponent';
 import ProductsComponent from './components/ProductsComponent';
+import ProductViews from './components/ProductViews';
 // import uuid from "uuid";
 // import logo from './logo.svg';
 // import './App.css';
@@ -63,9 +64,11 @@ class App extends Component {
     super(props)
     this.state = {
       products: testProducts,
-      searchField: ""
+      searchField: "",
+      productViews: false
     }
     this.filterProductsLists = this.filterProductsLists.bind(this)
+    this.activateProductViews = this.activateProductViews.bind(this)
   }
   
   filterProductsLists = (ev) => {
@@ -74,6 +77,10 @@ class App extends Component {
 
     console.log(productsSearch)
   }
+
+  activateProductViews = () => {
+    this.setState((prevState) => ({productViews: !prevState.productViews}))
+  }
   render() {
     const filteredProducts = this.state.products.filter(product => {
       return product.productName.toLowerCase().includes(this.state.searchField.toLowerCase())
@@ -81,7 +88,8 @@ class App extends Component {
     return (
       <div className="App">
       <HeaderComponent search={this.filterProductsLists}/>
-      <ProductsComponent products={ filteredProducts }/>
+      <ProductsComponent products={ filteredProducts } views={this.activateProductViews}/>
+      {this.state.productViews && <ProductViews closeViews={this.activateProductViews}/>}
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>

@@ -28,7 +28,7 @@ class IndividualProductItems extends Component {
           onMouseEnter={this.hoverProductIndividual}
           onMouseLeave={this.hoverProductExits}
       >
-        {this.state.hoverProductState && <HoverProductsComponent/>}
+        {this.state.hoverProductState && <HoverProductsComponent views={this.props.views}/>}
         <div className="product__division">
             <div className="product__division--image">
               <img src={product.productCover} alt="product__image"/>

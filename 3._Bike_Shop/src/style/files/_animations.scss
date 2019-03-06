@@ -44,3 +44,12 @@
         // filter:blur(0);
     }
 }
+
+@keyframes animationProductViews {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}

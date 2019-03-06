@@ -24,3 +24,23 @@
         right:0;
     }
 }
+
+@keyframes animationProductsExtra {
+    from {
+        right:-10rem;
+    }
+    to {
+        right:0;
+    }
+}
+
+@keyframes animationDisplayProduct {
+    from {
+        opacity:0;
+        // filter:blur(4.5px);
+    }
+    to {
+        opacity:1;
+        // filter:blur(0);
+    }
+}

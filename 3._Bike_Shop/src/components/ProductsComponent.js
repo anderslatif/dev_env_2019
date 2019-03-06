@@ -10,9 +10,9 @@ class ProductsComponent extends Component {
             {
                 products.map((product) => {
                     return <IndividualProductItems 
-                                key={ product.productId }
-                                data-id={ product.productId }
-                                product={ product }
+                                key={product.productId}
+                                data-id={product.productId}
+                                product={product}
                            />
                 })
             }

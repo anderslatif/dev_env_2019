@@ -21,6 +21,14 @@
         // padding: 4.5rem 0 4.5rem 0;
 
         @media screen and(max-width:$large) {
+            width:45vw;
+        }
+
+        @media screen and(max-width:$medium) {
+            width:65vw;
+        }
+
+        @media screen and(max-width:$small) {
             width:100vw;
         }
 

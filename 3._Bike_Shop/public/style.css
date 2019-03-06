@@ -103,6 +103,12 @@ html {
     grid-template-rows: 9.5rem 1fr 9.5rem; }
     @media screen and (max-width: 900px) {
       .carts__component--content {
+        width: 45vw; } }
+    @media screen and (max-width: 645px) {
+      .carts__component--content {
+        width: 65vw; } }
+    @media screen and (max-width: 445px) {
+      .carts__component--content {
         width: 100vw; } }
     .carts__component--content .cart__header {
       width: 90%;

@@ -77,6 +77,10 @@ class App extends Component {
     this.addProductsCarts = this.addProductsCarts.bind(this)
     this.removeProductsCarts = this.removeProductsCarts.bind(this)
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> ca8398304e630fe3980b2e9bacbd9c4566c5fa13
   filterProductsLists = (ev) => {
     let productsSearch = ev.target.value;
     this.setState({searchField: productsSearch})
@@ -86,6 +90,7 @@ class App extends Component {
   activateProductViews = () => {
     this.setState((prevState) => ({productViews: !prevState.productViews}))
   }
+<<<<<<< HEAD
   activateFiltersViews = () => {
     this.setState((prevState) => ({filtersViews: !prevState.filtersViews}))
   }
@@ -104,6 +109,9 @@ class App extends Component {
       return console.log(product.productId)
     })
   }  
+=======
+
+>>>>>>> ca8398304e630fe3980b2e9bacbd9c4566c5fa13
   render() {
     const filteredProducts = this.state.products.filter(product => {
       return product.productName.toLowerCase().includes(this.state.searchField.toLowerCase())

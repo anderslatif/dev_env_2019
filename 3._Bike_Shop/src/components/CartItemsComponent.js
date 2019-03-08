@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
 
 class CartItemsComponent extends Component {
-  render() {
+  render(props) {
+    let { productName, productPrice, productCover, productListImage, productId } = this.props.productDatas;
     return (
       <div className="cart__items">
         <div className="cart__items--wrapper">
             <div className="product__image">
-                <img src="./image/product__image.jpg" alt="product__image"/>
+                <img src={productCover} alt="product__image"/>
             </div>
             <div className="product__info-interaction">
                 <div className="product__title">
-                    <h2>BMX Bicycle</h2>
+                    <h2>{productName}</h2>
                 </div>
                 <div className="product__quantitativeDatas">
                     <div className="product__price">
-                        <p>$145.00</p>
+                        <p>{productPrice}</p>
                     </div>
                     <div className="product__quantity">
                         <svg>
@@ -28,7 +29,7 @@ class CartItemsComponent extends Component {
                 </div>
             </div>
             <div className="product__remove">
-                <svg>
+                <svg data-id={productId} onClick={this.props.removeProductsCarts}>
                     <use href="./image/sprite.svg#icon-cross"></use>
                 </svg>
             </div>

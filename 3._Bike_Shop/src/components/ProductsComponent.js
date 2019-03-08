@@ -2,6 +2,17 @@ import React, { Component } from 'react'
 import IndividualProductItems from './IndividualProductItems';
 
 class ProductsComponent extends Component {
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     cartProducts: []
+  //   }
+  //   this.addProductsCarts = this.addProductsCarts.bind(this);
+  // }
+  // addProductsCarts = (ev) => {
+  //   console.log("addProductsCarts");
+  //     this.state.cartProducts.push(ev.target.getAttribute("data-id"))
+  // }
   render(props) {
     let { products } = this.props;
     return (
@@ -14,6 +25,8 @@ class ProductsComponent extends Component {
                                 data-id={product.productId}
                                 product={product}
                                 views={this.props.views}
+                                addProductsCarts={this.props.addProductsCarts}
+                                // cartProducts={this.props.cartProducts}
                            />
                 })
             }

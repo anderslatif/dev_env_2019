@@ -38,7 +38,13 @@ class HeaderComponent extends Component {
                     </svg>
                 </div>
             </div>
-            { this.state.cartState && <CartsComponent closeCart={this.activateCartComponent}/> }
+            { this.state.cartState && <CartsComponent 
+                products={this.props.products} 
+                cartProducts={this.props.cartProducts} 
+                closeCart={this.activateCartComponent}
+                removeProductsCarts={this.props.removeProductsCarts}
+               /> 
+            }
             {/* HeaderComponent */}
         </div>
         )

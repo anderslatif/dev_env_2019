@@ -70,7 +70,7 @@ class App extends Component {
     this.filterProductsLists = this.filterProductsLists.bind(this)
     this.activateProductViews = this.activateProductViews.bind(this)
   }
-  
+
   filterProductsLists = (ev) => {
     let productsSearch = ev.target.value;
     this.setState({searchField: productsSearch})
@@ -81,6 +81,7 @@ class App extends Component {
   activateProductViews = () => {
     this.setState((prevState) => ({productViews: !prevState.productViews}))
   }
+
   render() {
     const filteredProducts = this.state.products.filter(product => {
       return product.productName.toLowerCase().includes(this.state.searchField.toLowerCase())

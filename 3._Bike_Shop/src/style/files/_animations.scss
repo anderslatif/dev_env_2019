@@ -53,3 +53,12 @@
         opacity:1;
     }
 }
+
+@keyframes animationSlideFilters {
+    from {
+        left:-35rem;
+    }
+    to {
+        left:0;
+    }
+}

@@ -19,6 +19,8 @@
         margin:0 auto;
         border-radius:0.45rem;
         position: relative;
+        display:grid;
+        align-items:center;
         
         .close__views {
             width:3.2rem;
@@ -33,6 +35,36 @@
                 padding:0.70rem;
                 background-color:$color__black;
                 fill:$color__white;
+            }
+        }
+
+        .loader__products {
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+        }
+
+        .inner__contentWrapper {
+            width:90%;
+            height:95%;
+            margin:0 auto;
+            border:2.1px solid lightgrey;
+            border-radius:0.45rem;
+            display:grid;
+            grid-template-columns:32rem 1fr;
+            grid-column-gap:0.45rem;
+
+            &--image {
+                border:2.1px solid lightgrey;
+                border-radius:0.45rem;
+                height:100%;
+            }
+            
+            &--controllers {
+                border:2.1px solid lightgrey;
+                border-radius:0.45rem;
+                height:100%;
             }
         }
     }

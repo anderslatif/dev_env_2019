@@ -1,0 +1,12 @@
+.filters__component {
+  width:35rem;
+  height:100vh;
+  position:fixed;
+  z-index:9;
+  top:0;
+  left:0;
+  background-color:$color__white;
+  box-shadow:0 0 3.5rem lightgrey;
+  transition:0.45s ease-in-out;
+  animation:animationSlideFilters 0.45s ease-in-out forwards;
+}

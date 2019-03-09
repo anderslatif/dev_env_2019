@@ -67,9 +67,10 @@ class App extends Component {
     this.state = {
       products: testProducts,
       searchField: "",
-      productViews: false,
+      productViews: true,
       filtersViews: false,
-      cartProducts: []
+      cartProducts: [],
+      cartProductsNumber: 0
     }
     this.filterProductsLists = this.filterProductsLists.bind(this)
     this.activateProductViews = this.activateProductViews.bind(this)
@@ -77,10 +78,6 @@ class App extends Component {
     this.addProductsCarts = this.addProductsCarts.bind(this)
     this.removeProductsCarts = this.removeProductsCarts.bind(this)
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> ca8398304e630fe3980b2e9bacbd9c4566c5fa13
   filterProductsLists = (ev) => {
     let productsSearch = ev.target.value;
     this.setState({searchField: productsSearch})
@@ -90,13 +87,13 @@ class App extends Component {
   activateProductViews = () => {
     this.setState((prevState) => ({productViews: !prevState.productViews}))
   }
-<<<<<<< HEAD
   activateFiltersViews = () => {
     this.setState((prevState) => ({filtersViews: !prevState.filtersViews}))
   }
   addProductsCarts = (ev) => {
     console.log("addProductsCarts");
       this.state.cartProducts.push(ev.currentTarget.getAttribute("data-id"))
+      this.setState({cartProductsNumber: this.state.cartProducts.length})
   }
   removeProductsCarts = (ev) => {
     let productId = ev.currentTarget.getAttribute("data-id")
@@ -109,9 +106,6 @@ class App extends Component {
       return console.log(product.productId)
     })
   }  
-=======
-
->>>>>>> ca8398304e630fe3980b2e9bacbd9c4566c5fa13
   render() {
     const filteredProducts = this.state.products.filter(product => {
       return product.productName.toLowerCase().includes(this.state.searchField.toLowerCase())
@@ -123,6 +117,7 @@ class App extends Component {
         cartProducts={this.state.cartProducts} 
         search={this.filterProductsLists}
         removeProductsCarts={this.removeProductsCarts}
+        cartProductsNumber={this.state.cartProductsNumber}
       />
       <ProductsComponent 
         addProductsCarts={this.addProductsCarts} 

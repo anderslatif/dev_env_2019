@@ -7,7 +7,8 @@ class HeaderComponent extends Component {
         super(props)
         this.state = {
             searchState: false,
-            cartState: false
+            cartState: false,
+            cartNumber: this.props.cartProducts
         }
         this.activateSearchProducts = this.activateSearchProducts.bind(this)
         this.activateCartComponent = this.activateCartComponent.bind(this)
@@ -22,6 +23,7 @@ class HeaderComponent extends Component {
     }
     render(props) {
         // let { search } = this.props;
+        // let { cartProducts } = this.props;
         return (
         <div className="header__component">
             <div className="header__component--wrapper">
@@ -33,9 +35,12 @@ class HeaderComponent extends Component {
                     <svg onClick={this.activateSearchProducts}>
                         <use href="./image/sprite.svg#icon-search"></use>
                     </svg>
-                    <svg onClick={this.activateCartComponent}>
-                        <use href="./image/sprite.svg#icon-shopping-cart"></use>
-                    </svg>
+                    <div className="cartHeaderDivision">
+                        <svg onClick={this.activateCartComponent}>
+                            <use href="./image/sprite.svg#icon-shopping-cart"></use>
+                        </svg>
+                        <span>{this.props.cartProductsNumber}</span>
+                    </div>
                 </div>
             </div>
             { this.state.cartState && <CartsComponent 

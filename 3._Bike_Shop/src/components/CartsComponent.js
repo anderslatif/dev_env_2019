@@ -4,6 +4,8 @@ import CartItemsComponent from './CartItemsComponent';
 class CartsComponent extends Component {
   render(props) {
     let { closeCart } = this.props;
+    let total = 0;
+    let finalTotal = undefined;
     return (
       <div className="carts__component">
         {/* CartsComponent */}
@@ -17,29 +19,31 @@ class CartsComponent extends Component {
             <div className="cart__content">
                 {
                   this.props.cartProducts.map((cartProductIndividual) => {
-                    // return (<p>{cartProductIndividual}</p>)
                     return this.props.products.map((product) => {
                       if(product.productId === cartProductIndividual) {
                         return <CartItemsComponent removeProductsCarts={this.props.removeProductsCarts} productDatas={product} key={product.productId} cartProductIndividual={this.cartProductIndividual}/>
                       }
                     })
-                    // if(cartProductIndividual === this.props.products.productId) {
-                    //   let cartIndividual = cartProductIndividual;
-                    // this.props.products.map((product) => {
-                    //   if(product.productId === cartIndividual) {
-                    //     return(
-                    //         <CartItemsComponent key={product.productId} cartProductIndividual={this.cartProductIndividual}/>
-                    //       );
-                    //   }
-                    // })  
-                    // }
                   })
                 }
             </div>
             <div className="cart__checkout">
                 <div className="product__subtotal">
                     <h2>Sub Total</h2>
-                    <p>$145.00</p>
+                    {/* <p>$145.00</p> */}
+                    <p>
+                      {
+                        this.props.cartProducts.map((cartProductIndividual) => {
+                          return this.props.products.map((product) => {
+                            if(product.productId === cartProductIndividual) {
+                              total+= Number(product.productPrice)
+                              console.log(total, finalTotal)
+                            }
+                          })
+                        }) 
+                      }
+                      ${total}
+                    </p>
                 </div>
                 <div className="product__checkout">
                     <button>Go to checkout</button>

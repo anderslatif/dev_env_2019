@@ -67,8 +67,8 @@ class App extends Component {
     this.state = {
       products: testProducts,
       searchField: "",
-      productViews: true,
-      filtersViews: false,
+      productViews: false,
+      filtersViews: true,
       cartProducts: [],
       cartProductsNumber: 0
     }
@@ -118,15 +118,18 @@ class App extends Component {
         search={this.filterProductsLists}
         removeProductsCarts={this.removeProductsCarts}
         cartProductsNumber={this.state.cartProductsNumber}
-      />
+        />
+        <svg className={this.state.filtersViews ? "filters__buttonActive" : "filters__button"} onClick={this.activateFiltersViews}>
+          <use href="./image/sprite.svg#icon-settings"></use>
+        </svg>
+        {this.state.filtersViews && <FiltersComponent/>}
+        {/* <button onClick={this.activateFiltersViews}>filters</button> */}
       <ProductsComponent 
         addProductsCarts={this.addProductsCarts} 
         products={ filteredProducts } 
         views={this.activateProductViews}
       />
       {this.state.productViews && <ProductViews closeViews={this.activateProductViews}/>}
-      <button onClick={this.activateFiltersViews}>filters</button>
-      {this.state.filtersViews && <FiltersComponent/>}
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>

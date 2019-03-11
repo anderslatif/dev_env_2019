@@ -12,3 +12,24 @@ html {
 #App {
     overflow:hidden;
 }
+
+.filters__button {
+    width:2.1rem;
+    height:2.1rem;
+    cursor: pointer;
+    position: fixed;
+    right:4.5%;
+    top:6.5rem;
+    z-index:5;
+}
+
+.filters__buttonActive {
+    width:2.1rem;
+    height:2.1rem;
+    cursor: pointer;
+    position: fixed;
+    right:4.5%;
+    top:6.5rem;
+    z-index:5;
+    fill:orangered;
+}

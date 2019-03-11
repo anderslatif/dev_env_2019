@@ -10,6 +10,25 @@ html {
 #App {
   overflow: hidden; }
 
+.filters__button {
+  width: 2.1rem;
+  height: 2.1rem;
+  cursor: pointer;
+  position: fixed;
+  right: 4.5%;
+  top: 6.5rem;
+  z-index: 5; }
+
+.filters__buttonActive {
+  width: 2.1rem;
+  height: 2.1rem;
+  cursor: pointer;
+  position: fixed;
+  right: 4.5%;
+  top: 6.5rem;
+  z-index: 5;
+  fill: orangered; }
+
 @keyframes animationSlideSearch {
   from {
     width: 0; }
@@ -48,9 +67,17 @@ html {
 
 @keyframes animationSlideFilters {
   from {
-    left: -35rem; }
+    height: 0;
+    margin-top: 0; }
   to {
-    left: 0; } }
+    margin-top: 4.5rem;
+    height: 6.5rem; } }
+
+@keyframes animationSlideFilterElementObject {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 .header__component {
   width: 100%;
@@ -61,7 +88,8 @@ html {
   background-color: #ffffff;
   position: absolute;
   top: 0;
-  left: 0; }
+  left: 0;
+  z-index: 99; }
   .header__component--wrapper {
     width: 90%;
     height: 90%;
@@ -114,7 +142,7 @@ html {
   background-color: rgba(0, 0, 0, 0.5);
   animation: animationDisplayContent 0.95s ease-in-out forwards;
   overflow: hidden;
-  z-index: 99; }
+  z-index: 999; }
   .carts__component--content {
     width: 32vw;
     height: 100vh;
@@ -361,7 +389,7 @@ html {
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   left: 0;
-  z-index: 99;
+  z-index: 999;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -412,13 +440,47 @@ html {
         height: 100%; }
 
 .filters__component {
-  width: 35rem;
-  height: 100vh;
-  position: fixed;
+  width: 100%;
+  height: 6.5rem;
   z-index: 9;
-  top: 0;
+  top: 4.5rem;
   left: 0;
-  background-color: #ffffff;
+  background-color: #f7f7f7;
   box-shadow: 0 0 3.5rem lightgrey;
   transition: 0.45s ease-in-out;
-  animation: animationSlideFilters 0.45s ease-in-out forwards; }
+  animation: animationSlideFilters 0.45s ease-in-out forwards;
+  z-index: 9;
+  display: grid;
+  align-items: center;
+  justify-items: center; }
+  .filters__component--wrapper {
+    width: 90%;
+    margin: 0 auto;
+    height: 4.5rem; }
+    .filters__component--wrapper .filters__wrapper {
+      display: inline-block;
+      position: relative; }
+      .filters__component--wrapper .filters__wrapper button {
+        height: 4.5rem;
+        border: 2px solid #000000;
+        background-color: transparent;
+        cursor: pointer;
+        font-weight: 445;
+        border-radius: 0.45rem;
+        padding: 0 1.4rem 0 1.4rem; }
+      .filters__component--wrapper .filters__wrapper:not(:first-child) {
+        margin-left: 2.1rem; }
+
+.filter__types {
+  width: 21rem;
+  height: 0;
+  padding: 3.2rem;
+  border: 2px solid darkgrey;
+  border-radius: 0.45rem;
+  position: absolute;
+  bottom: -9.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  transition: all 0.45s ease-in-out;
+  animation: animationSlideFilterElementObject 0.45s ease-in-out forwards; }

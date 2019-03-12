@@ -6,6 +6,7 @@ import uuid from "uuid";
 import FiltersComponent from '../components/FiltersComponent';
 import moment from "moment";
 import BrowserRoute from '../router/BrowserRoute';
+import axios from 'axios';
 
 const testProducts = [
   {
@@ -186,6 +187,17 @@ class PageProducts extends Component {
 //       return console.log(product.productId)
 //     })
 //   }  
+  componentDidMount() {
+  axios.get('/bicycles')
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+    .then(function () {
+    });
+  }
   render() {
     const filteredProducts = this.state.products.filter(product => {
       return product.productName.toLowerCase().includes(this.state.searchField.toLowerCase())

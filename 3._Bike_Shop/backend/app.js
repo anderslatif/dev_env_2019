@@ -23,7 +23,9 @@ const Bicycle = mongoose.model('Bicycle', {
 
 const User = mongoose.model('User', {
     user: String,
-    password: String
+    password: String,
+    role: String,
+    bookings: [{type: String}]
 })
 
 app.post('/login', function(req, res) {

@@ -8,7 +8,7 @@ class HeaderComponent extends Component {
         this.state = {
             searchState: false,
             cartState: false,
-            cartNumber: this.props.cartProducts
+            cartNumber: this.props.carts
         }
         this.activateSearchProducts = this.activateSearchProducts.bind(this)
         this.activateCartComponent = this.activateCartComponent.bind(this)
@@ -21,9 +21,14 @@ class HeaderComponent extends Component {
     activateCartComponent = () => {
         this.setState((prevState) => ({ cartState: !prevState.cartState }))
     }
+
+    coponentDidUpdate() {
+        this.setState({cartNumber: this.props.carts})
+    }
     render(props) {
         // let { search } = this.props;
         // let { cartProducts } = this.props;
+        let { carts, removeProductsCarts } = this.props;
         return (
         <div className="header__component">
             <div className="header__component--wrapper">
@@ -43,11 +48,15 @@ class HeaderComponent extends Component {
                     </div>
                 </div>
             </div>
-            { this.state.cartState && <CartsComponent 
-                products={this.props.products} 
-                cartProducts={this.props.cartProducts} 
-                closeCart={this.activateCartComponent}
-                removeProductsCarts={this.props.removeProductsCarts}
+            { 
+                this.state.cartState 
+                && 
+                <CartsComponent 
+                    products={this.props.products} 
+                    cartProducts={this.props.cartProducts} 
+                    closeCart={this.activateCartComponent}
+                    removeProductsCarts={removeProductsCarts}
+                    carts={carts}
                /> 
             }
             {/* HeaderComponent */}

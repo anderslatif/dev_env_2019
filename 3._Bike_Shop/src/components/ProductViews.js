@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Loader from 'react-loader-spinner'
-// import Carousel from 'nuka-carousel';
+import Carousel from 'nuka-carousel';
+import Slider from "react-slick";
 
 class ProductViews extends Component {
   constructor(props) {
@@ -12,10 +13,20 @@ class ProductViews extends Component {
   componentDidMount() {
     setTimeout(() => {
        this.setState((prevState) => ({loaderState: !prevState.loaderState}))  
-    }, 3200)
+    }, 200)
   }
   render(props) {
     let { products, selectedProduct } = this.props;
+    var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows:true,
+      easing:"linear",
+      autoplay:true
+    };
     return (
       <div className="product__views">
         <div className="product__views--wrapper">
@@ -31,17 +42,19 @@ class ProductViews extends Component {
             }
             <div className="inner__contentWrapper">
               <div className="inner__contentWrapper--image">
-                {/* <Carousel>
+                {/* <Carousel> */}
+                <Slider {...settings}>
                   {
                     products.map((images) => {
                       if(images.productId === selectedProduct) {
                         return images.productListImage.map((image, index) => {
-                          return <img src={image} alt="" key={index}/>
+                          return <div className="image__contain"><img src={image} alt="" key={index}/></div>
                         })
                       }
                     })
                   }
-                </Carousel> */}
+                  </Slider>
+                {/* </Carousel> */}
               </div>
               <div className="inner__contentWrapper--controllers">
                   {
@@ -53,7 +66,7 @@ class ProductViews extends Component {
                               <h2>{datas.productName}</h2>
                             </div>
                             <div className="datas__wrapper--price">
-                              <p>{datas.productPrice}</p>
+                              <p>${datas.productPrice}</p>
                             </div>
                             <div className="datas__wrapper--datapicker">
                               will insert airbnb data-range picker

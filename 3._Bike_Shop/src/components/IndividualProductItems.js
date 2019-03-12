@@ -22,13 +22,13 @@ class IndividualProductItems extends Component {
     this.setState({hoverProductState: false})
   }
   render(props) {
-    let { product } = this.props;
+    let { product, addCartObject } = this.props;
     return (
       <div className="product__individual" 
           onMouseEnter={this.hoverProductIndividual}
           onMouseLeave={this.hoverProductExits}
       >
-        {this.state.hoverProductState && <HoverProductsComponent productId={product.productId} views={this.props.views} addProductsCarts={this.props.addProductsCarts}/>}
+        {this.state.hoverProductState && <HoverProductsComponent addCartObject={addCartObject} productId={product.productId} views={this.props.views} addProductsCarts={this.props.addProductsCarts}/>}
         <div className="product__division">
             <div className="product__division--image">
               <img src={product.productCover} alt="product__image"/>

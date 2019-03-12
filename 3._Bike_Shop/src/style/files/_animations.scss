@@ -78,3 +78,14 @@
         opacity:1;
     }
 }
+
+@keyframes animationAuthentificationVideo {
+    from {
+        opacity:0;
+        filter:blur(0.45rem) brightness(5%);
+    }
+    to {
+        opacity:1;
+        filter:blur(0.45rem) brightness(100%);
+    }
+}

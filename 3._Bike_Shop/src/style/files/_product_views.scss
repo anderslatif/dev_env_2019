@@ -73,13 +73,89 @@
                 // border:2.1px solid lightgrey;
                 border-radius:0.45rem;
                 height:100%;
+                position: relative;
+
+                .image__contain {
+                    width:100%!important;
+                    // height:100%;
+
+                    // img {
+                    //     width:100%;
+                    // }
+                }
             }
             
             &--controllers {
                 // border:2.1px solid lightgrey;
                 border-radius:0.45rem;
                 height:100%;
+                display:grid;
+                align-items:center;
+                justify-items:center;
+
+                .datas__wrapper {
+                    width:90%;
+                    height:95%;
+                    // border:2px solid lightgrey;
+                    border-radius:0.45rem;
+                    
+                    &--title {
+                        width:100%;
+                        padding:2rem 0 2rem 0;
+                        // border:2px solid lightgrey;
+
+                        h2 {
+                            font-size:2.1rem;
+                            font-weight:445;
+                            text-transform:uppercase;
+                            letter-spacing: 0.20rem;
+                        }
+                    }
+                    
+                    &--price {
+                        width:100%;
+                        // border:2px solid lightgray;
+                        // padding:2rem 0 2rem 0;
+
+                        p {
+                            font-size:2.1rem;
+                            font-weight:445;
+                            text-transform:uppercase;
+                        }
+                    }
+
+                    &--datapicker {
+                        width:100%;
+                        margin-top:3.2rem;
+                        border:2px solid lightgrey;
+                    }
+
+                    &--addToCart {
+                        margin-top:4.5rem;
+
+                        button {
+                            width:19rem;
+                            height:3.5rem;
+                            cursor: pointer;
+                            border:none;
+                            background-color:$color__black;
+                            color:$color__white;
+                            text-transform:uppercase;
+                            font-weight:200;
+                            letter-spacing:0.20rem;
+                            border-radius:0.45rem;
+                        }
+                    }
+                }
             }
         }
     }
+}
+
+.slider-slide > img {
+    width:90%!important;
+}
+
+.slick-slide img {
+    width:85%;
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class CartItemsComponent extends Component {
   render(props) {
-    let { productName, productPrice, productCover, productListImage, productId } = this.props.productDatas;
+    let { productName, productPrice, productCover, productListImage, productId } = this.props.product;
     return (
       <div className="cart__items">
         <div className="cart__items--wrapper">

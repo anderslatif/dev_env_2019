@@ -14,7 +14,7 @@ class ProductsComponent extends Component {
   //     this.state.cartProducts.push(ev.target.getAttribute("data-id"))
   // }
   render(props) {
-    let { products } = this.props;
+    let { products, addCartObject } = this.props;
     return (
       <div className="products__component">
         <div className="products__component--wrapper">
@@ -26,6 +26,7 @@ class ProductsComponent extends Component {
                                 product={product}
                                 views={this.props.views}
                                 addProductsCarts={this.props.addProductsCarts}
+                                addCartObject={addCartObject}
                                 // cartProducts={this.props.cartProducts}
                            />
                 })

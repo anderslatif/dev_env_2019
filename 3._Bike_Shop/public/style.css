@@ -87,6 +87,14 @@ body::-webkit-scrollbar {
   to {
     opacity: 1; } }
 
+@keyframes animationAuthentificationVideo {
+  from {
+    opacity: 0;
+    filter: blur(0.45rem) brightness(5%); }
+  to {
+    opacity: 1;
+    filter: blur(0.45rem) brightness(100%); } }
+
 .header__component {
   width: 100%;
   height: 4.5rem;
@@ -446,10 +454,57 @@ body::-webkit-scrollbar {
       grid-column-gap: 0.45rem; }
       .product__views--wrapper .inner__contentWrapper--image {
         border-radius: 0.45rem;
-        height: 100%; }
+        height: 100%;
+        position: relative; }
+        .product__views--wrapper .inner__contentWrapper--image .image__contain {
+          width: 100% !important; }
       .product__views--wrapper .inner__contentWrapper--controllers {
         border-radius: 0.45rem;
-        height: 100%; }
+        height: 100%;
+        display: grid;
+        align-items: center;
+        justify-items: center; }
+        .product__views--wrapper .inner__contentWrapper--controllers .datas__wrapper {
+          width: 90%;
+          height: 95%;
+          border-radius: 0.45rem; }
+          .product__views--wrapper .inner__contentWrapper--controllers .datas__wrapper--title {
+            width: 100%;
+            padding: 2rem 0 2rem 0; }
+            .product__views--wrapper .inner__contentWrapper--controllers .datas__wrapper--title h2 {
+              font-size: 2.1rem;
+              font-weight: 445;
+              text-transform: uppercase;
+              letter-spacing: 0.20rem; }
+          .product__views--wrapper .inner__contentWrapper--controllers .datas__wrapper--price {
+            width: 100%; }
+            .product__views--wrapper .inner__contentWrapper--controllers .datas__wrapper--price p {
+              font-size: 2.1rem;
+              font-weight: 445;
+              text-transform: uppercase; }
+          .product__views--wrapper .inner__contentWrapper--controllers .datas__wrapper--datapicker {
+            width: 100%;
+            margin-top: 3.2rem;
+            border: 2px solid lightgrey; }
+          .product__views--wrapper .inner__contentWrapper--controllers .datas__wrapper--addToCart {
+            margin-top: 4.5rem; }
+            .product__views--wrapper .inner__contentWrapper--controllers .datas__wrapper--addToCart button {
+              width: 19rem;
+              height: 3.5rem;
+              cursor: pointer;
+              border: none;
+              background-color: #000000;
+              color: #ffffff;
+              text-transform: uppercase;
+              font-weight: 200;
+              letter-spacing: 0.20rem;
+              border-radius: 0.45rem; }
+
+.slider-slide > img {
+  width: 90% !important; }
+
+.slick-slide img {
+  width: 85%; }
 
 .filters__component {
   width: 100%;
@@ -519,3 +574,247 @@ body::-webkit-scrollbar {
       background-color: #f7f7f7; }
   .filter__types::-webkit-scrollbar {
     display: none; }
+
+.auth__pages--login {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden; }
+  .auth__pages--login .main__blured {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), url("./image/authentification__background.jpg");
+    filter: blur(0.95rem);
+    transform: scale(1.2); }
+  .auth__pages--login .authentification__wrapper {
+    width: 70%;
+    height: 45rem;
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 99;
+    border-radius: 0.45rem;
+    display: grid;
+    grid-template-columns: 42% 1fr; }
+    .auth__pages--login .authentification__wrapper--video {
+      position: relative;
+      overflow: hidden; }
+      .auth__pages--login .authentification__wrapper--video video {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) scale(1.09);
+        filter: blur(0.45rem);
+        animation: animationAuthentificationVideo 2s ease-in-out forwards;
+        transition: 0.45s ease-in-out; }
+      .auth__pages--login .authentification__wrapper--video .auth__textcontent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 99; }
+        .auth__pages--login .authentification__wrapper--video .auth__textcontent h2 {
+          font-size: 4.5rem;
+          color: #ffffff;
+          font-weight: 200;
+          text-align: center; }
+          .auth__pages--login .authentification__wrapper--video .auth__textcontent h2 span {
+            display: block; }
+    .auth__pages--login .authentification__wrapper--forms {
+      display: grid;
+      align-items: center;
+      justify-items: center; }
+      .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper {
+        width: 70%;
+        height: 70%; }
+        .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper h2 {
+          color: #22313f;
+          font-size: 2rem;
+          font-weight: 200;
+          margin-bottom: 0.45rem; }
+          .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper h2 span {
+            color: dodgerblue;
+            font-style: italic;
+            font-weight: 900; }
+        .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper p {
+          font-size: 1.4rem;
+          font-weight: 900;
+          margin-bottom: 4.5rem;
+          color: #22313f; }
+        .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form {
+          width: 100%; }
+          .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form .form__group {
+            width: 100%; }
+            .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form .form__group:not(:first-child) {
+              margin-top: 3.2rem; }
+            .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form .form__group label {
+              margin-bottom: 2rem;
+              font-size: 1.4rem;
+              font-weight: 445;
+              color: #22313f; }
+            .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form .form__group input {
+              width: 100%;
+              border: none;
+              border-bottom: 2px solid lightblue;
+              outline: none;
+              transition: 0.45s ease-in-out; }
+              .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form .form__group input:focus {
+                border-color: dodgerblue; }
+          .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form button {
+            margin-top: 3.2rem;
+            padding: 0.45rem 4.5rem 0.45rem 4.5rem;
+            border-radius: 0.45rem;
+            background-color: dodgerblue;
+            border: none;
+            cursor: pointer;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            transition: all 0.45s ease-in-out; }
+            .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form button:hover {
+              background-color: #0079ef; }
+        .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper .form__dividor {
+          width: 14rem;
+          height: 1.4px;
+          background-color: lightgrey;
+          margin: 0 auto;
+          margin-top: 3.2rem; }
+        .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper .redirect__signup {
+          margin: 0 auto;
+          margin-top: 2rem; }
+          .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper .redirect__signup p {
+            text-align: center;
+            color: #22313f;
+            font-weight: 200; }
+            .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper .redirect__signup p a {
+              color: dodgerblue;
+              font-weight: 445; }
+
+.auth__pages--register {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden; }
+  .auth__pages--register .main__blured {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), url("./image/authentification__background.jpg");
+    filter: blur(0.95rem);
+    transform: scale(1.2); }
+  .auth__pages--register .authentification__wrapper {
+    width: 70%;
+    height: 45rem;
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 99;
+    border-radius: 0.45rem;
+    display: grid;
+    grid-template-columns: 42% 1fr; }
+    .auth__pages--register .authentification__wrapper--video {
+      position: relative;
+      overflow: hidden; }
+      .auth__pages--register .authentification__wrapper--video video {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) scale(1.09);
+        filter: blur(0.45rem);
+        animation: animationAuthentificationVideo 2s ease-in-out forwards;
+        transition: 0.45s ease-in-out; }
+      .auth__pages--register .authentification__wrapper--video .auth__textcontent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 99; }
+        .auth__pages--register .authentification__wrapper--video .auth__textcontent h2 {
+          font-size: 4.5rem;
+          color: #ffffff;
+          font-weight: 200;
+          text-align: center; }
+          .auth__pages--register .authentification__wrapper--video .auth__textcontent h2 span {
+            display: block; }
+    .auth__pages--register .authentification__wrapper--forms {
+      display: grid;
+      align-items: center;
+      justify-items: center; }
+      .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper {
+        width: 70%;
+        height: 90%; }
+        .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper h2 {
+          color: #22313f;
+          font-size: 2rem;
+          font-weight: 200;
+          margin-bottom: 0.45rem; }
+          .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper h2 span {
+            color: dodgerblue;
+            font-style: italic;
+            font-weight: 900; }
+        .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper p {
+          font-size: 1.4rem;
+          font-weight: 900;
+          margin-bottom: 4.5rem;
+          color: #22313f; }
+        .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper form {
+          width: 100%; }
+          .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper form .form__group {
+            width: 100%; }
+            .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper form .form__group:not(:first-child) {
+              margin-top: 3.2rem; }
+            .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper form .form__group label {
+              margin-bottom: 2rem;
+              font-size: 1.4rem;
+              font-weight: 445;
+              color: #22313f; }
+            .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper form .form__group input {
+              width: 100%;
+              border: none;
+              border-bottom: 2px solid lightblue;
+              outline: none;
+              transition: 0.45s ease-in-out; }
+              .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper form .form__group input:focus {
+                border-color: dodgerblue; }
+          .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper form button {
+            margin-top: 3.2rem;
+            padding: 0.45rem 4.5rem 0.45rem 4.5rem;
+            border-radius: 0.45rem;
+            background-color: dodgerblue;
+            border: none;
+            cursor: pointer;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            transition: all 0.45s ease-in-out; }
+            .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper form button:hover {
+              background-color: #0079ef; }
+        .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper .form__dividor {
+          width: 14rem;
+          height: 1.4px;
+          background-color: lightgrey;
+          margin: 0 auto;
+          margin-top: 3.2rem; }
+        .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper .redirect__login {
+          margin: 0 auto;
+          margin-top: 2rem; }
+          .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper .redirect__login p {
+            text-align: center;
+            color: #22313f;
+            font-weight: 200; }
+            .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper .redirect__login p a {
+              color: dodgerblue;
+              font-weight: 445; }

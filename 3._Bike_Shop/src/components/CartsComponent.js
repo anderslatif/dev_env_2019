@@ -1,11 +1,23 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import CartItemsComponent from './CartItemsComponent';
+import moment from "moment";
+import { DateRangePicker } from "react-dates";
+import "react-dates/lib/css/_datepicker.css";
+
+const now = moment();
+console.log(now.format("D MMM YYYY H mm"));
 
 class CartsComponent extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+
+    }
+  }
   render(props) {
-    let { closeCart } = this.props;
+    let { closeCart, carts, products, removeProductsCarts } = this.props;
     let total = 0;
-    let finalTotal = undefined;
+    let valueTotal;
     return (
       <div className="carts__component">
         {/* CartsComponent */}
@@ -18,10 +30,18 @@ class CartsComponent extends Component {
             </div>
             <div className="cart__content">
                 {
-                  this.props.cartProducts.map((cartProductIndividual) => {
-                    return this.props.products.map((product) => {
-                      if(product.productId === cartProductIndividual) {
-                        return <CartItemsComponent removeProductsCarts={this.props.removeProductsCarts} productDatas={product} key={product.productId} cartProductIndividual={this.cartProductIndividual}/>
+                  carts.map((cartProductIndividual) => {
+                    console.log(cartProductIndividual)
+                    return products.map((product) => {
+                      if(product.productId === cartProductIndividual.id) {
+                        return(
+                          <CartItemsComponent
+                            key={product.productId}
+                            product={product}
+                            removeProductsCarts={removeProductsCarts}
+                          >
+                          </CartItemsComponent>
+                        );
                       }
                     })
                   })
@@ -33,11 +53,15 @@ class CartsComponent extends Component {
                     {/* <p>$145.00</p> */}
                     <p>
                       {
-                        this.props.cartProducts.map((cartProductIndividual) => {
-                          return this.props.products.map((product) => {
-                            if(product.productId === cartProductIndividual) {
+                        carts.map((cartProductIndividual) => {
+                          return products.map((product) => {
+                            if(product.productId === cartProductIndividual.id) {
                               total+= Number(product.productPrice)
-                              console.log(total, finalTotal)
+                              // let numberString = total.toString();
+                              // let lengthNumber = numberString.length;
+                              // let valueTotal = numberString.substring(0, lengthNumber-2) + "." + numberString.substring(lengthNumber-2)
+                              // console.log(total, valueTotal)
+                              // return valueTotal
                             }
                           })
                         }) 

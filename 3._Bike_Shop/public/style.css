@@ -27,7 +27,13 @@ html {
   right: 4.5%;
   top: 6.5rem;
   z-index: 5;
-  fill: orangered; }
+  fill: #22313f; }
+
+body::-webkit-scrollbar {
+  display: none; }
+
+.no--scroll {
+  overflow: hidden; }
 
 @keyframes animationSlideSearch {
   from {
@@ -55,9 +61,11 @@ html {
 
 @keyframes animationDisplayProduct {
   from {
-    opacity: 0; }
+    opacity: 0;
+    transition: all 0.45s ease-in-out; }
   to {
-    opacity: 1; } }
+    opacity: 1;
+    transition: all 0.45s ease-in-out; } }
 
 @keyframes animationProductViews {
   from {
@@ -125,7 +133,6 @@ html {
           width: 2.1rem;
           height: 2.1rem;
           border-radius: 50%;
-          background-color: orangered;
           color: #ffffff;
           text-align: center;
           display: flex;
@@ -133,7 +140,8 @@ html {
           align-items: center;
           position: absolute;
           top: -1.1rem;
-          right: -1.1rem; }
+          right: -1.1rem;
+          background-color: #22313f; }
 
 .carts__component {
   width: 100%;
@@ -418,24 +426,28 @@ html {
         fill: #ffffff; }
     .product__views--wrapper .loader__products {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #ffffff; }
+      .product__views--wrapper .loader__products svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); }
     .product__views--wrapper .inner__contentWrapper {
       width: 90%;
       height: 95%;
       margin: 0 auto;
-      border: 2.1px solid lightgrey;
       border-radius: 0.45rem;
       display: grid;
       grid-template-columns: 32rem 1fr;
       grid-column-gap: 0.45rem; }
       .product__views--wrapper .inner__contentWrapper--image {
-        border: 2.1px solid lightgrey;
         border-radius: 0.45rem;
         height: 100%; }
       .product__views--wrapper .inner__contentWrapper--controllers {
-        border: 2.1px solid lightgrey;
         border-radius: 0.45rem;
         height: 100%; }
 
@@ -449,7 +461,7 @@ html {
   box-shadow: 0 0 3.5rem lightgrey;
   transition: 0.45s ease-in-out;
   animation: animationSlideFilters 0.45s ease-in-out forwards;
-  z-index: 9;
+  z-index: 99;
   display: grid;
   align-items: center;
   justify-items: center; }
@@ -462,25 +474,48 @@ html {
       position: relative; }
       .filters__component--wrapper .filters__wrapper button {
         height: 4.5rem;
-        border: 2px solid #000000;
         background-color: transparent;
         cursor: pointer;
         font-weight: 445;
         border-radius: 0.45rem;
-        padding: 0 1.4rem 0 1.4rem; }
+        padding: 0 1.4rem 0 1.4rem;
+        border: 1.4px solid #dce0e0;
+        outline: none; }
+      .filters__component--wrapper .filters__wrapper .activeFilterTypes {
+        border-color: #22313f; }
       .filters__component--wrapper .filters__wrapper:not(:first-child) {
         margin-left: 2.1rem; }
 
+.filter__content {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 92;
+  background-color: rgba(255, 255, 255, 0.5);
+  left: 0;
+  top: 0; }
+
 .filter__types {
   width: 21rem;
-  height: 0;
-  padding: 3.2rem;
-  border: 2px solid darkgrey;
+  height: auto;
+  padding: 0.45rem 3.2rem 0.45rem 3.2rem;
   border-radius: 0.45rem;
   position: absolute;
-  bottom: -9.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 14rem;
+  left: 5%;
   overflow: hidden;
   transition: all 0.45s ease-in-out;
-  animation: animationSlideFilterElementObject 0.45s ease-in-out forwards; }
+  animation: animationSlideFilterElementObject 0.45s ease-in-out forwards;
+  overflow-y: scroll;
+  z-index: 9;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 14px 36px 2px;
+  background-color: #ffffff; }
+  .filter__types .filterType {
+    transition: 0.20s ease-in-out; }
+    .filter__types .filterType:not(:first-child) {
+      margin-top: 0.45rem; }
+    .filter__types .filterType:hover {
+      background-color: #f7f7f7; }
+  .filter__types::-webkit-scrollbar {
+    display: none; }

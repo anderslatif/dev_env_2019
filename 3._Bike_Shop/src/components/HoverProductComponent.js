@@ -7,7 +7,7 @@ class HoverProductComponent extends Component {
             <svg onClick={this.props.addProductsCarts} data-id={this.props.productId}>
                 <use href="./image/sprite.svg#icon-shopping-cart"></use>
             </svg>
-            <svg onClick={this.props.views}>
+            <svg onClick={this.props.views} data-id={this.props.productId}>
                 <use href="./image/sprite.svg#icon-eye"></use>
             </svg>
             {/* HoverProductComponent */}

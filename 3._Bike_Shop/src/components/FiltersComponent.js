@@ -12,7 +12,8 @@ class FiltersComponent extends Component {
   handlerBikeTypes = () => {
     this.setState((prevState) => ({bikeTypes: !prevState.bikeTypes}))
   }
-  render() {
+  render(props) {
+    let { addFilterTypes } = this.props;
     return (
       <div className="filters__component">
         <div className="filters__component--wrapper">
@@ -20,8 +21,8 @@ class FiltersComponent extends Component {
             <button>Dates</button>
           </div>
           <div className="filters__wrapper">
-            <button onClick={this.handlerBikeTypes}>Bike type</button>
-            {this.state.bikeTypes && <FilterBikeTypes/>}
+            <button onClick={this.handlerBikeTypes} className={this.state.bikeTypes ? "activeFilterTypes" : "inactiveFilterTypes"}>Bike type</button>
+            {this.state.bikeTypes && <FilterBikeTypes addFilterTypes={addFilterTypes}/>}
           </div>
           <div className="filters__wrapper">
             <button>Price</button>

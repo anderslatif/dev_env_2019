@@ -22,7 +22,7 @@ class IndividualProductItems extends Component {
     this.setState({hoverProductState: false})
   }
   render(props) {
-    let {product} = this.props;
+    let { product } = this.props;
     return (
       <div className="product__individual" 
           onMouseEnter={this.hoverProductIndividual}

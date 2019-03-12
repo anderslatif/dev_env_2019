@@ -31,5 +31,16 @@ html {
     right:4.5%;
     top:6.5rem;
     z-index:5;
-    fill:orangered;
+    fill:#22313f;
+    // fill:orangered;
+}
+
+body {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.no--scroll {
+    overflow:hidden;
 }

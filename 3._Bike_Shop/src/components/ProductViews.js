@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Loader from 'react-loader-spinner'
+// import Carousel from 'nuka-carousel';
 
 class ProductViews extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class ProductViews extends Component {
     }, 3200)
   }
   render(props) {
+    let { products, selectedProduct } = this.props;
     return (
       <div className="product__views">
         <div className="product__views--wrapper">
@@ -28,8 +30,43 @@ class ProductViews extends Component {
               </div>
             }
             <div className="inner__contentWrapper">
-              <div className="inner__contentWrapper--image"></div>
-              <div className="inner__contentWrapper--controllers"></div>
+              <div className="inner__contentWrapper--image">
+                {/* <Carousel>
+                  {
+                    products.map((images) => {
+                      if(images.productId === selectedProduct) {
+                        return images.productListImage.map((image, index) => {
+                          return <img src={image} alt="" key={index}/>
+                        })
+                      }
+                    })
+                  }
+                </Carousel> */}
+              </div>
+              <div className="inner__contentWrapper--controllers">
+                  {
+                    products.map((datas) => {
+                      if(datas.productId === selectedProduct) {
+                        return(
+                          <div className="datas__wrapper" key={datas.productId}>
+                            <div className="datas__wrapper--title">
+                              <h2>{datas.productName}</h2>
+                            </div>
+                            <div className="datas__wrapper--price">
+                              <p>{datas.productPrice}</p>
+                            </div>
+                            <div className="datas__wrapper--datapicker">
+                              will insert airbnb data-range picker
+                            </div>
+                            <div className="datas__wrapper--addToCart">
+                              <button>add to cart</button>
+                            </div>
+                          </div>
+                        );
+                      }
+                    })
+                  }
+              </div>
             </div>
         </div>
         {/* ProductViews */}

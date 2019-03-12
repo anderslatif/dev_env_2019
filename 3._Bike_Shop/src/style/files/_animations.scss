@@ -37,10 +37,12 @@
 @keyframes animationDisplayProduct {
     from {
         opacity:0;
+        transition:all 0.45s ease-in-out;
         // filter:blur(4.5px);
     }
     to {
         opacity:1;
+        transition:all 0.45s ease-in-out;
         // filter:blur(0);
     }
 }

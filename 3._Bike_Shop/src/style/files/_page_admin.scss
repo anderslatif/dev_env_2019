@@ -1,0 +1,220 @@
+.page__admin,
+.subpage__dashboard {
+    width: 100%;
+    height: 100vh;
+    display:grid;
+    grid-template-rows:3.5rem 1fr;
+
+    .header__component {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5.5rem;
+        background-color: dodgerblue;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &--left {
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            &--logos {
+                width: 9rem;
+                height: 100%;
+                background-color: darken(dodgerblue, 9%);
+                display: grid;
+                align-items: center;
+                justify-items: center;
+
+                a {
+                    color: $color__white;
+                    font-size: 1.4rem;
+                    font-weight: 900;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+
+            &--pageswitcher {
+                width: 14rem;
+                margin-left: 2rem;
+                position: relative;
+
+                button,
+                .adminInactiveLinks {
+                    width: 14rem;
+                    height: 3.5rem;
+                    color: $color__white;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    transition: all 0.45s ease-in-out;
+                    padding-left:1.4rem;
+
+                    svg {
+                        transition: all 0.45s ease-in-out;
+                        width: 2.1rem;
+                        height: 2.1rem;
+                        fill: $color__white;
+                        margin-left: 0.45rem;
+                    }
+                }
+
+                .adminActiveLinks {
+                    transition: all 0.45s ease-in-out;
+                    padding-left:1.4rem;
+
+                    svg {
+                        transition: all 0.45s ease-in-out;
+                        transform: rotate(180deg);
+                    }
+                }
+
+                .admin__links {
+                    position: absolute;
+                    top: 6.5rem;
+                    left: 50%;
+                    width: 100%;
+                    background-color: #f7f7f7;
+                    padding:0.45rem 0 0.45rem 1.4rem;
+                    transform: translateX(-50%);
+                    border-radius: 0.45rem;
+                    animation: animationAdminLinks 0.45s ease-in-out forwards;
+                    // background-color:dodgerblue;
+
+                    a {
+                        font-size: 1.4rem;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        &--right {
+            height:100%;
+            display:flex;
+            flex-direction:row;
+            align-items:center;
+
+            &--search {
+                height:100%;
+                display:flex;
+                align-items:center;
+                // grid-template-columns:1fr 2.1rem;
+
+                svg {
+                    width:2.1rem;
+                    height:2.1rem; 
+                    fill:$color__white;
+                    cursor:pointer;
+                    margin-left:0.45rem;
+                }
+
+                input {
+                    background-color:transparent;
+                    border:none;
+                    border-bottom:2px solid $color__white;
+                    color:$color__white;
+                    padding:0.45rem;
+                    transition:all 0.45s ease-in-out;
+                    animation:animationSearchAdmin 0.45s ease-in-out forwards;
+                    
+                    &::placeholder {
+                        color:$color__white;
+                    }
+                }
+            }
+            
+            &--users {
+                width:17rem;
+                height:90%;
+                margin-left:2rem;
+                border-left:1.4px solid lightgrey;
+                padding-left:1.4rem;
+                padding-right:1.4rem;
+
+                .profile__admin {
+                    width:100%;
+                    height:100%;
+                    display:flex;
+                    flex-direction:row;
+                    justify-content:space-between;
+                    align-items:center;
+
+                    &--image {
+                        width:3.5rem;
+                        height:3.5rem;
+                        overflow:hidden;
+                        border-radius:50%;
+
+                        img {
+                            width:100%;
+                        }
+                    }
+
+                    &--username {
+
+                        a {
+                            text-decoration:none;
+                            font-size:1.4rem;
+                            color: $color__white;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .subheader__component {
+        width:100%;
+        height:4.5rem;
+        border-bottom:2px solid lightgrey;
+        margin-top:5.5rem;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        background-color:$color__white;
+        align-items:center;
+        // background-color:#f7f7f7;
+
+        &--navigation {
+            padding-left:1.4rem;
+            display:flex;
+            flex-direction:row;
+            align-items:center;
+            height:100%;
+            // border:2px solid lightgrey;
+
+            a {
+                font-weight:900;
+                text-transform:uppercase;
+                text-decoration:none;
+                cursor: pointer;
+                color:darkgrey;
+                font-size:1.2rem;
+            }
+
+            .active__subnavigation {
+                text-decoration:underline;
+                color:dodgerblue;
+            }
+
+            a:not(:first-child) {
+                margin-left:2rem;
+            }
+        }
+        
+        &--extra {
+            padding-right:1.4rem;
+            // border:2px solid lightgrey;
+        }
+    }
+}

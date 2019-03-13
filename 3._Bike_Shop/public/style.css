@@ -95,6 +95,18 @@ body::-webkit-scrollbar {
     opacity: 1;
     filter: blur(0.45rem) brightness(100%); } }
 
+@keyframes animationAdminLinks {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes animationSearchAdmin {
+  from {
+    width: 0; }
+  to {
+    width: 14rem; } }
+
 .header__component {
   width: 100%;
   height: 4.5rem;
@@ -818,3 +830,281 @@ body::-webkit-scrollbar {
             .auth__pages--register .authentification__wrapper--forms .auth__form--wrapper .redirect__login p a {
               color: dodgerblue;
               font-weight: 445; }
+
+.page__admin,
+.subpage__dashboard {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 3.5rem 1fr; }
+  .page__admin .header__component,
+  .subpage__dashboard .header__component {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5.5rem;
+    background-color: dodgerblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .page__admin .header__component--left,
+    .subpage__dashboard .header__component--left {
+      height: 100%;
+      display: flex;
+      align-items: center; }
+      .page__admin .header__component--left--logos,
+      .subpage__dashboard .header__component--left--logos {
+        width: 9rem;
+        height: 100%;
+        background-color: #0079ef;
+        display: grid;
+        align-items: center;
+        justify-items: center; }
+        .page__admin .header__component--left--logos a,
+        .subpage__dashboard .header__component--left--logos a {
+          color: #ffffff;
+          font-size: 1.4rem;
+          font-weight: 900;
+          text-decoration: none;
+          cursor: pointer; }
+      .page__admin .header__component--left--pageswitcher,
+      .subpage__dashboard .header__component--left--pageswitcher {
+        width: 14rem;
+        margin-left: 2rem;
+        position: relative; }
+        .page__admin .header__component--left--pageswitcher button,
+        .page__admin .header__component--left--pageswitcher .adminInactiveLinks,
+        .subpage__dashboard .header__component--left--pageswitcher button,
+        .subpage__dashboard .header__component--left--pageswitcher .adminInactiveLinks {
+          width: 14rem;
+          height: 3.5rem;
+          color: #ffffff;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          transition: all 0.45s ease-in-out;
+          padding-left: 1.4rem; }
+          .page__admin .header__component--left--pageswitcher button svg,
+          .page__admin .header__component--left--pageswitcher .adminInactiveLinks svg,
+          .subpage__dashboard .header__component--left--pageswitcher button svg,
+          .subpage__dashboard .header__component--left--pageswitcher .adminInactiveLinks svg {
+            transition: all 0.45s ease-in-out;
+            width: 2.1rem;
+            height: 2.1rem;
+            fill: #ffffff;
+            margin-left: 0.45rem; }
+        .page__admin .header__component--left--pageswitcher .adminActiveLinks,
+        .subpage__dashboard .header__component--left--pageswitcher .adminActiveLinks {
+          transition: all 0.45s ease-in-out;
+          padding-left: 1.4rem; }
+          .page__admin .header__component--left--pageswitcher .adminActiveLinks svg,
+          .subpage__dashboard .header__component--left--pageswitcher .adminActiveLinks svg {
+            transition: all 0.45s ease-in-out;
+            transform: rotate(180deg); }
+        .page__admin .header__component--left--pageswitcher .admin__links,
+        .subpage__dashboard .header__component--left--pageswitcher .admin__links {
+          position: absolute;
+          top: 6.5rem;
+          left: 50%;
+          width: 100%;
+          background-color: #f7f7f7;
+          padding: 0.45rem 0 0.45rem 1.4rem;
+          transform: translateX(-50%);
+          border-radius: 0.45rem;
+          animation: animationAdminLinks 0.45s ease-in-out forwards; }
+          .page__admin .header__component--left--pageswitcher .admin__links a,
+          .subpage__dashboard .header__component--left--pageswitcher .admin__links a {
+            font-size: 1.4rem;
+            text-decoration: none;
+            cursor: pointer; }
+    .page__admin .header__component--right,
+    .subpage__dashboard .header__component--right {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+      .page__admin .header__component--right--search,
+      .subpage__dashboard .header__component--right--search {
+        height: 100%;
+        display: flex;
+        align-items: center; }
+        .page__admin .header__component--right--search svg,
+        .subpage__dashboard .header__component--right--search svg {
+          width: 2.1rem;
+          height: 2.1rem;
+          fill: #ffffff;
+          cursor: pointer;
+          margin-left: 0.45rem; }
+        .page__admin .header__component--right--search input,
+        .subpage__dashboard .header__component--right--search input {
+          background-color: transparent;
+          border: none;
+          border-bottom: 2px solid #ffffff;
+          color: #ffffff;
+          padding: 0.45rem;
+          transition: all 0.45s ease-in-out;
+          animation: animationSearchAdmin 0.45s ease-in-out forwards; }
+          .page__admin .header__component--right--search input::placeholder,
+          .subpage__dashboard .header__component--right--search input::placeholder {
+            color: #ffffff; }
+      .page__admin .header__component--right--users,
+      .subpage__dashboard .header__component--right--users {
+        width: 17rem;
+        height: 90%;
+        margin-left: 2rem;
+        border-left: 1.4px solid lightgrey;
+        padding-left: 1.4rem;
+        padding-right: 1.4rem; }
+        .page__admin .header__component--right--users .profile__admin,
+        .subpage__dashboard .header__component--right--users .profile__admin {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center; }
+          .page__admin .header__component--right--users .profile__admin--image,
+          .subpage__dashboard .header__component--right--users .profile__admin--image {
+            width: 3.5rem;
+            height: 3.5rem;
+            overflow: hidden;
+            border-radius: 50%; }
+            .page__admin .header__component--right--users .profile__admin--image img,
+            .subpage__dashboard .header__component--right--users .profile__admin--image img {
+              width: 100%; }
+          .page__admin .header__component--right--users .profile__admin--username a,
+          .subpage__dashboard .header__component--right--users .profile__admin--username a {
+            text-decoration: none;
+            font-size: 1.4rem;
+            color: #ffffff;
+            cursor: pointer; }
+  .page__admin .subheader__component,
+  .subpage__dashboard .subheader__component {
+    width: 100%;
+    height: 4.5rem;
+    border-bottom: 2px solid lightgrey;
+    margin-top: 5.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #ffffff;
+    align-items: center; }
+    .page__admin .subheader__component--navigation,
+    .subpage__dashboard .subheader__component--navigation {
+      padding-left: 1.4rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 100%; }
+      .page__admin .subheader__component--navigation a,
+      .subpage__dashboard .subheader__component--navigation a {
+        font-weight: 900;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        color: darkgrey;
+        font-size: 1.2rem; }
+      .page__admin .subheader__component--navigation .active__subnavigation,
+      .subpage__dashboard .subheader__component--navigation .active__subnavigation {
+        text-decoration: underline;
+        color: dodgerblue; }
+      .page__admin .subheader__component--navigation a:not(:first-child),
+      .subpage__dashboard .subheader__component--navigation a:not(:first-child) {
+        margin-left: 2rem; }
+    .page__admin .subheader__component--extra,
+    .subpage__dashboard .subheader__component--extra {
+      padding-right: 1.4rem; }
+
+.subpage__dashboard {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 9.5rem 1fr;
+  background-color: #eeeeee; }
+  .subpage__dashboard .budget__details {
+    width: 85%;
+    margin: 0 auto;
+    height: 37rem;
+    display: grid;
+    grid-template-rows: 4.5rem 1fr;
+    margin-top: 4.5rem;
+    border-radius: 0.45rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.14), 0 2px 5px rgba(0, 0, 0, 0.17); }
+    .subpage__dashboard .budget__details--header {
+      width: 100%;
+      border-radius: 0.45rem;
+      background-color: #f7f7f7;
+      display: grid;
+      align-items: center;
+      padding-left: 1.4rem; }
+      .subpage__dashboard .budget__details--header h2 {
+        color: darkgrey;
+        font-weight: 900; }
+    .subpage__dashboard .budget__details--content {
+      width: 100%;
+      border-radius: 0.45rem;
+      background-color: #ffffff;
+      display: grid;
+      grid-template-columns: 42rem 1fr; }
+      .subpage__dashboard .budget__details--content .budgetContent__information {
+        height: 100%;
+        border-right: 2px solid lightgrey;
+        padding-top: 4.5rem; }
+        .subpage__dashboard .budget__details--content .budgetContent__information h2 {
+          font-size: 1.9rem;
+          text-align: center;
+          color: darkgrey;
+          font-weight: 900;
+          letter-spacing: 0.32rem; }
+        .subpage__dashboard .budget__details--content .budgetContent__information svg {
+          width: 6.5rem;
+          height: 6.5rem;
+          fill: dodgerblue;
+          margin: 0 auto;
+          text-align: center;
+          display: block;
+          margin-top: 3.2rem; }
+        .subpage__dashboard .budget__details--content .budgetContent__information p {
+          color: darkgrey;
+          font-size: 1.4rem;
+          text-align: center;
+          width: 70%;
+          margin: 0 auto;
+          font-weight: 445;
+          margin-top: 2rem; }
+          .subpage__dashboard .budget__details--content .budgetContent__information p span {
+            font-weight: 900;
+            color: #767676; }
+      .subpage__dashboard .budget__details--content .budgetContent__details {
+        height: 100%;
+        display: grid;
+        grid-template-rows: 1fr 12rem;
+        padding: 0 1.4rem 0 1.4rem; }
+        .subpage__dashboard .budget__details--content .budgetContent__details--textinformation {
+          display: grid;
+          grid-template-rows: 3.5rem 1fr; }
+          .subpage__dashboard .budget__details--content .budgetContent__details--textinformation .data__header {
+            border-bottom: 2px solid lightgrey;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center; }
+            .subpage__dashboard .budget__details--content .budgetContent__details--textinformation .data__header--description, .subpage__dashboard .budget__details--content .budgetContent__details--textinformation .data__header--amount {
+              font-weight: 900;
+              font-size: 1.4rem;
+              color: darkgrey;
+              text-transform: uppercase; }
+        .subpage__dashboard .budget__details--content .budgetContent__details--numericinformation {
+          border: 2px solid lightgrey;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          align-items: center; }
+          .subpage__dashboard .budget__details--content .budgetContent__details--numericinformation .data__total {
+            width: 100%;
+            height: 90%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); }

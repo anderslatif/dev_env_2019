@@ -21,7 +21,16 @@ const BudgetDetails = () => (
             <h2 className="data__header--description">Description</h2>
             <h2 className="data__header--amount">Amount</h2>
           </div>
-          <div className="data__content"></div>
+          <div className="data__content">
+            <div className="data__content--numberTotalPurchases">
+              <p>Total number of sells</p>
+              <p>445(static)</p>
+            </div>
+            <div className="data__content--vatPercentage">
+              <p>VAT Taxes 25%</p>
+              <span>-445$</span>
+            </div>
+          </div>
         </div>
         <div className="budgetContent__details--numericinformation">
           <div></div>
@@ -30,7 +39,9 @@ const BudgetDetails = () => (
               <p>Total</p>
               <span>Due to {moment().format("DD MMM YY")}</span>
             </div>
-            <div className="data__total--numeric"></div>
+            <div className="data__total--numeric">
+              <span>$445</span>
+            </div>
           </div>
         </div>
       </div>

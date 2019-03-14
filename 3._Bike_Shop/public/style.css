@@ -107,6 +107,12 @@ body::-webkit-scrollbar {
   to {
     width: 14rem; } }
 
+@keyframes animationSearchEntries {
+  from {
+    width: 0; }
+  to {
+    width: 21rem; } }
+
 .header__component {
   width: 100%;
   height: 4.5rem;
@@ -832,13 +838,15 @@ body::-webkit-scrollbar {
               font-weight: 445; }
 
 .page__admin,
-.subpage__dashboard {
+.subpage__dashboard,
+.subpage__entries {
   width: 100%;
   height: 100vh;
   display: grid;
   grid-template-rows: 3.5rem 1fr; }
   .page__admin .header__component,
-  .subpage__dashboard .header__component {
+  .subpage__dashboard .header__component,
+  .subpage__entries .header__component {
     position: fixed;
     top: 0;
     left: 0;
@@ -849,12 +857,14 @@ body::-webkit-scrollbar {
     flex-direction: row;
     justify-content: space-between; }
     .page__admin .header__component--left,
-    .subpage__dashboard .header__component--left {
+    .subpage__dashboard .header__component--left,
+    .subpage__entries .header__component--left {
       height: 100%;
       display: flex;
       align-items: center; }
       .page__admin .header__component--left--logos,
-      .subpage__dashboard .header__component--left--logos {
+      .subpage__dashboard .header__component--left--logos,
+      .subpage__entries .header__component--left--logos {
         width: 9rem;
         height: 100%;
         background-color: #0079ef;
@@ -862,21 +872,25 @@ body::-webkit-scrollbar {
         align-items: center;
         justify-items: center; }
         .page__admin .header__component--left--logos a,
-        .subpage__dashboard .header__component--left--logos a {
+        .subpage__dashboard .header__component--left--logos a,
+        .subpage__entries .header__component--left--logos a {
           color: #ffffff;
           font-size: 1.4rem;
           font-weight: 900;
           text-decoration: none;
           cursor: pointer; }
       .page__admin .header__component--left--pageswitcher,
-      .subpage__dashboard .header__component--left--pageswitcher {
+      .subpage__dashboard .header__component--left--pageswitcher,
+      .subpage__entries .header__component--left--pageswitcher {
         width: 14rem;
         margin-left: 2rem;
         position: relative; }
         .page__admin .header__component--left--pageswitcher button,
         .page__admin .header__component--left--pageswitcher .adminInactiveLinks,
         .subpage__dashboard .header__component--left--pageswitcher button,
-        .subpage__dashboard .header__component--left--pageswitcher .adminInactiveLinks {
+        .subpage__dashboard .header__component--left--pageswitcher .adminInactiveLinks,
+        .subpage__entries .header__component--left--pageswitcher button,
+        .subpage__entries .header__component--left--pageswitcher .adminInactiveLinks {
           width: 14rem;
           height: 3.5rem;
           color: #ffffff;
@@ -891,22 +905,27 @@ body::-webkit-scrollbar {
           .page__admin .header__component--left--pageswitcher button svg,
           .page__admin .header__component--left--pageswitcher .adminInactiveLinks svg,
           .subpage__dashboard .header__component--left--pageswitcher button svg,
-          .subpage__dashboard .header__component--left--pageswitcher .adminInactiveLinks svg {
+          .subpage__dashboard .header__component--left--pageswitcher .adminInactiveLinks svg,
+          .subpage__entries .header__component--left--pageswitcher button svg,
+          .subpage__entries .header__component--left--pageswitcher .adminInactiveLinks svg {
             transition: all 0.45s ease-in-out;
             width: 2.1rem;
             height: 2.1rem;
             fill: #ffffff;
             margin-left: 0.45rem; }
         .page__admin .header__component--left--pageswitcher .adminActiveLinks,
-        .subpage__dashboard .header__component--left--pageswitcher .adminActiveLinks {
+        .subpage__dashboard .header__component--left--pageswitcher .adminActiveLinks,
+        .subpage__entries .header__component--left--pageswitcher .adminActiveLinks {
           transition: all 0.45s ease-in-out;
           padding-left: 1.4rem; }
           .page__admin .header__component--left--pageswitcher .adminActiveLinks svg,
-          .subpage__dashboard .header__component--left--pageswitcher .adminActiveLinks svg {
+          .subpage__dashboard .header__component--left--pageswitcher .adminActiveLinks svg,
+          .subpage__entries .header__component--left--pageswitcher .adminActiveLinks svg {
             transition: all 0.45s ease-in-out;
             transform: rotate(180deg); }
         .page__admin .header__component--left--pageswitcher .admin__links,
-        .subpage__dashboard .header__component--left--pageswitcher .admin__links {
+        .subpage__dashboard .header__component--left--pageswitcher .admin__links,
+        .subpage__entries .header__component--left--pageswitcher .admin__links {
           position: absolute;
           top: 6.5rem;
           left: 50%;
@@ -917,30 +936,35 @@ body::-webkit-scrollbar {
           border-radius: 0.45rem;
           animation: animationAdminLinks 0.45s ease-in-out forwards; }
           .page__admin .header__component--left--pageswitcher .admin__links a,
-          .subpage__dashboard .header__component--left--pageswitcher .admin__links a {
+          .subpage__dashboard .header__component--left--pageswitcher .admin__links a,
+          .subpage__entries .header__component--left--pageswitcher .admin__links a {
             font-size: 1.4rem;
             text-decoration: none;
             cursor: pointer; }
     .page__admin .header__component--right,
-    .subpage__dashboard .header__component--right {
+    .subpage__dashboard .header__component--right,
+    .subpage__entries .header__component--right {
       height: 100%;
       display: flex;
       flex-direction: row;
       align-items: center; }
       .page__admin .header__component--right--search,
-      .subpage__dashboard .header__component--right--search {
+      .subpage__dashboard .header__component--right--search,
+      .subpage__entries .header__component--right--search {
         height: 100%;
         display: flex;
         align-items: center; }
         .page__admin .header__component--right--search svg,
-        .subpage__dashboard .header__component--right--search svg {
+        .subpage__dashboard .header__component--right--search svg,
+        .subpage__entries .header__component--right--search svg {
           width: 2.1rem;
           height: 2.1rem;
           fill: #ffffff;
           cursor: pointer;
           margin-left: 0.45rem; }
         .page__admin .header__component--right--search input,
-        .subpage__dashboard .header__component--right--search input {
+        .subpage__dashboard .header__component--right--search input,
+        .subpage__entries .header__component--right--search input {
           background-color: transparent;
           border: none;
           border-bottom: 2px solid #ffffff;
@@ -949,10 +973,12 @@ body::-webkit-scrollbar {
           transition: all 0.45s ease-in-out;
           animation: animationSearchAdmin 0.45s ease-in-out forwards; }
           .page__admin .header__component--right--search input::placeholder,
-          .subpage__dashboard .header__component--right--search input::placeholder {
+          .subpage__dashboard .header__component--right--search input::placeholder,
+          .subpage__entries .header__component--right--search input::placeholder {
             color: #ffffff; }
       .page__admin .header__component--right--users,
-      .subpage__dashboard .header__component--right--users {
+      .subpage__dashboard .header__component--right--users,
+      .subpage__entries .header__component--right--users {
         width: 17rem;
         height: 90%;
         margin-left: 2rem;
@@ -960,7 +986,8 @@ body::-webkit-scrollbar {
         padding-left: 1.4rem;
         padding-right: 1.4rem; }
         .page__admin .header__component--right--users .profile__admin,
-        .subpage__dashboard .header__component--right--users .profile__admin {
+        .subpage__dashboard .header__component--right--users .profile__admin,
+        .subpage__entries .header__component--right--users .profile__admin {
           width: 100%;
           height: 100%;
           display: flex;
@@ -968,22 +995,26 @@ body::-webkit-scrollbar {
           justify-content: space-between;
           align-items: center; }
           .page__admin .header__component--right--users .profile__admin--image,
-          .subpage__dashboard .header__component--right--users .profile__admin--image {
+          .subpage__dashboard .header__component--right--users .profile__admin--image,
+          .subpage__entries .header__component--right--users .profile__admin--image {
             width: 3.5rem;
             height: 3.5rem;
             overflow: hidden;
             border-radius: 50%; }
             .page__admin .header__component--right--users .profile__admin--image img,
-            .subpage__dashboard .header__component--right--users .profile__admin--image img {
+            .subpage__dashboard .header__component--right--users .profile__admin--image img,
+            .subpage__entries .header__component--right--users .profile__admin--image img {
               width: 100%; }
           .page__admin .header__component--right--users .profile__admin--username a,
-          .subpage__dashboard .header__component--right--users .profile__admin--username a {
+          .subpage__dashboard .header__component--right--users .profile__admin--username a,
+          .subpage__entries .header__component--right--users .profile__admin--username a {
             text-decoration: none;
             font-size: 1.4rem;
             color: #ffffff;
             cursor: pointer; }
   .page__admin .subheader__component,
-  .subpage__dashboard .subheader__component {
+  .subpage__dashboard .subheader__component,
+  .subpage__entries .subheader__component {
     width: 100%;
     height: 4.5rem;
     border-bottom: 2px solid lightgrey;
@@ -994,14 +1025,16 @@ body::-webkit-scrollbar {
     background-color: #ffffff;
     align-items: center; }
     .page__admin .subheader__component--navigation,
-    .subpage__dashboard .subheader__component--navigation {
+    .subpage__dashboard .subheader__component--navigation,
+    .subpage__entries .subheader__component--navigation {
       padding-left: 1.4rem;
       display: flex;
       flex-direction: row;
       align-items: center;
       height: 100%; }
       .page__admin .subheader__component--navigation a,
-      .subpage__dashboard .subheader__component--navigation a {
+      .subpage__dashboard .subheader__component--navigation a,
+      .subpage__entries .subheader__component--navigation a {
         font-weight: 900;
         text-transform: uppercase;
         text-decoration: none;
@@ -1009,14 +1042,17 @@ body::-webkit-scrollbar {
         color: darkgrey;
         font-size: 1.2rem; }
       .page__admin .subheader__component--navigation .active__subnavigation,
-      .subpage__dashboard .subheader__component--navigation .active__subnavigation {
+      .subpage__dashboard .subheader__component--navigation .active__subnavigation,
+      .subpage__entries .subheader__component--navigation .active__subnavigation {
         text-decoration: underline;
         color: dodgerblue; }
       .page__admin .subheader__component--navigation a:not(:first-child),
-      .subpage__dashboard .subheader__component--navigation a:not(:first-child) {
+      .subpage__dashboard .subheader__component--navigation a:not(:first-child),
+      .subpage__entries .subheader__component--navigation a:not(:first-child) {
         margin-left: 2rem; }
     .page__admin .subheader__component--extra,
-    .subpage__dashboard .subheader__component--extra {
+    .subpage__dashboard .subheader__component--extra,
+    .subpage__entries .subheader__component--extra {
       padding-right: 1.4rem; }
 
 .subpage__dashboard {
@@ -1036,17 +1072,18 @@ body::-webkit-scrollbar {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.14), 0 2px 5px rgba(0, 0, 0, 0.17); }
     .subpage__dashboard .budget__details--header {
       width: 100%;
-      border-radius: 0.45rem;
+      border-radius: 0.45rem 0.45rem 0 0;
       background-color: #f7f7f7;
       display: grid;
       align-items: center;
-      padding-left: 1.4rem; }
+      padding-left: 1.4rem;
+      border-bottom: 2px solid lightgrey; }
       .subpage__dashboard .budget__details--header h2 {
         color: darkgrey;
         font-weight: 900; }
     .subpage__dashboard .budget__details--content {
       width: 100%;
-      border-radius: 0.45rem;
+      border-radius: 0 0 0.45rem 0.45rem;
       background-color: #ffffff;
       display: grid;
       grid-template-columns: 42rem 1fr; }
@@ -1098,8 +1135,29 @@ body::-webkit-scrollbar {
               font-size: 1.4rem;
               color: darkgrey;
               text-transform: uppercase; }
+          .subpage__dashboard .budget__details--content .budgetContent__details--textinformation .data__content--numberTotalPurchases {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 3.5rem;
+            border-bottom: 1.4px solid lightgrey;
+            align-items: center;
+            font-size: 1.4rem;
+            color: #c6c6c6; }
+          .subpage__dashboard .budget__details--content .budgetContent__details--textinformation .data__content--vatPercentage {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 3.5rem;
+            border-bottom: 1.4px solid lightgrey;
+            align-items: center;
+            font-size: 1.4rem;
+            color: #c6c6c6; }
+            .subpage__dashboard .budget__details--content .budgetContent__details--textinformation .data__content--vatPercentage span {
+              color: orangered;
+              font-weight: 900;
+              letter-spacing: 0.14rem; }
         .subpage__dashboard .budget__details--content .budgetContent__details--numericinformation {
-          border: 2px solid lightgrey;
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           align-items: center; }
@@ -1107,4 +1165,79 @@ body::-webkit-scrollbar {
             width: 100%;
             height: 90%;
             display: grid;
-            grid-template-columns: repeat(2, 1fr); }
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center; }
+            .subpage__dashboard .budget__details--content .budgetContent__details--numericinformation .data__total--due p {
+              font-size: 1.4rem;
+              color: #22313f;
+              margin-bottom: 0.45rem; }
+            .subpage__dashboard .budget__details--content .budgetContent__details--numericinformation .data__total--due span {
+              color: lightgrey;
+              font-size: 1.4rem; }
+            .subpage__dashboard .budget__details--content .budgetContent__details--numericinformation .data__total--numeric {
+              text-align: center; }
+              .subpage__dashboard .budget__details--content .budgetContent__details--numericinformation .data__total--numeric span {
+                font-size: 2.1rem;
+                font-weight: 900;
+                color: #22313f; }
+
+.subpage__entries {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 9.5rem 1fr;
+  background-color: #eeeeee; }
+  .subpage__entries .entries__wrapper {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 4.5rem;
+    display: grid;
+    grid-template-rows: 4.5rem 1fr;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.14), 0 2px 5px rgba(0, 0, 0, 0.17); }
+    .subpage__entries .entries__wrapper .admin__filters {
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center; }
+      .subpage__entries .entries__wrapper .admin__filters--search {
+        margin-left: 1.4rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center; }
+        .subpage__entries .entries__wrapper .admin__filters--search svg {
+          width: 2.1rem;
+          height: 2.1rem;
+          cursor: pointer;
+          color: #22313f;
+          margin-right: 0.45rem; }
+        .subpage__entries .entries__wrapper .admin__filters--search input {
+          background-color: transparent;
+          border: none;
+          border-bottom: 1.4px solid lightgrey;
+          color: #22313f;
+          padding: 0.45rem 0.20rem 0.45rem 0.20rem;
+          transition: all 0.45s ease-in-out;
+          animation: animationSearchEntries 0.45s ease-in-out forwards; }
+          .subpage__entries .entries__wrapper .admin__filters--search input::placeholder {
+            color: #22313f; }
+      .subpage__entries .entries__wrapper .admin__filters--sorting {
+        margin-right: 1.4rem;
+        display: flex;
+        align-items: center; }
+        .subpage__entries .entries__wrapper .admin__filters--sorting select {
+          width: 12rem;
+          border: none;
+          padding: 0.45rem;
+          border-radius: 0.45rem;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.14), 0 2px 5px rgba(0, 0, 0, 0.17);
+          font-family: "Roboto", sans-serif;
+          font-weight: 200;
+          outline: none;
+          transition: all 0.45s ease-in-out; }
+    .subpage__entries .entries__wrapper .admin__purchases {
+      background-color: #ffffff; }
+      .subpage__entries .entries__wrapper .admin__purchases--header {
+        width: 100%;
+        height: 4.5rem;
+        background-color: lightgrey; }

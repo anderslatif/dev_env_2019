@@ -18,11 +18,12 @@
         
         &--header {
             width:100%;
-            border-radius:0.45rem;
+            border-radius:0.45rem 0.45rem 0 0;
             background-color:#f7f7f7;
             display:grid;
             align-items:center;
             padding-left:1.4rem;
+            border-bottom:2px solid lightgrey;
 
             h2 {
                 color:darkgrey;
@@ -32,7 +33,7 @@
         
         &--content {
             width:100%;
-            border-radius:0.45rem;
+            border-radius:0 0 0.45rem 0.45rem;
             background-color:$color__white;
             display:grid;
             grid-template-columns:42rem 1fr;
@@ -106,28 +107,70 @@
                     }
 
                     .data__content {
+                        &--numberTotalPurchases {
+                            display:flex;
+                            flex-direction:row;
+                            justify-content:space-between;
+                            height:3.5rem;
+                            border-bottom:1.4px solid lightgrey;
+                            align-items:center;
+                            font-size:1.4rem;
+                            color:darken(lightgrey, 5%);
+                        }
+                        
+                        &--vatPercentage {
+                            display:flex;
+                            flex-direction:row;
+                            justify-content:space-between;
+                            height:3.5rem;
+                            border-bottom:1.4px solid lightgrey;
+                            align-items:center;
+                            font-size:1.4rem;
+                            color:darken(lightgrey, 5%);
 
+                            span {
+                                color:orangered;
+                                font-weight:900;
+                                letter-spacing:0.14rem;
+                            }
+                        }
                     }
                 }
                 
                 &--numericinformation {
-                    border:2px solid lightgrey;
                     display:grid;
                     grid-template-columns:repeat(2, 1fr);
                     align-items:center;
-
+                    // border:2px solid lightgrey;
+                    
                     .data__total {
                         width:100%;
                         height:90%;
                         display:grid;
                         grid-template-columns:repeat(2, 1fr);
+                        align-items:center;
 
                         &--due {
-                            
+                            p {
+                                font-size:1.4rem;
+                                color:$color__darkblue;
+                                margin-bottom:0.45rem;
+                            }
+
+                            span {
+                                color:lightgrey;
+                                font-size:1.4rem;
+                            }
                         }
 
                         &--numeric {
+                            text-align:center;
 
+                            span {
+                                font-size:2.1rem;
+                                font-weight:900;
+                                color:$color__darkblue; 
+                            }
                         }
                     }
                 }

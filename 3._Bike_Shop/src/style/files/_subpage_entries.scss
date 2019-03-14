@@ -20,6 +20,7 @@
             flex-direction:row;
             justify-content:space-between;
             align-items:center;
+            border-bottom:2px solid lightgrey;
 
             &--search {
                 margin-left:1.4rem;
@@ -76,12 +77,40 @@
             &--header {
                 width:100%;
                 height:4.5rem;
-                background-color:lightgrey;
+                background-color:lighten(lightgrey, 9%);
+                display:grid;
+                grid-template-columns:repeat(4, 1fr) auto;
+                align-items:center;
+                padding-left:1.4rem;
+                padding-right:1.4rem;
+                border-bottom:2px solid lightgrey;
                 // background-color:lighten(#f7f7f7, 9%);  
+
+                &--element {
+                    color:$color__darkblue;
+                    font-weight:900;
+                    font-size:1.2rem;
+                }
             }
 
             &--content {
-                
+                .adminPurchasesElement {
+                    width:100%;
+                    height:4.5rem;
+                    display:grid;
+                    grid-template-columns:repeat(4, 1fr) auto;
+                    align-items:center;
+                    padding-left:1.4rem;
+                    padding-right:1.4rem;
+                    font-size:1.2rem;
+                    color:$color__darkblue;
+                    font-weight:445;
+
+                    &:nth-child(even) {
+                        background-color:#e4f1fe; //alice__color
+                        // background-color:lightblue;
+                    }
+                }
             }
         }
     }

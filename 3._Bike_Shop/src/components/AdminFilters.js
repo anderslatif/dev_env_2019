@@ -11,7 +11,7 @@ class AdminFilters extends Component {
             {
                 this.props.adminEntriesSearch
                 &&
-                <input type="text" placeholder="search entries"/>
+                <input type="text" placeholder="search entries" onChange={this.props.getAdminEntriesSearchValue}/>
             }
         </div>
         <div className="admin__filters--sorting">

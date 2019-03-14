@@ -1199,7 +1199,8 @@ body::-webkit-scrollbar {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      align-items: center; }
+      align-items: center;
+      border-bottom: 2px solid lightgrey; }
       .subpage__entries .entries__wrapper .admin__filters--search {
         margin-left: 1.4rem;
         display: flex;
@@ -1240,4 +1241,27 @@ body::-webkit-scrollbar {
       .subpage__entries .entries__wrapper .admin__purchases--header {
         width: 100%;
         height: 4.5rem;
-        background-color: lightgrey; }
+        background-color: #eaeaea;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr) auto;
+        align-items: center;
+        padding-left: 1.4rem;
+        padding-right: 1.4rem;
+        border-bottom: 2px solid lightgrey; }
+        .subpage__entries .entries__wrapper .admin__purchases--header--element {
+          color: #22313f;
+          font-weight: 900;
+          font-size: 1.2rem; }
+      .subpage__entries .entries__wrapper .admin__purchases--content .adminPurchasesElement {
+        width: 100%;
+        height: 4.5rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr) auto;
+        align-items: center;
+        padding-left: 1.4rem;
+        padding-right: 1.4rem;
+        font-size: 1.2rem;
+        color: #22313f;
+        font-weight: 445; }
+        .subpage__entries .entries__wrapper .admin__purchases--content .adminPurchasesElement:nth-child(even) {
+          background-color: #e4f1fe; }

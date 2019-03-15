@@ -111,10 +111,10 @@ async function testBrowser(browsers) {
     });
 }*/
 
-app.listen(3000, (err) => {
+app.listen(8080, (err) => {
     if (err) {
         console.log("Error ", err);
     } else {
-        console.log("App is running on port 3000");
+        console.log("App is running on port 8080");
     }
 });

@@ -15,7 +15,7 @@ class AdminFilters extends Component {
             }
         </div>
         <div className="admin__filters--sorting">
-            <select>
+            <select onChange={this.props.getSortType}>
                 <option value="ascending">Ascending</option>
                 <option value="descending">Descending</option>
             </select>

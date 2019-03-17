@@ -8,7 +8,7 @@ class PageRegister extends Component {
             <div className="main__blured"></div>
             <div className="authentification__wrapper">
                 <div className="authentification__wrapper--video">
-                    <video autoPlay>
+                    <video autoPlay loop>
                         <source src="./image/authentification__video.mp4" type="video/mp4"/>>
                     </video>
                     <div className="auth__textcontent">

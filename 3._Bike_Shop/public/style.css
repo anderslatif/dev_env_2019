@@ -113,6 +113,18 @@ body::-webkit-scrollbar {
   to {
     width: 21rem; } }
 
+@keyframes animationSlidePurchase {
+  from {
+    left: 0; }
+  to {
+    left: -45rem; } }
+
+@keyframes animationSlidePurchaseMobile {
+  from {
+    left: -45rem; }
+  to {
+    left: 0; } }
+
 .header__component {
   width: 100%;
   height: 4.5rem;
@@ -187,7 +199,8 @@ body::-webkit-scrollbar {
     right: -100rem;
     top: 0;
     display: grid;
-    grid-template-rows: 9.5rem 1fr 9.5rem; }
+    grid-template-rows: 9.5rem 1fr 9.5rem;
+    z-index: 999; }
     @media screen and (max-width: 900px) {
       .carts__component--content {
         width: 45vw; } }
@@ -593,6 +606,42 @@ body::-webkit-scrollbar {
   .filter__types::-webkit-scrollbar {
     display: none; }
 
+.filterBikePrice {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.7);
+  left: 0;
+  top: 12rem;
+  z-index: 999; }
+  .filterBikePrice--wrapper {
+    margin-left: 5%;
+    width: 25.45rem;
+    height: 9rem;
+    height: auto;
+    padding: 0.45rem 1.2rem 0.45rem 1.2rem;
+    border-radius: 0.45rem;
+    left: 5%;
+    overflow: hidden;
+    transition: all 0.45s ease-in-out;
+    animation: animationSlideFilterElementObject 0.45s ease-in-out forwards;
+    z-index: 9;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 14px 36px 2px;
+    background-color: #ffffff; }
+    .filterBikePrice--wrapper p {
+      margin-bottom: 1.4rem;
+      font-size: 1.4rem;
+      font-weight: 200;
+      color: #22313f; }
+    .filterBikePrice--wrapper--input {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 1.4rem; }
+      .filterBikePrice--wrapper--input input {
+        width: 100%;
+        height: 3.5rem; }
+
 .auth__pages--login {
   width: 100%;
   height: 100vh;
@@ -611,6 +660,28 @@ body::-webkit-scrollbar {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), url("./image/authentification__background.jpg");
     filter: blur(0.95rem);
     transform: scale(1.2); }
+  .auth__pages--login .user__types {
+    width: 14rem;
+    height: 4.5rem;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: fixed;
+    right: 1.4rem;
+    top: 1.4rem;
+    border-radius: 0.45rem;
+    background-color: #ffffff;
+    padding-left: 0.45rem;
+    padding-right: 0.45rem; }
+    .auth__pages--login .user__types select {
+      width: 100%;
+      border-radius: 0.45rem;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      border-bottom: 1.4px solid lightgrey; }
+      .auth__pages--login .user__types select:focus {
+        border-color: #22313f; }
   .auth__pages--login .authentification__wrapper {
     width: 70%;
     height: 45rem;
@@ -1265,3 +1336,291 @@ body::-webkit-scrollbar {
         font-weight: 445; }
         .subpage__entries .entries__wrapper .admin__purchases--content .adminPurchasesElement:nth-child(even) {
           background-color: #e4f1fe; }
+
+.purchase__users {
+  position: absolute;
+  height: 100vh;
+  width: 45rem;
+  background-color: #f7f7f7;
+  z-index: 99;
+  left: -45rem;
+  transition: 0.45s ease-in-out;
+  animation: animationSlidePurchase 0.45s ease-in-out forwards;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  overflow-y: scroll; }
+  @media (max-width: 545px) {
+    .purchase__users {
+      width: 100%;
+      left: 0 !important;
+      animation: animationSlidePurchaseMobile 0.45s ease-in-out forwards; } }
+  .purchase__users::-webkit-scrollbar {
+    display: none; }
+  .purchase__users .purchase__users {
+    display: grid;
+    grid-template-rows: auto 1fr 1fr;
+    grid-row-gap: 0.45rem; }
+    .purchase__users .purchase__users--extra {
+      width: 90%;
+      margin: 0 auto;
+      position: relative; }
+      .purchase__users .purchase__users--extra .purchase__DatePicker {
+        position: relative;
+        transition: 0.45s ease-in-out;
+        transition: all 0.45s ease-in-out; }
+        .purchase__users .purchase__users--extra .purchase__DatePicker .status__users--inactive {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 4.5rem;
+          height: 4.5rem;
+          border-radius: 50%;
+          background-color: #22313f;
+          transition: all 0.45s ease-in-out;
+          cursor: pointer;
+          display: grid;
+          align-items: center;
+          justify-items: center;
+          color: #ffffff;
+          text-align: center; }
+        .purchase__users .purchase__users--extra .purchase__DatePicker .status__users--active {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 4.5rem;
+          height: 4.5rem;
+          border-radius: 50%;
+          transition: all 0.45s ease-in-out;
+          cursor: pointer;
+          display: grid;
+          align-items: center;
+          justify-items: center;
+          background-color: #36d7b7; }
+          .purchase__users .purchase__users--extra .purchase__DatePicker .status__users--active svg {
+            width: 3.2rem;
+            height: 3.2rem;
+            fill: #ffffff; }
+        .purchase__users .purchase__users--extra .purchase__DatePicker h2 {
+          margin-left: 6.5rem;
+          font-size: 1.7rem;
+          font-weight: 445;
+          color: #22313f;
+          margin-bottom: 0.45rem; }
+        .purchase__users .purchase__users--extra .purchase__DatePicker p {
+          margin-left: 6.5rem;
+          font-size: 1.4rem;
+          font-weight: 200;
+          color: #22313f; }
+      .purchase__users .purchase__users--extra .purchase__DateElement {
+        overflow: hidden;
+        transition: all 0.45s ease-in-out;
+        margin-top: 3.2rem;
+        border-left: 2px solid lightblue;
+        padding-left: 3.2rem; }
+        .purchase__users .purchase__users--extra .purchase__DateElement p {
+          margin-bottom: 0.45rem;
+          font-size: 1.4rem; }
+      .purchase__users .purchase__users--extra .purchase__DateElement--overfloated {
+        height: 0;
+        overflow: hidden;
+        transition: all 0.45s ease-in-out;
+        padding-left: 3.2rem; }
+    .purchase__users .purchase__users--profile {
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 4.5rem; }
+      .purchase__users .purchase__users--profile .purchase__UsersTitle {
+        position: relative;
+        transition: 0.45s ease-in-out;
+        transition: all 0.45s ease-in-out; }
+        .purchase__users .purchase__users--profile .purchase__UsersTitle .status__usersDatas--inactive {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 4.5rem;
+          height: 4.5rem;
+          border-radius: 50%;
+          background-color: #22313f;
+          transition: all 0.45s ease-in-out;
+          cursor: pointer;
+          display: grid;
+          align-items: center;
+          justify-items: center;
+          color: #ffffff;
+          text-align: center; }
+        .purchase__users .purchase__users--profile .purchase__UsersTitle .status__usersDatas--active {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 4.5rem;
+          height: 4.5rem;
+          border-radius: 50%;
+          background-color: lightblue;
+          transition: all 0.45s ease-in-out;
+          cursor: pointer;
+          display: grid;
+          align-items: center;
+          justify-items: center;
+          background-color: #36d7b7; }
+          .purchase__users .purchase__users--profile .purchase__UsersTitle .status__usersDatas--active svg {
+            width: 3.2rem;
+            height: 3.2rem;
+            fill: #ffffff; }
+        .purchase__users .purchase__users--profile .purchase__UsersTitle h2 {
+          margin-left: 6.5rem;
+          font-size: 1.7rem;
+          font-weight: 445;
+          color: #22313f;
+          margin-bottom: 0.45rem; }
+        .purchase__users .purchase__users--profile .purchase__UsersTitle p {
+          margin-left: 6.5rem;
+          font-size: 1.4rem;
+          font-weight: 200;
+          color: #22313f; }
+      .purchase__users .purchase__users--profile .purchase__usersDatas {
+        overflow: hidden;
+        transition: all 0.45s ease-in-out;
+        margin-top: 3.2rem;
+        border-left: 2px solid lightblue;
+        padding-left: 3.2rem; }
+        .purchase__users .purchase__users--profile .purchase__usersDatas p {
+          margin-bottom: 0.45rem;
+          font-size: 1.4rem; }
+        .purchase__users .purchase__users--profile .purchase__usersDatas .billing__formgroup {
+          height: 4.5rem;
+          display: grid; }
+          .purchase__users .purchase__users--profile .purchase__usersDatas .billing__formgroup:not(:first-child) {
+            margin-top: 0.45rem; }
+          .purchase__users .purchase__users--profile .purchase__usersDatas .billing__formgroup label {
+            margin-bottom: 0.45rem;
+            font-size: 1.4rem;
+            font-weight: 200; }
+          .purchase__users .purchase__users--profile .purchase__usersDatas .billing__formgroup input {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid lightgrey;
+            transition: all 0.45s ease-in-out;
+            outline: none; }
+            .purchase__users .purchase__users--profile .purchase__usersDatas .billing__formgroup input:focus {
+              border-color: lightblue; }
+          .purchase__users .purchase__users--profile .purchase__usersDatas .billing__formgroup:not(:first-child) {
+            margin-top: 0.45rem; }
+      .purchase__users .purchase__users--profile .purchase__usersDatas--overfloated {
+        height: 0;
+        overflow: hidden;
+        transition: all 0.45s ease-in-out;
+        padding-left: 3.2rem; }
+    .purchase__users .purchase__users--cards {
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 4.5rem; }
+      .purchase__users .purchase__users--cards .purchase__CardsTitle {
+        position: relative;
+        transition: 0.45s ease-in-out;
+        transition: all 0.45s ease-in-out; }
+        .purchase__users .purchase__users--cards .purchase__CardsTitle .status__CardsTitle--active {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 4.5rem;
+          height: 4.5rem;
+          border-radius: 50%;
+          background-color: lightblue;
+          transition: all 0.45s ease-in-out;
+          cursor: pointer;
+          display: grid;
+          align-items: center;
+          justify-items: center;
+          background-color: #36d7b7; }
+          .purchase__users .purchase__users--cards .purchase__CardsTitle .status__CardsTitle--active svg {
+            width: 3.2rem;
+            height: 3.2rem;
+            fill: #ffffff; }
+        .purchase__users .purchase__users--cards .purchase__CardsTitle .status__CardsTitle--inactive {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 4.5rem;
+          height: 4.5rem;
+          border-radius: 50%;
+          background-color: #22313f;
+          transition: all 0.45s ease-in-out;
+          cursor: pointer;
+          display: grid;
+          align-items: center;
+          justify-items: center;
+          color: #ffffff;
+          text-align: center; }
+        .purchase__users .purchase__users--cards .purchase__CardsTitle h2 {
+          margin-left: 6.5rem;
+          font-size: 1.7rem;
+          font-weight: 445;
+          color: #22313f;
+          margin-bottom: 0.45rem; }
+        .purchase__users .purchase__users--cards .purchase__CardsTitle p {
+          margin-left: 6.5rem;
+          font-size: 1.4rem;
+          font-weight: 200;
+          color: #22313f; }
+      .purchase__users .purchase__users--cards .purchase__usersDatas {
+        overflow: hidden;
+        transition: all 0.45s ease-in-out;
+        margin-top: 3.2rem;
+        border-left: 2px solid lightblue;
+        padding-left: 3.2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 4.5rem; }
+        .purchase__users .purchase__users--cards .purchase__usersDatas .billing__formgroup {
+          height: 4.5rem;
+          display: grid; }
+          .purchase__users .purchase__users--cards .purchase__usersDatas .billing__formgroup:first-child {
+            grid-column: 1/4; }
+          .purchase__users .purchase__users--cards .purchase__usersDatas .billing__formgroup:nth-child(2) {
+            grid-column: 1/2; }
+          .purchase__users .purchase__users--cards .purchase__usersDatas .billing__formgroup:nth-child(3) {
+            grid-column: 2/4; }
+          .purchase__users .purchase__users--cards .purchase__usersDatas .billing__formgroup:not(:first-child) {
+            margin-top: 0.45rem; }
+          .purchase__users .purchase__users--cards .purchase__usersDatas .billing__formgroup label {
+            margin-bottom: 0.45rem;
+            font-size: 1.4rem;
+            font-weight: 200; }
+          .purchase__users .purchase__users--cards .purchase__usersDatas .billing__formgroup input {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid lightgrey;
+            transition: all 0.45s ease-in-out;
+            outline: none; }
+            .purchase__users .purchase__users--cards .purchase__usersDatas .billing__formgroup input:focus {
+              border-color: lightblue; }
+          .purchase__users .purchase__users--cards .purchase__usersDatas .billing__formgroup:not(:first-child) {
+            margin-top: 0.45rem; }
+        .purchase__users .purchase__users--cards .purchase__usersDatas label {
+          margin-bottom: 0.45rem;
+          font-size: 1.4rem;
+          font-weight: 200; }
+      .purchase__users .purchase__users--cards .purchase__CardDatas--overfloated {
+        height: 0;
+        overflow: hidden;
+        transition: all 0.45s ease-in-out;
+        padding-left: 3.2rem; }
+
+.finish__purchase {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #000000;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.21s ease-in-out;
+  height: 4.3rem;
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  margin-top: 4rem; }

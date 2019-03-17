@@ -6,9 +6,15 @@ class PageLogin extends Component {
     return (
         <div className="auth__pages--login">
             <div className="main__blured"></div>
+            <div className="user__types">
+                <select>
+                    <option value="admin">Admin</option>
+                    <option value="regular">Regular</option>
+                </select>
+            </div>
             <div className="authentification__wrapper">
                 <div className="authentification__wrapper--video">
-                    <video autoPlay>
+                    <video autoPlay loop>
                         <source src="./image/authentification__video.mp4" type="video/mp4"/>>
                     </video>
                     <div className="auth__textcontent">

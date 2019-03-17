@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import HeaderComponent from './components/HeaderComponent';
-import ProductsComponent from './components/ProductsComponent';
-import ProductViews from './components/ProductViews';
-import uuid from "uuid";
-import FiltersComponent from './components/FiltersComponent';
-import moment from "moment";
 import BrowserRoute from './router/BrowserRoute';
+// import HeaderComponent from './components/HeaderComponent';
+// import ProductsComponent from './components/ProductsComponent';
+// import ProductViews from './components/ProductViews';
+// import uuid from "uuid";
+// import FiltersComponent from './components/FiltersComponent';
+// import moment from "moment";
 
 class App extends Component {
   render() {

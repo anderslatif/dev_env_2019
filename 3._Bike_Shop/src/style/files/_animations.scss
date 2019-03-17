@@ -116,3 +116,21 @@
         width:21rem;
     }
 }
+
+@keyframes animationSlidePurchase {
+    from {
+        left:0;
+    }
+    to {
+        left:-45rem;
+    }
+}
+
+@keyframes animationSlidePurchaseMobile {
+    from {
+        left:-45rem;
+    }
+    to {
+        left:0;
+    }
+}

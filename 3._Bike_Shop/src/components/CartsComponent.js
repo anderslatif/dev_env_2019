@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import CartItemsComponent from './CartItemsComponent';
 import moment from "moment";
-import { DateRangePicker } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
+import PurchaseUsers from './PurchaseUsers';
+// import { DateRangePicker } from "react-dates";
 
 const now = moment();
 console.log(now.format("D MMM YYYY H mm"));
@@ -11,13 +12,18 @@ class CartsComponent extends Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      purchaseUsersState: false
     }
+    this.togglePurchaseUsers = this.togglePurchaseUsers.bind(this)
+  }
+  
+  togglePurchaseUsers = () => {
+      this.setState((prevState) => ({purchaseUsersState: !prevState.purchaseUsersState}))
   }
   render(props) {
     let { closeCart, carts, products, removeProductsCarts } = this.props;
     let total = 0;
-    let valueTotal;
+    // let valueTotal;
     return (
       <div className="carts__component">
         {/* CartsComponent */}
@@ -70,9 +76,14 @@ class CartsComponent extends Component {
                     </p>
                 </div>
                 <div className="product__checkout">
-                    <button>Go to checkout</button>
+                    <button onClick={this.togglePurchaseUsers}>Go to checkout</button>
                 </div>
             </div>
+            {
+              this.state.purchaseUsersState
+              &&
+              <PurchaseUsers></PurchaseUsers>
+            }
         </div>
       </div>
     )

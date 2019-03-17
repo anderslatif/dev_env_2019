@@ -12,10 +12,10 @@ const testProducts = [
   {
     productName:"product a",
     productPrice:45000,
-    productCover:"./image/product__imageTests.jpg",
+    productCover:"./image/productpictures/cover1.jpg",
     productListImage:[
-      "./image/product__imageTests.jpg",
-      "./image/product__imageTests.jpg"
+      "./image/productpictures/product1a.png",
+      "./image/productpictures/product1b.png"
     ],
     type:"commuting_bike",
     productId:uuid()
@@ -23,10 +23,10 @@ const testProducts = [
   {
     productName:"product b",
     productPrice:25000,
-    productCover:"./image/product__imageTests.jpg",
+    productCover:"./image/productpictures/cover2.jpg",
     productListImage:[
-      "./image/product__imageTests.jpg",
-      "./image/product__imageTests.jpg"
+      "./image/productpictures/product2a.png",
+      "./image/productpictures/product2b.png"
     ],
     type:"bmx",
     productId:uuid()
@@ -34,10 +34,10 @@ const testProducts = [
   {
     productName:"product c",
     productPrice:35000,
-    productCover:"./image/product__imageTests.jpg",
+    productCover:"./image/productpictures/cover3.jpg",
     productListImage:[
-      "./image/product__imageTests.jpg",
-      "./image/product__imageTests.jpg"
+      "./image/productpictures/product3a.jpg",
+      "./image/productpictures/product3b.jpg"
     ],
     type:"mountain_bike",
     productId:uuid()
@@ -45,20 +45,20 @@ const testProducts = [
   {
     productName:"product d",
     productPrice:85000,
-    productCover:"./image/product__imageTests.jpg",
+    productCover:"./image/productpictures/cover4.jpg",
     productListImage:[
-      "./image/product__imageTests.jpg",
-      "./image/product__imageTests.jpg"
+      "./image/productpictures/product4a.png",
+      "./image/productpictures/product4b.jpg"
     ],
     productId:uuid()
   },
   {
     productName:"product e",
     productPrice:95000,
-    productCover:"./image/product__imageTests.jpg",
+    productCover:"./image/productpictures/cover5.jpg",
     productListImage:[
-      "./image/product__imageTests.jpg",
-      "./image/product__imageTests.jpg"
+      "./image/productpictures/product5a.jpg",
+      "./image/productpictures/product5b.jpg"
     ],
     type:"bmx",
     productId:uuid()

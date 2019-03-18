@@ -129,6 +129,7 @@
 
                 form {
                     width:100%;
+                    position:relative;
                     // height:100%;
                     // border:2px solid lightgrey;
                     
@@ -159,7 +160,8 @@
                         }
                     }
 
-                    button {
+                    button,
+                    a {
                         margin-top:3.2rem;
                         padding:0.45rem 4.5rem 0.45rem 4.5rem;
                         border-radius:0.45rem;
@@ -175,6 +177,14 @@
                             background-color:darken(dodgerblue, 9%);
                         }
                     }
+
+                    a {
+                        position:absolute;
+                        left:50%;
+                        transform:translateX(-50%);
+                        text-decoration:none;
+                        // bottom:0;
+                    }
                 }
 
                 .form__dividor {
@@ -182,7 +192,7 @@
                     height:1.4px;
                     background-color:lightgrey; 
                     margin:0 auto;
-                    margin-top:3.2rem;
+                    margin-top:9rem;
                 }
 
                 .redirect__signup {

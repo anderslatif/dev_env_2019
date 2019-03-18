@@ -1,7 +1,39 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 class PageRegister extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            username: "",
+            password: ""
+        }
+        this.getFormDatas = this.getFormDatas.bind(this)
+        this.submitLoginDatas = this.submitLoginDatas.bind(this)
+    }
+    getFormDatas = (ev) => {
+        let inputValue = ev.target.getAttribute("name");
+        let inputDatas = ev.target.value;
+        if(inputValue === "username") {
+          this.setState({username: inputDatas})
+      } else if(inputValue === "password") {
+          this.setState({password: inputDatas})
+      }
+    }
+  
+    submitLoginDatas = (ev) => {
+      ev.preventDefault();
+      console.log(this.state.username, this.state.password)
+      axios({
+          method: 'post',
+          url: 'http://localhost:8080/login',
+          data: {
+            user: this.state.username,
+            password: this.state.password
+          }
+        });
+    }
   render() {
     return (
         <div className="auth__pages--register">

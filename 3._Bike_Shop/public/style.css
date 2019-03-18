@@ -738,7 +738,8 @@ body::-webkit-scrollbar {
           margin-bottom: 4.5rem;
           color: #22313f; }
         .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form {
-          width: 100%; }
+          width: 100%;
+          position: relative; }
           .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form .form__group {
             width: 100%; }
             .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form .form__group:not(:first-child) {
@@ -756,7 +757,8 @@ body::-webkit-scrollbar {
               transition: 0.45s ease-in-out; }
               .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form .form__group input:focus {
                 border-color: dodgerblue; }
-          .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form button {
+          .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form button,
+          .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form a {
             margin-top: 3.2rem;
             padding: 0.45rem 4.5rem 0.45rem 4.5rem;
             border-radius: 0.45rem;
@@ -767,14 +769,20 @@ body::-webkit-scrollbar {
             text-transform: uppercase;
             font-size: 1.4rem;
             transition: all 0.45s ease-in-out; }
-            .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form button:hover {
+            .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form button:hover,
+            .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form a:hover {
               background-color: #0079ef; }
+          .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper form a {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-decoration: none; }
         .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper .form__dividor {
           width: 14rem;
           height: 1.4px;
           background-color: lightgrey;
           margin: 0 auto;
-          margin-top: 3.2rem; }
+          margin-top: 9rem; }
         .auth__pages--login .authentification__wrapper--forms .auth__form--wrapper .redirect__signup {
           margin: 0 auto;
           margin-top: 2rem; }

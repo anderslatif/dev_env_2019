@@ -102,12 +102,12 @@ class SubpageDashboard extends Component {
     }
   }
   componentDidMount() {
-    let total = 0;
-    this.state.purchases.map((purchase, index) => {
-      return console.log(total+=purchase.price, index)
-    })
+    // let total = 0;
+    // this.state.purchases.map((purchase, index) => {
+    //   return console.log(total+=purchase.price, index)
+    // })
 
-    priceWithPercentage = 25 / 100 * total;
+    // priceWithPercentage = 25 / 100 * total;
   }
 
   // calculateTotal = () => {

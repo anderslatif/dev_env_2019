@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Loader from 'react-loader-spinner'
 import Slider from "react-slick";
+import { DateRangePicker } from 'react-dates';
+import 'react-dates/lib/css/_datepicker.css';
+
 // import Carousel from 'nuka-carousel';
 
 class ProductViews extends Component {

@@ -1,14 +1,21 @@
 const express = require('express');
 const app = express();
 const helmet = require('helmet');
+app.use(helmet());  
 
-app.use(helmet());
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+  
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/bicycles', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/bikes', {useNewUrlParser: true});
+// console.log(test);
 
 
 
@@ -80,9 +87,9 @@ app.get('/purchases', function(req, res) {
 });
 
 app.get('/bicycles', function(req, res) {
-
     const query = Bicycle.find();
     query.exec(function(error, bicycles) {
+        console.log("query")
         console.log(error, bicycles);
         console.log(req);
         res.send(bicycles);

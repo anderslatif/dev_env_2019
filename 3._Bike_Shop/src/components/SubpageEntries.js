@@ -7,50 +7,64 @@ import moment from "moment";
 const adminProducts = [
   {
     date:moment().format("DD MM YYYY H mm"),
-    staff:"Staff memeber",
+    staff:"Staff memeber1",
     customer:"Customer member",
     product:"product a",
     price:441
   },
   {
     date:moment().format("DD MM YYYY H mm"),
-    staff:"Staff memeber",
+    staff:"Staff memeber2",
     customer:"Customer member",
     product:"product b",
     price:442
   },
   {
     date:moment().format("DD MM YYYY H mm"),
-    staff:"Staff memeber",
+    staff:"Staff memeber3",
     customer:"Customer member",
     product:"product c",
     price:443
   },
   {
     date:moment().format("DD MM YYYY H mm"),
-    staff:"Staff memeber",
+    staff:"Staff memeber4",
     customer:"Customer member",
     product:"product d",
     price:444
   },
   {
     date:moment().format("DD MM YYYY H mm"),
-    staff:"Staff memeber",
+    staff:"Staff memeber5",
     customer:"Customer member",
     product:"product e",
     price:445
   }
 ];
 
-const EntriesObjects = ({toggleAdminEntriesSearch, adminEntriesSearch, adminProducts, getAdminEntriesSearchValue}) => (
+const EntriesObjects = (
+  {
+    toggleAdminEntriesSearch, 
+    adminEntriesSearch, 
+    adminProducts, 
+    getAdminEntriesSearchValue,
+    getSortType,
+    sortType
+  }
+  ) => (
   <div className="entries__wrapper">
     <AdminFilters 
       toggleAdminEntriesSearch={toggleAdminEntriesSearch}
       adminEntriesSearch={adminEntriesSearch}
       getAdminEntriesSearchValue={getAdminEntriesSearchValue}
+      getSortType={getSortType}
     >
     </AdminFilters>
-    <AdminPuchases adminProducts={adminProducts}></AdminPuchases>
+    <AdminPuchases 
+      adminProducts={adminProducts} 
+      sortType={sortType}
+    >
+    </AdminPuchases>
     {/* EntriesObjects */}
   </div>
 );
@@ -66,6 +80,7 @@ class SubpageEntries extends Component {
     }
     this.toggleAdminEntriesSearch = this.toggleAdminEntriesSearch.bind(this)
     this.getAdminEntriesSearchValue = this.getAdminEntriesSearchValue.bind(this)
+    this.getSortType = this.getSortType.bind(this)
   }
 
   toggleAdminEntriesSearch = () => {
@@ -75,6 +90,11 @@ class SubpageEntries extends Component {
   getAdminEntriesSearchValue = (ev) => {
     let adminEntriesSearchValue = ev.target.value;
     this.setState({adminEntriesSearchValue})
+  }
+
+  getSortType = (ev) => {
+    let sortType = ev.target.value;
+    this.setState({sortType})
   }
   render() {
     // const getCorrectDatas = (adminProducts, sortType) => {
@@ -97,6 +117,8 @@ class SubpageEntries extends Component {
           adminEntriesSearch={this.state.adminEntriesSearch}
           adminProducts={filteredEntries}
           getAdminEntriesSearchValue={this.getAdminEntriesSearchValue}
+          sortType={this.state.sortType}
+          getSortType={this.getSortType}
         >
         </EntriesObjects>
         {/* SubpageEntries */}

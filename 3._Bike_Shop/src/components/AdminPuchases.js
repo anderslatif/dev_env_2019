@@ -2,7 +2,17 @@ import React, { Component } from 'react'
 import AdminPurchasesElement from './AdminPurchasesElement';
 
 class AdminPuchases extends Component {
+  constructor(props) {
+    super(props)
+  }
   render(props) {
+    let sortedEntries = this.props.adminProducts.sort((a, b) => {
+      if(this.props.sortType === "ascending") {
+        return a.price - b.price;
+      } else if(this.props.sortType === "descending") {
+        return b.price - a.price;
+      }
+    });
     return (
       <div className="admin__purchases">
         <div className="admin__purchases--header">
@@ -14,8 +24,8 @@ class AdminPuchases extends Component {
         </div>
         <div className="admin__purchases--content">
             {
-                this.props.adminProducts.map((entry) => {
-                    return <AdminPurchasesElement entry={entry}></AdminPurchasesElement>
+                sortedEntries.map((entry, index) => {
+                    return <AdminPurchasesElement entry={entry} key={index}></AdminPurchasesElement>
                 })
             }
         </div>

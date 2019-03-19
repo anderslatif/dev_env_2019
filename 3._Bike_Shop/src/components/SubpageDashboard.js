@@ -2,7 +2,48 @@ import React, { Component } from 'react'
 import AdminHeader from './AdminHeader';
 import moment from "moment";
 
-const BudgetDetails = () => (
+const adminProducts = [
+  {
+    date:moment().format("DD MM YYYY H mm"),
+    staff:"Staff memeber1",
+    customer:"Customer member",
+    product:"product a",
+    price:441
+  },
+  {
+    date:moment().format("DD MM YYYY H mm"),
+    staff:"Staff memeber2",
+    customer:"Customer member",
+    product:"product b",
+    price:442
+  },
+  {
+    date:moment().format("DD MM YYYY H mm"),
+    staff:"Staff memeber3",
+    customer:"Customer member",
+    product:"product c",
+    price:443
+  },
+  {
+    date:moment().format("DD MM YYYY H mm"),
+    staff:"Staff memeber4",
+    customer:"Customer member",
+    product:"product d",
+    price:444
+  },
+  {
+    date:moment().format("DD MM YYYY H mm"),
+    staff:"Staff memeber5",
+    customer:"Customer member",
+    product:"product e",
+    price:445
+  }
+];
+
+let total = 0;
+let priceWithPercentage = 0;
+
+const BudgetDetails = ({ purchases, calculateTotal }) => (
   <div className="budget__details">
     <div className="budget__details--header">
       <h2>Budget Details</h2>
@@ -24,11 +65,15 @@ const BudgetDetails = () => (
           <div className="data__content">
             <div className="data__content--numberTotalPurchases">
               <p>Total number of sells</p>
-              <p>445(static)</p>
+              <p>{
+                purchases.map((purchase, index) => {
+                  total+= Number(purchase.price)
+                })
+              }{total}</p>
             </div>
             <div className="data__content--vatPercentage">
               <p>VAT Taxes 25%</p>
-              <span>-445$</span>
+              <span>-{ 25 / 100 * total }</span>
             </div>
           </div>
         </div>
@@ -40,7 +85,7 @@ const BudgetDetails = () => (
               <span>Due to {moment().format("DD MMM YY")}</span>
             </div>
             <div className="data__total--numeric">
-              <span>$445</span>
+              <span>$ { total - (25 / 100 * total) }</span>
             </div>
           </div>
         </div>
@@ -50,11 +95,33 @@ const BudgetDetails = () => (
 );
 
 class SubpageDashboard extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      purchases: adminProducts
+    }
+  }
+  componentDidMount() {
+    // let total = 0;
+    // this.state.purchases.map((purchase, index) => {
+    //   return console.log(total+=purchase.price, index)
+    // })
+
+    // priceWithPercentage = 25 / 100 * total;
+  }
+
+  // calculateTotal = () => {
+  //   let total = 0;
+  //   this.state.purchases.map((purchase, index) => {
+  //     return total+=purchase.price
+  //   })
+  //   return total;
+  // }
   render() {
     return (
       <div className="subpage__dashboard">
         <AdminHeader></AdminHeader>
-        <BudgetDetails></BudgetDetails>
+        <BudgetDetails purchases={this.state.purchases}></BudgetDetails>
         {/* <p style={{marginTop:"32rem"}}>SubpageDashboard</p> */}
       </div>
     )

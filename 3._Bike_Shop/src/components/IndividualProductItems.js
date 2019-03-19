@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import {Link} from "react-router-dom";
 import HoverProductsComponent from "./HoverProductComponent";
+// import {Link} from "react-router-dom";
 
 class IndividualProductItems extends Component {
   constructor(props) {

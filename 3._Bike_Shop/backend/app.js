@@ -41,7 +41,7 @@ app.post('/login', function(req, res) {
         }
         res.send(response.statuscode, response.description);
     })
-})
+});
 
 app.post('/signup', function(req, res) {
     let options = {upsert: true, new: true, setDefaultsOnInsert: true};
@@ -69,7 +69,7 @@ app.post('/signup', function(req, res) {
             })
         }
     })
-})
+});
 
 app.get('/purchases', function(req, res) {
     const query = User.find();
@@ -90,7 +90,7 @@ app.get('/bicycles', function(req, res) {
 });
 
 
-/*app.listen('browser-test', async (req, res) => {
+app.listen('browser-test', async (req, res) => {
     const browsers = ['firefox', 'chrome'];
     await testBrowser(browsers);
 
@@ -109,7 +109,7 @@ async function testBrowser(browsers) {
             await driver.quit();
         }
     });
-}*/
+}
 
 app.listen(8080, (err) => {
     if (err) {

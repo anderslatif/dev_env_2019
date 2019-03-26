@@ -1,0 +1,35 @@
+OOP
+
+Key OO Concepts
+Encapsulation
+Inheritance
+Polymorphism
+
+
+CORBA - Common Object Request Broker Architecture
+Predates SOAP
+
+Abstract design away from implementation (behavior is a higher level of abstraction than operation)
+Principle of least privilege
+
+The use of abstraction is often now based around relationships based on aggregation / composition
+
+ A singleton pattern ensures that you always get back the same instance of whatever type you are retrieving, whereas the factory pattern generally gives you a different instance of each type.
+
+Objects expose behavior and hide data.
+Data Structures expose data and have no significant behavior.
+
+
+Polymorphism, Composition
+
+SOLID
+Single responsibility
+Open / Closed
+Liskov Substitution
+Interface segregation
+Dependency Injection
+
+Analytical Hierarchy Process
+
+
+

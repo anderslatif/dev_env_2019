@@ -4,6 +4,8 @@
 
 mysql-credentials-local.js
 
+credentials.js
+
 *.db
 
 # dependencies

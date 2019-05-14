@@ -1,4 +1,4 @@
-exports.userRoutes = function(app, db) {
+exports.userRoutes = function (app, db) {
 
 
-}
+};

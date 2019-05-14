@@ -5,11 +5,11 @@ module.exports = {
   development: {
     client: 'mysql2',
     connection: {
-      host : credentials.host,
-      user : credentials.user,
-      password : credentials.password,
-      database : credentials.database
-    }
+      host: credentials.host,
+      user: credentials.user,
+      password: credentials.password,
+      database: credentials.database,
+    },
   },
 
   staging: {
@@ -18,12 +18,12 @@ module.exports = {
   production: {
     client: 'mysql',
     connection: {
-      host : '127.0.0.1',
-      database: 'toxic_tracker'
+      host: '127.0.0.1',
+      database: 'toxic_tracker',
     },
     pool: {
       min: 2,
-      max: 10
-    }
-  }
+      max: 10,
+    },
+  },
 };

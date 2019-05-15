@@ -145,3 +145,129 @@ html {
   height: 100vh;
   display: grid;
   grid-template-rows: 6.5rem 1fr; }
+
+.admin__page {
+  width: 100%;
+  height: 100vh;
+  background-color: #f7f7f7; }
+  .admin__page--wrapper {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 32rem 1fr; }
+
+.sidebar__component {
+  background-color: #ffffff;
+  display: grid;
+  align-items: center; }
+  .sidebar__component--wrapper {
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-row-gap: 4.5rem; }
+
+.sidebar__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid lightgrey; }
+  .sidebar__header--logos {
+    text-decoration: none;
+    color: dodgerblue;
+    font-size: 1.9rem;
+    font-weight: 900;
+    cursor: pointer; }
+  .sidebar__header--userrelated {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .sidebar__header--userrelated--usertype {
+      font-size: 1.4rem;
+      text-decoration: none;
+      color: dodgerblue;
+      cursor: pointer;
+      margin-right: 1.9rem; }
+    .sidebar__header--userrelated .userStateStatus {
+      width: 0.95rem;
+      height: 0.95rem;
+      background-color: limegreen;
+      border-radius: 50%; }
+
+.sidebar__navigation {
+  margin-top: 4.5rem;
+  padding-top: 4.5rem; }
+  .sidebar__navigation a {
+    width: 100%;
+    padding: 0.95rem 1.4rem 0.95rem 0;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    color: #ffffff;
+    background-color: dodgerblue;
+    text-align: center;
+    font-size: 1.4rem;
+    border-radius: 0.45rem;
+    transition: all 0.22s ease-in-out; }
+    .sidebar__navigation a:not(:first-child) {
+      margin-top: 1.2rem; }
+    .sidebar__navigation a:hover {
+      background-color: #0079ef; }
+
+.admin__select {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  background-color: #f7f7f7;
+  border-radius: 0.95rem 0 0 0.95rem; }
+  .admin__select--wrapper {
+    width: 95%;
+    height: 90%;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    position: relative; }
+    .admin__select--wrapper h2 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.2rem; }
+
+.select__wrapper {
+  width: 45rem;
+  height: 19rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; }
+  .select__wrapper a {
+    width: 17rem;
+    height: 17rem;
+    display: grid;
+    align-items: center;
+    text-decoration: none;
+    border: 2px solid dodgerblue;
+    transition: all 0.22s ease-in-out;
+    border-radius: 0.45rem; }
+    .select__wrapper a:hover {
+      background-color: dodgerblue; }
+    .select__wrapper a:hover svg,
+    .select__wrapper a:hover p {
+      fill: #ffffff;
+      color: #ffffff; }
+    .select__wrapper a svg {
+      width: 6.5rem;
+      height: 6.5rem;
+      fill: dodgerblue;
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: -2.2rem; }
+    .select__wrapper a p {
+      text-align: center;
+      font-size: 1.4rem;
+      color: dodgerblue; }

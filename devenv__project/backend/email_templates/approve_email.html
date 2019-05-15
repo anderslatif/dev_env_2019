@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>approve_email</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html {
+            font-size:62.5%;
+            font-family:sans-serif;
+        }
+
+        .main__division {
+            width:100%;
+            height:100vh;
+            background-color:#f7f7f7;
+            /* overflow:hidden; */
+        }
+
+        .division__wrapper {
+            width:45vw;
+            margin:0 auto;
+            display:grid;
+            grid-template-rows:14rem 1fr;
+            height:100%;
+            background-color:#ffffff;
+            grid-row-gap:1.4rem;
+        }
+
+        .main__division--header {
+            background-color:dodgerblue;
+            display:flex;
+            align-items:center;
+            padding:0 0 0 0.95rem;
+        }
+
+        .main__division--content {
+            padding:0 0.95rem 0 0.95rem;
+            /* background-color:darkblue; */
+        }
+
+        .application__logos {
+            font-size:1.9rem;
+            text-decoration:none;
+            color:#ffffff;
+        }
+
+        .text__content {
+
+        }
+
+        h2 {
+            font-size:1.9rem;
+            margin-bottom:0.45rem;
+        }
+
+        p {
+            font-size: 1.4rem;
+            margin-bottom:0.45rem;
+        }
+
+        .text__content--credentials--email {
+            margin-top:4.5rem;
+        }
+        
+        .text__content--credentials--password {
+            margin-bottom:4.5rem;
+        }
+
+        .text__content--credentials--email,
+        .text__content--credentials--password {
+            font-size:1.9rem;
+            background-color:dodgerblue;
+            color:#ffffff;
+            padding:0.45rem;
+            border-radius:0.45rem;
+        }
+
+        .text__content--approvetext {
+            font-size:1.9rem;
+            margin-bottom:4.5rem;
+        }
+
+        .text__content--approvebutton {
+            text-decoration:none;
+            background-color:dodgerblue;
+            color:#ffffff;
+            cursor: pointer;
+            border-radius:0.45rem;
+            border:none;
+            padding:0.65rem 1.4rem 0.65rem 1.4rem;
+            margin-top:1.4rem;
+            font-size:1.4rem;
+        }
+
+        .text__content--finishtexts {
+            margin-top:4.5rem;
+            font-size:1.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="main__division">
+        <div class="division__wrapper">
+            <div class="main__division--header">
+                <a href="#" class="application__logos">Toxic Application</a>
+            </div>
+            <div class="main__division--content">
+                <div class="text__content">
+                    <h2>This email was generated for the new created account.</h2>
+                    <p>We created an account on Toxic Application. You are now on a pending state</p>
+                    <p class="text__content--credentials--email">Email: inject email text value</p>
+                    <p class="text__content--credentials--password">Password: inject password text value</p>
+                    <p class="text__content--approvetext">Please click the button to approve you account</p>
+                    <a href="#" class="text__content--approvebutton">Approve Account</a>
+                    <p class="text__content--finishtexts">Thank you!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

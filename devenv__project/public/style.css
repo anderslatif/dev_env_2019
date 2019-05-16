@@ -271,3 +271,273 @@ html {
       text-align: center;
       font-size: 1.4rem;
       color: dodgerblue; }
+
+.admin__create,
+.admin__createSite {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center; }
+  .admin__create--wrapper,
+  .admin__createSite--wrapper {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 32rem 1fr; }
+
+.create__users {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  background-color: #f7f7f7; }
+  .create__users--wrapper {
+    width: 95%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: 27rem 1fr;
+    margin: 0 auto; }
+
+.adminCreateUsersTracker {
+  background-color: #0C1727; }
+  .adminCreateUsersTracker--wrapper h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 1.9rem; }
+
+.progress__utilities--progress {
+  width: 9rem;
+  height: 9rem;
+  margin-bottom: 3.5rem; }
+
+.progress__utilities--stage {
+  width: 90%;
+  margin: 0 auto; }
+  .progress__utilities--stage p {
+    color: #ffffff;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.65rem 0.45rem 0.65rem 0.45rem;
+    transition: all 0.22s ease-in-out;
+    border-radius: 0.45rem;
+    cursor: pointer; }
+    .progress__utilities--stage p svg {
+      width: 2.2rem;
+      height: 2.2rem;
+      fill: #ffffff;
+      margin-right: 2.2rem; }
+    .progress__utilities--stage p:not(:last-child) {
+      margin-bottom: 1.4rem; }
+    .progress__utilities--stage p:hover {
+      background-color: dodgerblue; }
+  .progress__utilities--stage .credentialStage--active {
+    border-bottom: 2px solid dodgerblue;
+    border-bottom-style: double; }
+  .progress__utilities--stage .personalStage--active {
+    border-bottom: 2px solid dodgerblue;
+    border-bottom-style: double; }
+  .progress__utilities--stage .roleStage--active {
+    border-bottom: 2px solid dodgerblue;
+    border-bottom-style: double; }
+
+.adminCreateCredentialsComponent,
+.adminCreatePersonalComponent,
+.adminCreateRoleComponent,
+.adminCreateSiteDetailsComponent,
+.adminCreateSiteLocationComponent,
+.adminCreateSiteWarehousesComponent {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center; }
+  .adminCreateCredentialsComponent--wrapper,
+  .adminCreatePersonalComponent--wrapper,
+  .adminCreateRoleComponent--wrapper,
+  .adminCreateSiteDetailsComponent--wrapper,
+  .adminCreateSiteLocationComponent--wrapper,
+  .adminCreateSiteWarehousesComponent--wrapper {
+    width: 70%;
+    height: 35rem;
+    margin: 0 auto; }
+    .adminCreateCredentialsComponent--wrapper h2,
+    .adminCreatePersonalComponent--wrapper h2,
+    .adminCreateRoleComponent--wrapper h2,
+    .adminCreateSiteDetailsComponent--wrapper h2,
+    .adminCreateSiteLocationComponent--wrapper h2,
+    .adminCreateSiteWarehousesComponent--wrapper h2 {
+      font-size: 2.2rem;
+      text-align: center;
+      font-weight: 900;
+      color: darkgrey;
+      margin-bottom: 6.5rem; }
+
+.credentials__registration {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2.2rem; }
+  .credentials__registration input {
+    height: 4.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid darkgrey;
+    font-weight: 900;
+    font-size: 1.4rem; }
+
+.personal__registration {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 2.2rem; }
+  .personal__registration input {
+    height: 4.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid darkgrey;
+    font-weight: 900;
+    font-size: 1.4rem; }
+
+.role__registration select {
+  width: 100%;
+  height: 4.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: darkgrey; }
+
+.next__stage,
+.finish__stage {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+  .next__stage--button,
+  .finish__stage--button {
+    padding: 0.95rem 1.9rem 0.95rem 1.9rem;
+    border-radius: 0.45rem;
+    border: none;
+    background-color: #DDDEE8;
+    color: darkgrey;
+    cursor: pointer;
+    margin-top: 9.5rem;
+    transition: all 0.22s ease-in-out; }
+    .next__stage--button:hover,
+    .finish__stage--button:hover {
+      background-color: #c2c3d5;
+      color: #ffffff; }
+
+.confirmFinishProfile {
+  margin-top: 2.2rem; }
+  .confirmFinishProfile h2 {
+    font-size: 1.9rem; }
+  .confirmFinishProfile--buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1.4rem; }
+    .confirmFinishProfile--buttons .reject__creation {
+      height: 3.5rem;
+      cursor: pointer;
+      border: none;
+      background-color: #f03434;
+      color: #ffffff;
+      border-radius: 0.45rem;
+      font-size: 1.4rem;
+      transition: all 0.22s ease-in-out; }
+      .confirmFinishProfile--buttons .reject__creation:hover {
+        background-color: #e51111; }
+    .confirmFinishProfile--buttons .accept__creation {
+      height: 3.5rem;
+      cursor: pointer;
+      border: none;
+      background-color: #03c9a9;
+      color: #ffffff;
+      border-radius: 0.45rem;
+      font-size: 1.4rem;
+      transition: all 0.22s ease-in-out; }
+      .confirmFinishProfile--buttons .accept__creation:hover {
+        background-color: #029c83; }
+
+.create__site {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  background-color: #f7f7f7; }
+  .create__site--wrapper {
+    width: 95%;
+    height: 90%;
+    margin: 0 auto; }
+
+.details__registration {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2.2rem; }
+  .details__registration input {
+    height: 4.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid darkgrey;
+    font-weight: 900;
+    font-size: 1.4rem; }
+
+.location__registration {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 2.2rem; }
+  .location__registration input {
+    height: 4.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid darkgrey;
+    font-weight: 900;
+    font-size: 1.4rem; }
+
+.warehouses__registration {
+  display: grid;
+  grid-template-columns: repeat(5, 14rem);
+  grid-column-gap: 4.5rem;
+  overflow-x: scroll;
+  padding: 2.2rem 0 2.2rem 0; }
+  .warehouses__registration::-webkit-scrollbar {
+    width: 9px;
+    background-color: #F5F5F5;
+    height: 4.5px; }
+  .warehouses__registration::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #555; }
+
+.adminWarehouseIndividualComponent {
+  display: grid;
+  align-items: center;
+  height: 14rem;
+  border-radius: 0.45rem;
+  transition: all 0.22s ease-in-out;
+  cursor: pointer;
+  border: 2px solid #24243e;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: transparent; }
+  .adminWarehouseIndividualComponent--wrapper {
+    width: 95%;
+    height: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .adminWarehouseIndividualComponent--wrapper h2 {
+      font-size: 1.9rem;
+      margin-bottom: 3.2rem; }
+    .adminWarehouseIndividualComponent--wrapper p {
+      font-size: 1.4rem;
+      border-bottom: 1.4px solid lightgrey;
+      margin-bottom: 3.2rem; }
+  .adminWarehouseIndividualComponent:hover {
+    border-color: transparent;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  .adminWarehouseIndividualComponent:hover .adminWarehouseIndividualComponent--wrapper h2,
+  .adminWarehouseIndividualComponent:hover .adminWarehouseIndividualComponent--wrapper p {
+    color: #ffffff; }

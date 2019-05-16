@@ -7,8 +7,8 @@ class AdminSelectComponent extends Component {
       <div className="admin__select">
         <div className="admin__select--wrapper">
             <h2>Admin Page</h2>
-            <div class="select__wrapper">
-                <Link to="/admin/create-profiles">
+            <div className="select__wrapper">
+                <Link to="/admin/create-users">
                     <svg>
                         <use href="./image/sprite.svg#icon-user-plus"></use>
                     </svg>

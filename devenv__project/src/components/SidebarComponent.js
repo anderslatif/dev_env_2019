@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { Component } from 'react';
 import { Link, NavLink } from "react-router-dom";
 
@@ -17,6 +18,7 @@ class SidebarComponent extends Component {
                 <NavLink to="/admin/create-profile">Create Profile</NavLink>
                 <NavLink to="/admin/view-products">View Products</NavLink>
                 <NavLink to="/admin/view-profiles">View Profiles</NavLink>
+                <NavLink to="/admin/create-site">Create Site</NavLink>
             </div>
         </div>
         {/* sidebar__component */}

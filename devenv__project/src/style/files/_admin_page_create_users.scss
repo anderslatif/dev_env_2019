@@ -1,0 +1,241 @@
+.admin__create,
+.admin__createSite {
+    width:100%;
+    height:100%;
+    display:grid;
+    align-items:center;
+
+    &--wrapper {
+        width:100%;
+        height:100vh;
+        display:grid;
+        grid-template-columns:32rem 1fr;
+    }
+}
+
+.create__users {
+    width:100%;
+    height:100%;
+    display:grid;
+    align-items:center;
+    background-color:$color__lightgrey;
+
+    &--wrapper {
+        width:95%;
+        height:90%;
+        display:grid;
+        grid-template-columns:27rem 1fr;
+        margin:0 auto;
+    }
+}
+
+.adminCreateUsersTracker {
+    background-color:#0C1727;
+    &--wrapper {
+
+        h2 {
+            text-align:center;
+            color:$color__white;
+            margin-bottom:1.9rem;
+        }
+    }
+}
+
+.progress__utilities {
+
+    &--progress {
+        width:9rem;
+        height:9rem;
+        margin-bottom:3.5rem;
+    }
+
+    &--stage {
+        // border:2px solid lightgrey;
+        width:90%;
+        margin:0 auto;
+        // margin-top:3.9rem;
+
+        p {
+            color:$color__white;
+            font-size:1.4rem;
+            display:flex;
+            flex-direction:row;
+            // justify-content:space-between;
+            align-items:center;
+            padding:0.65rem 0.45rem 0.65rem 0.45rem;
+            transition:all 0.22s ease-in-out;
+            border-radius:0.45rem;
+            cursor: pointer;
+
+            svg {
+                width:2.2rem;
+                height:2.2rem;
+                fill:$color__white;
+                margin-right:2.2rem;
+            }
+
+            &:not(:last-child) {
+                margin-bottom:1.4rem;
+            }
+
+            &:hover {
+                background-color:dodgerblue;
+            }
+        }
+
+        .credentialStage--active {
+            border-bottom:2px solid dodgerblue;
+            border-bottom-style: double;
+            // border-style: double;
+        }
+
+        .personalStage--active {
+            border-bottom:2px solid dodgerblue;
+            border-bottom-style: double;
+        }
+
+        .roleStage--active {
+            border-bottom:2px solid dodgerblue;
+            border-bottom-style: double;
+        }
+    }
+}
+
+.adminCreateCredentialsComponent,
+.adminCreatePersonalComponent,
+.adminCreateRoleComponent,
+.adminCreateSiteDetailsComponent,
+.adminCreateSiteLocationComponent,
+.adminCreateSiteWarehousesComponent {
+    width:100%;
+    height:100%;
+    display:grid;
+    align-items:center;
+
+    &--wrapper {
+        width: 70%;
+        height:35rem;
+        margin:0 auto;
+        // border:2px solid lightgrey;
+
+        h2 {
+            font-size:2.2rem;
+            text-align:center;
+            font-weight:900;
+            color:darkgrey;
+            margin-bottom:6.5rem;
+        }
+    }
+}
+
+.credentials__registration {
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-column-gap:2.2rem;
+
+    input {
+        height:4.5rem;
+        background-color:transparent;
+        border:none;
+        border-bottom:2px solid darkgrey;
+        font-weight:900;
+        font-size:1.4rem;    
+    }
+}
+
+.personal__registration {
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows:repeat(2, 1fr);
+    grid-column-gap:2.2rem;
+
+    input {
+        height:4.5rem;
+        background-color:transparent;
+        border:none;
+        border-bottom:2px solid darkgrey;
+        font-weight:900;
+        font-size:1.4rem;    
+    }
+}
+
+.role__registration {
+
+    select {
+        width:100%;
+        height:4.5rem;
+        border:none;
+        cursor: pointer;
+        font-size:2.2rem;
+        font-weight:900;
+        color:darkgrey;
+    }
+}
+
+.next__stage,
+.finish__stage {
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+
+    &--button {
+        padding:0.95rem 1.9rem 0.95rem 1.9rem;
+        border-radius:0.45rem;
+        border:none;
+        background-color:#DDDEE8;
+        color:darkgrey;
+        cursor: pointer;
+        margin-top:9.5rem;
+        transition:all 0.22s ease-in-out;
+
+        &:hover {
+            background-color:darken(#DDDEE8, 9%);
+            color:$color__white;
+        }
+    }
+}
+
+.confirmFinishProfile {
+    margin-top:2.2rem;
+
+    h2 {
+        font-size:1.9rem;
+    }
+
+    &--buttons {
+        display:grid;
+        grid-template-columns:repeat(2, 1fr);
+        grid-column-gap:1.4rem;
+
+        .reject__creation {
+            height:3.5rem;
+            cursor: pointer;
+            border:none;
+            background-color:#f03434;
+            color:$color__white;
+            border-radius:0.45rem;
+            font-size:1.4rem;
+            transition:all 0.22s ease-in-out;
+
+            &:hover {
+                background-color:darken(#f03434, 9%);
+            }
+        }
+    
+        .accept__creation {
+            height:3.5rem;
+            cursor: pointer;
+            border:none;
+            background-color:#03c9a9;
+            color:$color__white;
+            border-radius:0.45rem;
+            font-size:1.4rem;
+            transition:all 0.22s ease-in-out;
+
+            &:hover {
+                background-color:darken(#03c9a9, 9%);
+            }
+        }
+    }
+}

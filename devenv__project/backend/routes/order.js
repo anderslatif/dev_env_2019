@@ -2,7 +2,7 @@ exports.orderRoutes = (app, db) => {
   app.get('/orders', async (req, res) => {
     const { userRoleId } = req.session;
     if (/* userRoleId <= 3 */ true) {
-      const result = await db.Order.query();
+      const result = await db.Order.query().orderBy('timestamp');
       res.send(result);
     } else {
       res.status(403).send();

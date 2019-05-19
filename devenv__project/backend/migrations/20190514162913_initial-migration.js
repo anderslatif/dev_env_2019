@@ -44,8 +44,8 @@ exports.up = function (knex, Promise) {
       table.increments('id').primary();
       table.integer('assigned_by').unsigned();
       table.foreign('assigned_by').references('users.id');
-      table.integer('assigned_to');
-      // table.foreign('assigned_to').references('users.id');
+      table.integer('assigned_to').unsigned();
+      table.foreign('assigned_to').references('users.id');
       table.dateTime('timestamp');
     })
     .createTable('orders', (table) => {
@@ -67,17 +67,17 @@ exports.up = function (knex, Promise) {
     .createTable('gate_scans', (table) => {
       table.increments('id').primary();
       table.string('scanned_by');
-      // table.foreign('scanned_by').references('users.id');
-      table.integer('order_id');
-      // table.foreign('order_id').references('orders.id');
+      table.foreign('scanned_by').references('users.id');
+      table.integer('order_id').unsigned();
+      table.foreign('order_id').references('orders.id');
       table.dateTime('timestamp');
     })
     .createTable('loading_table', (table) => {
-      table.increments('id').primary();
+      table.increments('id').primary().unsigned();
       table.integer('loaded_by');
-      // table.foreign('loaded_by').references('users.id');
-      table.integer('order_id');
-      // table.foreign('order_id').references('orders.id');
+      table.foreign('loaded_by').references('users.id');
+      table.integer('order_id').unsigned();
+      table.foreign('order_id').references('orders.id');
       table.dateTime('timestamp');
     });
 };

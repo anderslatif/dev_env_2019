@@ -13,7 +13,7 @@ exports.userRoutes = (app, db) => {
         }
         if (result) {
           req.session.userId = userArray[0].id;
-          req.session.userRole = userArray[0].id;
+          req.session.userRole = userArray[0];
           res.status(200).send({});
         } else {
           res.status(403).send({ response: 'Wrong password' });

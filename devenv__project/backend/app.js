@@ -1,7 +1,9 @@
-const app = require('express')();
+const express = require('express');
+
+const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 const objection = require('objection');
 
@@ -16,15 +18,17 @@ Model.knex(knex);
 
 const db = {
   Knex: knex,
+  User: require('./models/User.js'),
   UserRole: require('./models/UserRole.js'),
 };
 
 const userRoutes = require('./routes/user');
+const orderRoutes = require('./routes/order');
+const siteRoutes = require('./routes/site');
 
 userRoutes.userRoutes(app, db);
-
-
-const SwaggerExpress = require('swagger-express-mw');
+orderRoutes.orderRoutes(app, db);
+siteRoutes.siteRoutes(app, db);
 
 module.exports = app; // for testing
 
@@ -40,21 +44,10 @@ app.use(session({
   saveUninitialized: false,
 }));
 
-SwaggerExpress.create(config, (err, swaggerExpress) => {
-  if (err) { throw err; }
 
-  // install middleware
-  swaggerExpress.register(app);
-
-  const server = app.listen(8080, (error) => {
-    if (error) {
-      console.log('Could not listen on port: %d.', server.address().port);
-    } else {
-      console.log('Listening on port: %d.', server.address().port);
-    }
-  });
-
-  if (swaggerExpress.runner.swagger.paths['/hello']) {
-    console.log(`try this:\ncurl http://127.0.0.1:${port}/hello?name=Scott`);
+app.listen(3000, (error) => {
+  if (error) {
+    console.log('Error starting the server: ', error);
   }
+  console.log('Server is running');
 });

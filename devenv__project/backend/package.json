@@ -8,6 +8,8 @@
     "migrate": "knex migrate:latest",
     "migrate-undo": "knex migrate:rollback",
     "start": "node app.js",
+    "seed-create": "knex seed:make seed_name",
+    "seed-run": "knex seed:run",
     "debug-swagger": "DEBUG=* swagger project start",
     "edit-swagger": "swagger project edit",
     "start-swagger": "swagger project start",
@@ -23,6 +25,7 @@
     "knex": "^0.16.5",
     "mysql2": "^1.6.5",
     "nodemailer": "^6.1.1",
+    "nodemon": "^1.19.0",
     "objection": "^1.6.8",
     "swagger-express-mw": "^0.1.0",
     "swagger-node-express": "^2.1.3"

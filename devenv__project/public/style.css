@@ -7,6 +7,12 @@ html {
   font-family: "Nunito", sans-serif;
   font-size: 62.5%; }
 
+@keyframes animationDisplayExtend {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 .login__page {
   width: 100%;
   height: 100vh;
@@ -145,3 +151,521 @@ html {
   height: 100vh;
   display: grid;
   grid-template-rows: 6.5rem 1fr; }
+
+.admin__page {
+  width: 100%;
+  height: 100vh;
+  background-color: #f7f7f7; }
+  .admin__page--wrapper {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 32rem 1fr; }
+
+.sidebar__component {
+  background-color: #ffffff;
+  display: grid;
+  align-items: center; }
+  .sidebar__component--wrapper {
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-row-gap: 4.5rem; }
+
+.sidebar__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid lightgrey; }
+  .sidebar__header--logos {
+    text-decoration: none;
+    color: dodgerblue;
+    font-size: 1.9rem;
+    font-weight: 900;
+    cursor: pointer; }
+  .sidebar__header--userrelated {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .sidebar__header--userrelated--usertype {
+      font-size: 1.4rem;
+      text-decoration: none;
+      color: dodgerblue;
+      cursor: pointer;
+      margin-right: 1.9rem; }
+    .sidebar__header--userrelated .userStateStatus {
+      width: 0.95rem;
+      height: 0.95rem;
+      background-color: limegreen;
+      border-radius: 50%; }
+
+.sidebar__navigation {
+  margin-top: 4.5rem;
+  padding-top: 4.5rem; }
+  .sidebar__navigation a {
+    width: 100%;
+    padding: 0.95rem 1.4rem 0.95rem 0;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    color: #ffffff;
+    background-color: dodgerblue;
+    text-align: center;
+    font-size: 1.4rem;
+    border-radius: 0.45rem;
+    transition: all 0.22s ease-in-out; }
+    .sidebar__navigation a:not(:first-child) {
+      margin-top: 1.2rem; }
+    .sidebar__navigation a:hover {
+      background-color: #0079ef; }
+
+.admin__select {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  background-color: #f7f7f7;
+  border-radius: 0.95rem 0 0 0.95rem; }
+  .admin__select--wrapper {
+    width: 95%;
+    height: 90%;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    position: relative; }
+    .admin__select--wrapper h2 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.2rem; }
+
+.select__wrapper {
+  width: 45rem;
+  height: 19rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; }
+  .select__wrapper a {
+    width: 17rem;
+    height: 17rem;
+    display: grid;
+    align-items: center;
+    text-decoration: none;
+    border: 2px solid dodgerblue;
+    transition: all 0.22s ease-in-out;
+    border-radius: 0.45rem; }
+    .select__wrapper a:hover {
+      background-color: dodgerblue; }
+    .select__wrapper a:hover svg,
+    .select__wrapper a:hover p {
+      fill: #ffffff;
+      color: #ffffff; }
+    .select__wrapper a svg {
+      width: 6.5rem;
+      height: 6.5rem;
+      fill: dodgerblue;
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: -2.2rem; }
+    .select__wrapper a p {
+      text-align: center;
+      font-size: 1.4rem;
+      color: dodgerblue; }
+
+.admin__create,
+.admin__createSite {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center; }
+  .admin__create--wrapper,
+  .admin__createSite--wrapper {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 32rem 1fr; }
+
+.create__users {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  background-color: #f7f7f7; }
+  .create__users--wrapper {
+    width: 95%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: 27rem 1fr;
+    margin: 0 auto; }
+
+.adminCreateUsersTracker {
+  background-color: #0C1727; }
+  .adminCreateUsersTracker--wrapper h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 1.9rem; }
+
+.progress__utilities--progress {
+  width: 9rem;
+  height: 9rem;
+  margin-bottom: 3.5rem; }
+
+.progress__utilities--stage {
+  width: 90%;
+  margin: 0 auto; }
+  .progress__utilities--stage p {
+    color: #ffffff;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.65rem 0.45rem 0.65rem 0.45rem;
+    transition: all 0.22s ease-in-out;
+    border-radius: 0.45rem;
+    cursor: pointer; }
+    .progress__utilities--stage p svg {
+      width: 2.2rem;
+      height: 2.2rem;
+      fill: #ffffff;
+      margin-right: 2.2rem; }
+    .progress__utilities--stage p:not(:last-child) {
+      margin-bottom: 1.4rem; }
+    .progress__utilities--stage p:hover {
+      background-color: dodgerblue; }
+  .progress__utilities--stage .credentialStage--active {
+    border-bottom: 2px solid dodgerblue;
+    border-bottom-style: double; }
+  .progress__utilities--stage .personalStage--active {
+    border-bottom: 2px solid dodgerblue;
+    border-bottom-style: double; }
+  .progress__utilities--stage .roleStage--active {
+    border-bottom: 2px solid dodgerblue;
+    border-bottom-style: double; }
+
+.adminCreateCredentialsComponent,
+.adminCreatePersonalComponent,
+.adminCreateRoleComponent,
+.adminCreateSiteDetailsComponent,
+.adminCreateSiteLocationComponent,
+.adminCreateSiteWarehousesComponent {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center; }
+  .adminCreateCredentialsComponent--wrapper,
+  .adminCreatePersonalComponent--wrapper,
+  .adminCreateRoleComponent--wrapper,
+  .adminCreateSiteDetailsComponent--wrapper,
+  .adminCreateSiteLocationComponent--wrapper,
+  .adminCreateSiteWarehousesComponent--wrapper {
+    width: 70%;
+    height: 35rem;
+    margin: 0 auto; }
+    .adminCreateCredentialsComponent--wrapper h2,
+    .adminCreatePersonalComponent--wrapper h2,
+    .adminCreateRoleComponent--wrapper h2,
+    .adminCreateSiteDetailsComponent--wrapper h2,
+    .adminCreateSiteLocationComponent--wrapper h2,
+    .adminCreateSiteWarehousesComponent--wrapper h2 {
+      font-size: 2.2rem;
+      text-align: center;
+      font-weight: 900;
+      color: darkgrey;
+      margin-bottom: 6.5rem; }
+
+.credentials__registration {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2.2rem; }
+  .credentials__registration input {
+    height: 4.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid darkgrey;
+    font-weight: 900;
+    font-size: 1.4rem; }
+
+.personal__registration {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 2.2rem; }
+  .personal__registration input {
+    height: 4.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid darkgrey;
+    font-weight: 900;
+    font-size: 1.4rem; }
+
+.role__registration select {
+  width: 100%;
+  height: 4.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: darkgrey; }
+
+.next__stage,
+.finish__stage {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+  .next__stage--button,
+  .finish__stage--button {
+    padding: 0.95rem 1.9rem 0.95rem 1.9rem;
+    border-radius: 0.45rem;
+    border: none;
+    background-color: #DDDEE8;
+    color: darkgrey;
+    cursor: pointer;
+    margin-top: 9.5rem;
+    transition: all 0.22s ease-in-out; }
+    .next__stage--button:hover,
+    .finish__stage--button:hover {
+      background-color: #c2c3d5;
+      color: #ffffff; }
+
+.confirmFinishProfile {
+  margin-top: 2.2rem; }
+  .confirmFinishProfile h2 {
+    font-size: 1.9rem; }
+  .confirmFinishProfile--buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1.4rem; }
+    .confirmFinishProfile--buttons .reject__creation {
+      height: 3.5rem;
+      cursor: pointer;
+      border: none;
+      background-color: #f03434;
+      color: #ffffff;
+      border-radius: 0.45rem;
+      font-size: 1.4rem;
+      transition: all 0.22s ease-in-out; }
+      .confirmFinishProfile--buttons .reject__creation:hover {
+        background-color: #e51111; }
+    .confirmFinishProfile--buttons .accept__creation {
+      height: 3.5rem;
+      cursor: pointer;
+      border: none;
+      background-color: #03c9a9;
+      color: #ffffff;
+      border-radius: 0.45rem;
+      font-size: 1.4rem;
+      transition: all 0.22s ease-in-out; }
+      .confirmFinishProfile--buttons .accept__creation:hover {
+        background-color: #029c83; }
+
+.create__site {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  background-color: #f7f7f7; }
+  .create__site--wrapper {
+    width: 95%;
+    height: 90%;
+    margin: 0 auto; }
+
+.details__registration {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2.2rem; }
+  .details__registration input {
+    height: 4.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid darkgrey;
+    font-weight: 900;
+    font-size: 1.4rem; }
+
+.location__registration {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 2.2rem; }
+  .location__registration input {
+    height: 4.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid darkgrey;
+    font-weight: 900;
+    font-size: 1.4rem; }
+
+.warehouses__registration {
+  display: grid;
+  grid-template-columns: repeat(5, 14rem);
+  grid-column-gap: 4.5rem;
+  overflow-x: scroll;
+  padding: 2.2rem 0 2.2rem 0; }
+  .warehouses__registration::-webkit-scrollbar {
+    width: 9px;
+    background-color: #F5F5F5;
+    height: 4.5px; }
+  .warehouses__registration::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #555; }
+
+.adminWarehouseIndividualComponent {
+  display: grid;
+  align-items: center;
+  height: 14rem;
+  border-radius: 0.45rem;
+  transition: all 0.22s ease-in-out;
+  cursor: pointer;
+  border: 2px solid #24243e;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: transparent; }
+  .adminWarehouseIndividualComponent--wrapper {
+    width: 95%;
+    height: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .adminWarehouseIndividualComponent--wrapper h2 {
+      font-size: 1.9rem;
+      margin-bottom: 3.2rem; }
+    .adminWarehouseIndividualComponent--wrapper p {
+      font-size: 1.4rem;
+      border-bottom: 1.4px solid lightgrey;
+      margin-bottom: 3.2rem; }
+  .adminWarehouseIndividualComponent:hover {
+    border-color: transparent;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  .adminWarehouseIndividualComponent:hover .adminWarehouseIndividualComponent--wrapper h2,
+  .adminWarehouseIndividualComponent:hover .adminWarehouseIndividualComponent--wrapper p {
+    color: #ffffff; }
+
+.salesDistributorPage {
+  width: 100%;
+  height: 100vh;
+  background-color: #f7f7f7; }
+  .salesDistributorPage--wrapper {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 32rem 1fr; }
+
+.salesDistributorViewComponent {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center; }
+  .salesDistributorViewComponent--wrapper {
+    width: 95%;
+    height: 90%;
+    margin: 0 auto; }
+    .salesDistributorViewComponent--wrapper h2 {
+      font-size: 2.2rem;
+      color: darkgrey; }
+
+.salesDistributorViewIndividualComponent {
+  width: 70%;
+  border-radius: 0.45rem;
+  display: grid;
+  grid-template-rows: 6.5rem 1fr;
+  border-bottom: 2px solid lightgrey;
+  transition: all 0.22s ease-in-out; }
+  .salesDistributorViewIndividualComponent--upper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+    .salesDistributorViewIndividualComponent--upper--reference p {
+      font-size: 1.4rem; }
+    .salesDistributorViewIndividualComponent--upper--reference h2 {
+      font-size: 1.4rem;
+      text-transform: uppercase; }
+    .salesDistributorViewIndividualComponent--upper--kilounits h2 {
+      font-size: 2.2rem; }
+    .salesDistributorViewIndividualComponent--upper--kilounits p {
+      font-size: 1.4rem; }
+  .salesDistributorViewIndividualComponent--innercontent {
+    width: 100%;
+    position: relative; }
+    .salesDistributorViewIndividualComponent--innercontent--blockFirst {
+      display: flex;
+      flex-direction: row; }
+    .salesDistributorViewIndividualComponent--innercontent--blockExtend {
+      display: flex;
+      flex-direction: row;
+      margin-top: 4.5rem;
+      transition: all 0.22s ease-in-out;
+      animation: animationDisplayExtend 0.45s ease-in-out forwards; }
+    .salesDistributorViewIndividualComponent--innercontent--blockLast {
+      margin-top: 4.5rem;
+      display: flex;
+      flex-direction: row;
+      position: relative; }
+      .salesDistributorViewIndividualComponent--innercontent--blockLast button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+        border: none;
+        border-radius: 0.45rem;
+        background-color: dodgerblue;
+        transition: all 0.22s ease-in-out;
+        color: #ffffff;
+        padding: 0.95rem 1.4rem 0.95rem 1.4rem; }
+        .salesDistributorViewIndividualComponent--innercontent--blockLast button:hover {
+          background-color: #0079ef; }
+    .salesDistributorViewIndividualComponent--innercontent:after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: -1.6rem;
+      border: 2px solid limegreen;
+      border-style: dashed; }
+
+.block__marks {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #f7f7f7;
+  border-radius: 0.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+  .block__marks p {
+    width: 2.2rem;
+    height: 2.2rem;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: limegreen;
+    border: 2px solid limegreen;
+    border-radius: 50%; }
+
+.block__content {
+  margin-left: 2.2rem; }
+  .block__content h2 {
+    font-size: 1.4rem; }
+  .block__content p {
+    font-size: 1.4rem; }
+    .block__content p span {
+      margin-left: 3.5rem; }
+
+.departure__location {
+  margin-bottom: 1.4rem; }
+
+.pending__order {
+  background-color: limegreen;
+  color: #ffffff;
+  width: auto;
+  padding: 0.35rem 0.45rem 0.35rem 0.45rem;
+  border-radius: 0.45rem;
+  font-size: 1.4rem; }

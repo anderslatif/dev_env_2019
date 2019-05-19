@@ -1,0 +1,82 @@
+.sidebar__component {
+    background-color:$color__white;
+    display:grid;
+    align-items:center;
+
+    &--wrapper {
+        width:90%;
+        height:90%;
+        margin:0 auto;
+        display:grid;
+        grid-template-rows:auto 1fr;
+        grid-row-gap:4.5rem;
+        // border:2px solid lightgrey;
+    }
+}
+
+.sidebar__header {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    border-bottom:2px solid lightgrey;
+    // background-color:#0B121D;
+
+
+    &--logos {
+        text-decoration:none;
+        color:dodgerblue;
+        font-size:1.9rem;
+        font-weight:900;
+        cursor: pointer;
+    }
+
+    &--userrelated {
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+
+        &--usertype {
+            font-size:1.4rem;
+            text-decoration:none;
+            color:dodgerblue;
+            cursor: pointer;
+            margin-right:1.9rem;
+        }
+    
+        .userStateStatus {
+            width:0.95rem;
+            height:0.95rem;
+            background-color:limegreen;
+            border-radius:50%;
+        }
+    }
+}
+
+.sidebar__navigation {
+    margin-top:4.5rem;
+    padding-top:4.5rem;
+    // background-color:#0B121D;
+
+    a {
+        width:100%;
+        padding:0.95rem 1.4rem 0.95rem 0;
+        text-decoration:none;
+        cursor: pointer;
+        display:block;
+        color:$color__white;
+        background-color:dodgerblue;
+        // background-color:#0C1727;
+        text-align:center;
+        font-size:1.4rem;
+        border-radius:0.45rem;
+        transition:all 0.22s ease-in-out;
+
+        &:not(:first-child) {
+            margin-top:1.2rem;
+        }
+
+        &:hover {
+            background-color:darken(dodgerblue, 9%);
+        }
+    }
+}

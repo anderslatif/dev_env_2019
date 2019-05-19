@@ -22,6 +22,14 @@ const db = {
   UserRole: require('./models/UserRole.js'),
 };
 
+const session = require('express-session');
+
+app.use(session({
+  secret: 'ThisIsMySecretHopeYouNeverGuessIt',
+  resave: true,
+  saveUninitialized: false,
+}));
+
 const userRoutes = require('./routes/user');
 const orderRoutes = require('./routes/order');
 const siteRoutes = require('./routes/site');
@@ -35,14 +43,6 @@ module.exports = app; // for testing
 const config = {
   appRoot: __dirname, // required config
 };
-
-const session = require('express-session');
-
-app.use(session({
-  secret: 'ThisIsMySecretHopeYouNeverGuessIt',
-  resave: true,
-  saveUninitialized: false,
-}));
 
 
 app.listen(3000, (error) => {

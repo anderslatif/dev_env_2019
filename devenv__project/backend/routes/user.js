@@ -1,10 +1,11 @@
 const bcrypt = require('bcryptjs');
 
-exports.userRoutes = function (app, db) {
+exports.userRoutes = (app, db) => {
   app.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
     const userArray = await db.User.query().where({ email });
+    console.log(req.session);
     if (userArray.length === 1) {
       bcrypt.compare(password, userArray[0].password, (error, result) => {
         if (error) {
@@ -36,14 +37,14 @@ exports.userRoutes = function (app, db) {
   });
 
   app.post('/user', (req, res) => {
-    const { password, email, site_id } = req.body;
+    const { password, email } = req.body;
 
     bcrypt.hash(password, 8, async (error, hash) => {
-      console.log(hash)
+      console.log(hash);
       if (error) {
         console.log('Error hashing the password: ', error);
       }
-      const userCreated = await db.User.query().insert({ email, password: hash, site_id });
+      const userCreated = await db.User.query().insert({ email, password: hash });
       res.status(200).send(userCreated);
     });
   });

@@ -61,20 +61,20 @@ exports.up = function (knex, Promise) {
       table.foreign('site_destination_id').references('sites.id');
       table.string('other_source');
       table.string('other_destination');
-      table.integer('order_status_id');
+      table.integer('order_status_id').unsigned();
       table.foreign('order_status_id').references('order_status.id');
     })
     .createTable('gate_scans', (table) => {
       table.increments('id').primary();
-      table.string('scanned_by');
+      table.integer('scanned_by').unsigned();
       table.foreign('scanned_by').references('users.id');
       table.integer('order_id').unsigned();
       table.foreign('order_id').references('orders.id');
       table.dateTime('timestamp');
     })
     .createTable('loading_table', (table) => {
-      table.increments('id').primary().unsigned();
-      table.integer('loaded_by');
+      table.increments('id').primary();
+      table.integer('loaded_by').unsigned();
       table.foreign('loaded_by').references('users.id');
       table.integer('order_id').unsigned();
       table.foreign('order_id').references('orders.id');

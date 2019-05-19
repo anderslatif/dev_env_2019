@@ -22,9 +22,9 @@ exports.up = function (knex, Promise) {
       table.increments('id').primary();
       table.string('email');
       table.string('password');
-      table.integer('site_id').unsigned().notNullable();
+      table.integer('site_id').unsigned();
       table.foreign('site_id').references('sites.id');
-      table.integer('user_role_id').unsigned().notNullable();
+      table.integer('user_role_id').unsigned();
       table.foreign('user_role_id').references('user_roles.id');
       table.string('address1');
       table.string('address2');
@@ -42,27 +42,27 @@ exports.up = function (knex, Promise) {
     })
     .createTable('loader_assignments', (table) => {
       table.increments('id').primary();
-      table.integer('assigned_by');
-      // table.foreign('assigned_by').references('users.id');
+      table.integer('assigned_by').unsigned();
+      table.foreign('assigned_by').references('users.id');
       table.integer('assigned_to');
       // table.foreign('assigned_to').references('users.id');
       table.dateTime('timestamp');
     })
     .createTable('orders', (table) => {
       table.increments('id').primary();
-      table.integer('order_type_id');
-      // table.foreign('order_type_id').references('order_types.id');
-      table.integer('created_by');
-      // table.foreign('created_by').references('users.id');
+      table.integer('order_type_id').unsigned();
+      table.foreign('order_type_id').references('order_types.id');
+      table.integer('created_by').unsigned();
+      table.foreign('created_by').references('users.id');
       table.dateTime('timestamp');
-      table.integer('site_source_id');
-      // table.foreign('site_source_id').references('sites.id');
-      table.integer('site_destination_id');
-      // table.foreign('site_destination_id').references('sites.id');
+      table.integer('site_source_id').unsigned();
+      table.foreign('site_source_id').references('sites.id');
+      table.integer('site_destination_id').unsigned();
+      table.foreign('site_destination_id').references('sites.id');
       table.string('other_source');
       table.string('other_destination');
       table.integer('order_status_id');
-      // table.foreign('order_status_id').references('order_status.id');
+      table.foreign('order_status_id').references('order_status.id');
     })
     .createTable('gate_scans', (table) => {
       table.increments('id').primary();

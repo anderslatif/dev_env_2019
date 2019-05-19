@@ -8,7 +8,7 @@ class User extends Model {
 
   static get relationMappings() {
     return {
-      idea: {
+      userRole: {
         relation: Model.BelongsToOneRelation,
         modelClass: UserRole,
         join: {

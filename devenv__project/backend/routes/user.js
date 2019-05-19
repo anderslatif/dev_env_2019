@@ -5,15 +5,15 @@ exports.userRoutes = (app, db) => {
     const { email, password } = req.body;
 
     const userArray = await db.User.query().where({ email });
-    console.log(req.session);
     if (userArray.length === 1) {
       bcrypt.compare(password, userArray[0].password, (error, result) => {
         if (error) {
           console.log('Error comparing passwords', error);
         }
         if (result) {
+          console.log(userArray[0]);
           req.session.userId = userArray[0].id;
-          req.session.userRole = userArray[0];
+          req.session.userRoleId = userArray[0].user_role_id;
           res.status(200).send({});
         } else {
           res.status(403).send({ response: 'Wrong password' });
@@ -37,14 +37,14 @@ exports.userRoutes = (app, db) => {
   });
 
   app.post('/user', (req, res) => {
-    const { password, email } = req.body;
+    const { password, email, user_role_id } = req.body;
 
     bcrypt.hash(password, 8, async (error, hash) => {
-      console.log(hash);
+      console.log(hash)
       if (error) {
         console.log('Error hashing the password: ', error);
       }
-      const userCreated = await db.User.query().insert({ email, password: hash });
+      const userCreated = await db.User.query().insert({ email, password: hash, user_role_id: Number(user_role_id) });
       res.status(200).send(userCreated);
     });
   });

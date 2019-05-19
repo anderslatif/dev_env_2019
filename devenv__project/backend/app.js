@@ -20,6 +20,7 @@ const db = {
   Knex: knex,
   User: require('./models/User.js'),
   UserRole: require('./models/UserRole.js'),
+  Order: require('./models/Order.js'),
 };
 
 const session = require('express-session');

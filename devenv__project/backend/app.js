@@ -24,7 +24,6 @@ const userRoutes = require('./routes/user');
 userRoutes.userRoutes(app, db);
 
 
-
 const SwaggerExpress = require('swagger-express-mw');
 
 module.exports = app; // for testing
@@ -32,6 +31,14 @@ module.exports = app; // for testing
 const config = {
   appRoot: __dirname, // required config
 };
+
+const session = require('express-session');
+
+app.use(session({
+  secret: 'ThisIsMySecretHopeYouNeverGuessIt',
+  resave: true,
+  saveUninitialized: false,
+}));
 
 SwaggerExpress.create(config, (err, swaggerExpress) => {
   if (err) { throw err; }

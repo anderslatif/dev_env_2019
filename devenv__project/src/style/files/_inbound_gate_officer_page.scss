@@ -1,0 +1,61 @@
+.inboundGateOfficerPage,
+.main__ticket {
+    width:100%;
+    height:100vh;
+    display:grid;
+    align-items:center;
+    position: relative;
+
+    .menus {
+        position:fixed;
+        right:2.5%;
+        top:0.45rem;
+        background-color:darkgrey;
+        color:$color__white;
+        border:none;
+        border-radius:0.45rem;
+        padding:0.45rem 0.95rem 0.45rem 0.95rem;
+    }
+
+    &--wrapper {
+        width:100%;
+        height:100%;
+        margin:0 auto;
+        display:grid;
+        grid-template-rows:17rem 1fr;
+    }
+}
+
+.orders__header {
+    width:100%;
+    background-color:dodgerblue;
+    display:grid;
+    // height:14rem;
+
+    h2 {
+        font-size:1.4rem;
+        text-align:center;
+        color:$color__white;
+        margin-top:4.45rem;
+    }
+
+    input {
+        height:4.5rem;
+        width:85%;
+        margin:0 auto;
+        border-radius: 0.45rem;
+        border:none;
+        padding:0.45rem;
+        transition:all 0.22s ease-in-out;
+        cursor: pointer;
+
+        &:focus {
+            width:90%;
+            border-color:darken(dodgerblue, 9%);
+        }
+    }
+}
+
+.orders__wrapperMobile {
+    background-color:$color__lightgrey;
+}

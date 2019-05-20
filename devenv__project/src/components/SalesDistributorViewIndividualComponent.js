@@ -62,7 +62,7 @@ class SalesDistributorViewIndividualComponent extends Component {
                     <h2>{order.sale_name}</h2>
                     <p>{order.arival_location} <span>Expected Arival:{order.expected_arival}</span></p>
                 </div>
-                <button onClick={handleExpandOrder}>Expand</button>
+                <button onClick={handleExpandOrder}>{expansionOrderState.expansionOrderState ? "Minimize" : "Expand"}</button>
             </div>
         </div>
         {/* SalesDistributorViewIndividualComponent

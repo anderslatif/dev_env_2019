@@ -1,0 +1,173 @@
+.ticket__component {
+    width:95%;
+    margin:0 auto;
+    margin-top:1.2rem;
+    border-radius:0.45rem;
+    background-color:$color__white;
+    display:grid;
+    align-items:center;
+    min-height:14rem;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+    &:before {
+        content: "";
+        position: absolute;
+        left:4.5px;
+        top:50%;
+        transform:translateY(-50%);
+        border:2px solid limegreen;
+        border-style:dashed;
+        height:90%;
+    }
+
+    &--wrapper {
+        width:90%;
+        margin:0 auto;
+        // height:90%;
+    }
+}
+
+.ticket__referencecode {
+    width:100%;
+    margin-bottom:3.5rem;
+
+    h2 {
+        font-size:1.4rem;
+    }
+}
+
+.ticket__departureLocation,
+.ticket__arivalLocation {
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    // justify-content:space-between;
+    height:4.5rem;
+    align-items:center;
+
+    &--identifier {
+        width:3.5rem;
+        height:3.5rem;
+        border:2px solid limegreen;
+        padding:0.95rem;
+        border-radius:50%;
+        text-align:center;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-around;
+        align-items:center;
+        font-size:1.4rem;
+        font-weight:900;
+        color:limegreen;
+    }
+
+    p {
+        font-size:1.4rem;
+        margin-left:3.5rem;
+    }
+}
+
+.ticket__arivalLocation {
+    
+    &--identifier {
+
+    }
+
+    p {
+
+    }
+}
+
+.ticket__status {
+    width:auto;
+    display:grid;
+    align-items:center;
+    background-color:limegreen;
+    margin-top:4.5rem;
+    border-radius:0.45rem;
+    margin-bottom:0.95rem;
+
+    p {
+        width:auto;
+        color:$color__white; 
+        padding:0.45rem 0.65rem 0.45rem 0.65rem;  
+        font-size:1.4rem;
+    }
+}
+
+.generate__qrdivision {
+    margin-top:4.5rem;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+    margin-bottom:2.2rem;
+
+    button {
+        width:90%;
+        margin:0 auto;
+        height:4.5rem;
+        border-radius:0.45rem;
+        cursor: pointer;
+        border:none;
+        color:$color__white;
+        background-color:dodgerblue;
+        font-size:1.4rem;
+    }
+}
+
+.generatedQRBlockComponent {
+    width:100%;
+    height:100vh;
+    position:fixed;
+    z-index:99;
+    background-color:rgba(0,0,0,0.5);
+    display:flex;
+    align-items:center;
+
+    &--wrapper {
+        width:85%;
+        height:auto;
+        padding:1.2rem;
+        border-radius:0.45rem;
+        background-color:$color__lightgrey;
+        margin:0 auto;
+        display:flex;
+        align-items:center;
+        justify-content:space-around;
+    }
+
+    .close__qrcode {
+        position: absolute;
+        bottom: 2.2rem;
+        width: 90%;
+        margin: 0 auto;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 0.45rem;
+        height: 4.5rem;
+        color: $color__white;
+        background-color: #f03434;
+        border: none;
+        font-size: 1.4rem;
+    }
+}
+
+.refCodeDecoded {
+    font-size:2.2rem;
+    text-align:center;
+    background-color:dodgerblue;
+    color:$color__white;
+    padding:0.45rem 0 0.45rem 0;
+}
+
+.button__gateQR {
+    width:100%;
+    height:6.5rem;
+    border:none;
+    background-color:lightgrey;
+    position:absolute;
+    bottom:0;
+}

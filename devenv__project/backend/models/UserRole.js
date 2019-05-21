@@ -6,10 +6,10 @@ class UserRole extends Model {
     return 'user_roles';
   }
 
-  /* static get relationMappings() {
+  static get relationMappings() {
     return {
-      animal: {
-        relation: Model.HasOneRelation,
+      users: {
+        relation: Model.HasManyRelation,
         modelClass: User,
         join: {
           from: 'users.user_roles_id',
@@ -17,7 +17,7 @@ class UserRole extends Model {
         },
       },
     };
-  } */
+  }
 }
 
 module.exports = UserRole;

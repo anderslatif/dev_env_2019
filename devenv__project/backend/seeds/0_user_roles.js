@@ -11,5 +11,6 @@ exports.seed = function (knex, Promise) {
         { id: 4, role_name: 'GATE_OFFICER' },
         { id: 5, role_name: 'WAREHOUSE_LOADER' },
         { id: 6, role_name: 'WAREHOUSE_DISPATCHER' },
+        { id: 7, role_name: 'AUDITOR' },
       ]));
 };

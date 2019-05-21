@@ -31,6 +31,27 @@ app.use(session({
   saveUninitialized: false,
 }));
 
+const customAuthMiddleware = (req, res, next) => {
+/*  const userGet = {
+    route: '/users',
+    method: 'GET',
+    allowedRoles: [0, 1, 2, 4, 5],
+  };
+  const routes = [userGet];
+  routes.forEach((route) => {
+    if (route.route === req.originalUrl && route.method === req.method) {
+      if (route.allowedRoles.contains(req.session.userRoleId)) {
+        res.next();
+      } else {
+        res.status(403).send();
+      }
+    }
+  }); */
+  res.next();
+};
+
+app.use(customAuthMiddleware);
+
 const userRoutes = require('./routes/user');
 const orderRoutes = require('./routes/order');
 const siteRoutes = require('./routes/site');

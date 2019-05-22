@@ -1,47 +1,19 @@
 /*eslint-disable*/
 import React, { Component } from "react";
-import QrReader from 'react-qr-reader';
-import OrderElement from "../components/OrderElement";
-import GeneratedQRBlockComponent from "../components/GeneratedQRBlockComponent";
 import {
     BrowserView,
     MobileView,
     isBrowser,
     isMobile
   } from "react-device-detect";
+import QrReader from 'react-qr-reader';
 
-const testOrdersLists = [
-    {
-        id:1,
-        reference: "REF123456789",
-        name: "name1",
-        description: "description1",
-        order_quantity: 45,
-        order_departure_location: "Copenhagen, Denmark",
-        order_arival_location: "Lisbon, Portugal",
-        order_departure_date: "9.9.2045",
-        order_arival_date: "9.9.2045",
-        order_chemical_types: [
-            {
-                id: "id1",
-                chemical: "H20"
-            },
-            {
-                id: "id2",
-                chemical: "HSO4"
-            }
-        ]
-    }
-];
-
-class InboundGateOfficerPage extends Component {
+class WarehouseLoaderPage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            activeReference: "",
-            qrblock: false,
+            result: "No result",
             delay: 100,
-            result: "No Results",
             responese: "Pending"
         }
     }
@@ -54,21 +26,17 @@ class InboundGateOfficerPage extends Component {
         }
     }
     
-      handleError = err => {
+    handleError = err => {
         console.error(err)
     }
     render() {
-        const previewStyle = {
-            height: 240,
-            width: 320,
-        }
         return(
             <MobileView>
-            <div className="inboundGateOfficerPage">
+            <div className="warehouseLoaderPage">
                 <button className="menus">Menus</button>
-                <div className="inboundGateOfficerPage--wrapper">
+                <div className="warehouseLoaderPage--wrapper">
                     <div className="orders__header">
-                        <h2>Inbound gate officer</h2>
+                        <h2>Warehouse Loader</h2>
                         <input type="text" placeholder="Search order" name="inbound_gate_officer_search_order" />
                     </div>
 
@@ -85,11 +53,11 @@ class InboundGateOfficerPage extends Component {
                     <button className="button__gateQR">Check Availability</button>
                     </div>
                 </div>
-                {/* InboundGateOfficerPage */}
+                {/* WarehouseLoaderPage */}
             </div>
             </MobileView>
         );
     }
 }
 
-export default InboundGateOfficerPage;
+export default WarehouseLoaderPage;

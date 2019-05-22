@@ -200,6 +200,17 @@ html {
       height: 0.95rem;
       background-color: limegreen;
       border-radius: 50%; }
+    .sidebar__header--userrelated .signOutButton {
+      margin-left: 0.45rem;
+      color: #ffffff;
+      background-color: #0079ef;
+      cursor: pointer;
+      border-radius: 0.45rem;
+      border: none;
+      padding: 0.45rem 1.2rem 0.45rem 1.2rem;
+      transition: all 0.22s ease-in-out; }
+      .sidebar__header--userrelated .signOutButton:hover {
+        background-color: #0058ad; }
 
 .sidebar__navigation {
   margin-top: 4.5rem;
@@ -763,14 +774,16 @@ html {
         color: darkgrey; }
 
 .inboundGateOfficerPage,
-.main__ticket {
+.main__ticket,
+.warehouseLoaderPage {
   width: 100%;
   height: 100vh;
   display: grid;
   align-items: center;
   position: relative; }
   .inboundGateOfficerPage .menus,
-  .main__ticket .menus {
+  .main__ticket .menus,
+  .warehouseLoaderPage .menus {
     position: fixed;
     right: 2.5%;
     top: 0.45rem;
@@ -780,7 +793,8 @@ html {
     border-radius: 0.45rem;
     padding: 0.45rem 0.95rem 0.45rem 0.95rem; }
   .inboundGateOfficerPage--wrapper,
-  .main__ticket--wrapper {
+  .main__ticket--wrapper,
+  .warehouseLoaderPage--wrapper {
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -948,3 +962,229 @@ html {
   background-color: lightgrey;
   position: absolute;
   bottom: 0; }
+
+.adminViewOrdersPage,
+.adminViewUsersProfilePage,
+.adminUpdateUsersPage {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  align-items: center; }
+  .adminViewOrdersPage--wrapper,
+  .adminViewUsersProfilePage--wrapper,
+  .adminUpdateUsersPage--wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 32rem 1fr; }
+
+.display__orders {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  background-color: #f7f7f7; }
+  .display__orders--wrapper {
+    width: 95%;
+    height: 90%;
+    margin: 0 auto;
+    border-radius: 0.45rem; }
+    .display__orders--wrapper .category__title {
+      font-size: 2.2rem;
+      color: darkgrey;
+      margin-bottom: 4.5rem; }
+
+.adminViewOrderElements {
+  border-bottom: 2px solid lightgrey;
+  margin-bottom: 2.2rem;
+  transition: all 0.22s ease-in-out;
+  cursor: pointer; }
+  .adminViewOrderElements:hover {
+    transform: scale(1.01);
+    border-color: dodgerblue; }
+
+.users__display {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  display: grid;
+  align-items: center; }
+  .users__display--wrapper {
+    width: 95%;
+    height: 90%;
+    margin: 0 auto;
+    border-radius: 0.45rem;
+    display: grid;
+    grid-template-rows: 4.5rem 1fr;
+    grid-row-gap: 4.5rem; }
+
+.employees__filters {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .employees__filters .category__title h2 {
+    font-size: 2.2rem;
+    color: darkgrey; }
+  .employees__filters .filters__input--block {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+
+.filters__sortby {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 2.2rem; }
+  .filters__sortby p {
+    font-size: 1.4rem;
+    color: darkgrey;
+    margin-right: 0.45rem; }
+  .filters__sortby select {
+    width: 14rem;
+    height: 3.5rem;
+    border: 1.4px solid lightgrey;
+    border-radius: 0.45rem;
+    background-color: #ffffff;
+    color: darkgrey; }
+
+.filters__search input {
+  width: 22rem;
+  height: 3.5rem;
+  border-radius: 0.45rem;
+  border: 1.4px solid lightgrey;
+  color: darkgrey;
+  padding: 0 0 0 0.45rem; }
+
+.employees__lists {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 0.45rem;
+  padding: 0.45rem;
+  overflow-y: scroll; }
+  .employees__lists--upper {
+    width: 100%;
+    height: 4.5rem;
+    border-bottom: 2px solid lightgrey;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: darkgrey;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+    padding: 0 0.45rem 0 0.45rem; }
+  .employees__lists .individualUserComponentElement {
+    width: 100%;
+    height: 6.5rem;
+    border-bottom: 2px solid lightgrey;
+    display: grid;
+    align-items: center;
+    padding: 0 0.45rem 0 0.45rem; }
+    .employees__lists .individualUserComponentElement--wrapper {
+      width: 100%;
+      height: 4.5rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr); }
+
+.userblock {
+  display: grid;
+  align-items: center; }
+  .userblock p {
+    font-size: 1.4rem;
+    color: darkgrey; }
+
+.adminUserName {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .adminUserName--initials {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: dodgerblue;
+    border-radius: 50%;
+    color: #ffffff;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-transform: uppercase;
+    letter-spacing: 0.22rem;
+    margin-right: 0.45rem; }
+  .adminUserName--value p {
+    color: darkgrey;
+    font-size: 1.4rem; }
+
+.updateUserButton {
+  display: grid;
+  align-items: center; }
+  .updateUserButton a {
+    width: 12rem;
+    height: 3.5rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.45rem;
+    background-color: dodgerblue;
+    color: #ffffff;
+    transition: all 0.22s ease-in-out;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; }
+    .updateUserButton a:hover {
+      background-color: #0079ef; }
+
+.userupdater__display {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center; }
+  .userupdater__display--wrapper {
+    width: 95%;
+    height: 90%;
+    margin: 0 auto; }
+    .userupdater__display--wrapper h2 {
+      font-size: 2.2rem;
+      color: darkgrey; }
+
+.updater__content {
+  margin-top: 4.5rem; }
+  .updater__content form {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 2.2rem;
+    grid-column-gap: 2.2rem; }
+    .updater__content form input {
+      height: 4.5rem;
+      border: none;
+      border-bottom: 2px solid lightgrey;
+      border-radius: 0.45rem;
+      transition: all 0.22s ease-in-out;
+      font-size: 1.4rem;
+      color: darkgrey;
+      font-weight: 900; }
+      .updater__content form input:focus {
+        border-color: dodgerblue;
+        outline: none;
+        color: dodgerblue;
+        font-weight: 900; }
+  .updater__content button {
+    display: block;
+    margin-top: 4.5rem;
+    border: none;
+    border-radius: 0.45rem;
+    background-color: dodgerblue;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 0.45rem 1.4rem 0.45rem 1.4rem;
+    font-size: 1.4rem;
+    height: 3.5rem;
+    transition: all 0.22s ease-in-out; }
+    .updater__content button:hover {
+      background-color: #0079ef; }

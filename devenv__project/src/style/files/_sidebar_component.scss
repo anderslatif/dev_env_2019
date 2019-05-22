@@ -49,6 +49,21 @@
             background-color:limegreen;
             border-radius:50%;
         }
+
+        .signOutButton {
+            margin-left:0.45rem;
+            color:$color__white;
+            background-color:darken(dodgerblue, 9%);
+            cursor: pointer;
+            border-radius:0.45rem;
+            border:none;
+            padding:0.45rem 1.2rem 0.45rem 1.2rem;
+            transition:all 0.22s ease-in-out;
+
+            &:hover {
+                background-color:darken(dodgerblue, 22%);
+            }
+        }
     }
 }
 

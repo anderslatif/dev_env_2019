@@ -85,6 +85,9 @@ class AdminCreateUsers extends Component {
           role: role
       }
       console.log(userDatas)
+      axios.post("http://localhost:8000/user", userDatas)
+           .then(response => console.log("register__response: ", response))
+           .catch(error => console.log("register__error: ", error));
   }
   render() {
     let {

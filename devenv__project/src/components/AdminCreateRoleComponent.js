@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 import {
     HR, 
-    PURCHASES_SALES, 
-    INBOUND_GATE_OFFICER,
+    SALES, 
+    GATE_OFFICER,
     WAREHOUSE_LOADER,
     WAREHOUSE_DISPATCHER,
-    EXTERNAL_AUDITORS
+    AUDITOR
   } from "../externalDatas";
   
   const userTypes = [
@@ -15,12 +15,12 @@ import {
       name: "HR"
     },
     {
-      value: PURCHASES_SALES,
-      name: "Purchases/Sales"
+      value: SALES,
+      name: "Sales"
     },
     {
-      value: INBOUND_GATE_OFFICER,
-      name: "Inbound gate officer"
+      value: GATE_OFFICER,
+      name: "Gate officer"
     },
     {
       value: WAREHOUSE_LOADER,
@@ -31,8 +31,8 @@ import {
       name: "Warehouse dispatcher"
     },
     {
-      value: EXTERNAL_AUDITORS,
-      name: "External auditor"
+      value: AUDITOR,
+      name: "Auditor"
     }
   ];
 

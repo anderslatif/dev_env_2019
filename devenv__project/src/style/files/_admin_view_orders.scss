@@ -1,0 +1,304 @@
+.adminViewOrdersPage,
+.adminViewUsersProfilePage,
+.adminUpdateUsersPage {
+    width:100%;
+    height:100vh;
+    display:grid;
+    align-items:center;
+
+    &--wrapper {
+        width:100%;
+        height:100%;
+        display:grid;
+        grid-template-columns:32rem 1fr;
+    }
+}
+
+.display__orders {
+    width:100%;
+    height:100%;
+    display:grid;
+    align-items:center;
+    background-color:$color__lightgrey;
+
+    &--wrapper {
+        width:95%;
+        height:90%;
+        margin:0 auto;
+        border-radius:0.45rem;
+        // border:2px solid lightgrey;
+
+        .category__title {
+            font-size:2.2rem;
+            color:darkgrey;
+            margin-bottom:4.5rem;
+        }
+    }
+}
+
+.adminViewOrderElements {
+    border-bottom:2px solid lightgrey;
+    margin-bottom:2.2rem;
+    transition:all 0.22s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        transform:scale(1.01);
+        border-color:dodgerblue;
+    }
+}
+
+.users__display {
+    width:100%;
+    height:100%;
+    background-color:$color__lightgrey;
+    display:grid;
+    align-items:center;
+
+    &--wrapper {
+        width:95%;
+        height:90%;
+        margin:0 auto;
+        border-radius:0.45rem;
+        display:grid;
+        grid-template-rows:4.5rem 1fr;
+        grid-row-gap:4.5rem;
+        // border:2px solid lightgrey;
+    }
+}
+
+.employees__filters {
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+
+    .category__title {
+
+        h2 {
+            font-size:2.2rem;
+            color:darkgrey; 
+        }
+    }
+
+    .filters__input {
+
+        &--block {
+            display:flex;
+            flex-direction:row;
+            align-items:center;
+        }
+    }
+}
+
+.filters__sortby {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    margin-right:2.2rem;
+
+    p {
+        font-size:1.4rem;
+        color:darkgrey;
+        margin-right:0.45rem;
+    }
+
+    select {
+        width:14rem;
+        height:3.5rem; 
+        border:1.4px solid lightgrey;
+        border-radius:0.45rem;
+        background-color:$color__white;
+        color:darkgrey;
+    }
+}
+
+.filters__search {
+    input {
+        width:22rem;
+        height:3.5rem;
+        border-radius:0.45rem;
+        border:1.4px solid lightgrey;
+        color:darkgrey;
+        padding:0 0 0 0.45rem;
+    }
+}
+
+.employees__lists {
+    width:100%;
+    height:100%;
+    box-shadow:$box__shadow;
+    border-radius:0.45rem;
+    padding:0.45rem;
+    overflow-y:scroll;
+
+    &--upper {
+        width:100%;
+        height:4.5rem;
+        border-bottom:2px solid lightgrey;
+        font-size:1.4rem;
+        font-weight:900;
+        color:darkgrey;
+        display:grid;
+        grid-template-columns:repeat(7,1fr);
+        align-items:center;
+        padding:0 0.45rem 0 0.45rem;    
+    }
+    
+    .individualUserComponentElement {
+        width:100%;
+        height:6.5rem;
+        border-bottom:2px solid lightgrey;
+        display:grid;
+        align-items:center;
+        padding:0 0.45rem 0 0.45rem;    
+        
+        &--wrapper {
+            width:100%;
+            height:4.5rem;
+            // border:2px solid lightgrey;
+            margin:0 auto;
+            display:grid;
+            grid-template-columns:repeat(7, 1fr);
+        }
+    }
+}
+
+.userblock {
+    display:grid;
+    align-items:center;
+
+    p {
+        font-size:1.4rem;
+        color:darkgrey;
+    }
+}
+
+.adminUserName {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+
+    &--initials {
+        width:3.5rem;
+        height:3.5rem;
+        background-color:dodgerblue;
+        border-radius:50%;
+        color:$color__white;
+        font-weight:900;
+        display:flex;
+        align-items:center;
+        justify-content:space-around;
+        text-transform:uppercase;
+        letter-spacing:0.22rem;
+        margin-right:0.45rem;
+    }
+    
+    &--value {
+        
+        p {
+            color:darkgrey;
+            font-size:1.4rem;
+            // font-weight:900;
+        }
+    }
+}
+
+.updateUserButton {
+    display:grid;
+    align-items:center;
+
+    a {
+        width:12rem;
+        height:3.5rem;
+        cursor:pointer;
+        border:none;
+        border-radius:0.45rem;
+        background-color:dodgerblue;
+        color:$color__white;
+        transition:all 0.22s ease-in-out;
+        text-decoration:none;
+        text-align:center;
+        font-size:1.4rem;
+        display:flex;
+        align-items:center;
+        justify-content:space-around;
+
+        &:hover {
+            background-color:darken(dodgerblue, 9%);
+        }
+    }
+}
+
+// admin update user page style
+// ****************************
+
+.userupdater__display {
+    width:100%;
+    height:100%;
+    display:grid;
+    align-items:center;
+
+    &--wrapper {
+        width:95%;
+        height:90%;
+        margin:0 auto;
+        // border:2px solid lightgrey;
+
+        h2 {
+            font-size:2.2rem;
+            color:darkgrey;
+        }
+    }
+}
+
+.updater__content {
+    margin-top:4.5rem;
+
+    form {
+        width:70%;
+        display:grid;
+        grid-template-columns:repeat(2, 1fr);
+        grid-row-gap:2.2rem;
+        grid-column-gap:2.2rem;
+
+        input {
+            height:4.5rem;
+            border:none;
+            border-bottom:2px solid lightgrey;
+            border-radius:0.45rem;
+            transition:all 0.22s ease-in-out;
+            font-size:1.4rem;
+            color:darkgrey;
+            font-weight:900;
+
+            &:focus {
+                border-color:dodgerblue;
+                outline:none;
+                color:dodgerblue;
+                font-weight:900;
+            }
+        }
+
+    }
+
+    button {
+        display:block;
+        margin-top:4.5rem;
+        border:none;
+        border-radius:0.45rem;
+        background-color:dodgerblue;
+        cursor: pointer;
+        color:$color__white;
+        padding:0.45rem 1.4rem 0.45rem 1.4rem;
+        font-size:1.4rem;
+        height:3.5rem;
+        transition:all 0.22s ease-in-out;
+
+        &:hover {
+            background-color:darken(dodgerblue, 9%);
+        }
+    }
+}

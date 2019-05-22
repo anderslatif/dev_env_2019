@@ -1,9 +1,16 @@
+/*eslint-disable*/
 const express = require('express');
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 const objection = require('objection');
 
@@ -50,7 +57,7 @@ const customAuthMiddleware = (req, res, next) => {
   res.next();
 };
 
-app.use(customAuthMiddleware);
+// app.use(customAuthMiddleware);
 
 const userRoutes = require('./routes/user');
 const orderRoutes = require('./routes/order');
@@ -66,8 +73,7 @@ const config = {
   appRoot: __dirname, // required config
 };
 
-
-app.listen(3000, (error) => {
+app.listen(8000, (error) => {
   if (error) {
     console.log('Error starting the server: ', error);
   }

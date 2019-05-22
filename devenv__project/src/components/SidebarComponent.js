@@ -1,8 +1,14 @@
 /*eslint-disable*/
 import React, { Component } from 'react';
 import { Link, NavLink } from "react-router-dom";
+import axios from 'axios';
 
 class SidebarComponent extends Component {
+  signOutUsers = () => {
+    axios.get("http://localhost:8000/logout", {})
+         .then(response => console.log("response: ", response))
+         .catch(error => console.log("error: ", error))
+  }
   render() {
     return (
       <div className="sidebar__component">
@@ -12,12 +18,13 @@ class SidebarComponent extends Component {
                 <div className="sidebar__header--userrelated">
                     <Link to="/admin" className="sidebar__header--userrelated--usertype">Admin</Link>
                     <div className="userStateStatus"></div>
+                    <button className="signOutButton" onClick={this.signOutUsers}>SignOut</button>
                 </div>
             </div>
             <div className="sidebar__navigation">
-                <NavLink to="/admin/create-profile">Create Profile</NavLink>
-                <NavLink to="/admin/view-products">View Products</NavLink>
-                <NavLink to="/admin/view-profiles">View Profiles</NavLink>
+                <NavLink to="/admin/create-users">Create Profile</NavLink>
+                <NavLink to="/admin/view-orders">View Orders</NavLink>
+                <NavLink to="/admin/view-users">View Users</NavLink>
                 <NavLink to="/admin/create-site">Create Site</NavLink>
             </div>
         </div>

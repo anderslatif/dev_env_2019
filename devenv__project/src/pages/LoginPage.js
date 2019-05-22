@@ -1,45 +1,5 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import {
-  ADMIN , 
-  HR, 
-  PURCHASES_SALES, 
-  INBOUND_GATE_OFFICER,
-  WAREHOUSE_LOADER,
-  WAREHOUSE_DISPATCHER,
-  EXTERNAL_AUDITORS
-} from "../externalDatas";
-
-const userTypes = [
-  {
-    value: ADMIN,
-    name: "Admin"
-  },
-  {
-    value: HR,
-    name: "HR"
-  },
-  {
-    value: PURCHASES_SALES,
-    name: "Purchases/Sales"
-  },
-  {
-    value: INBOUND_GATE_OFFICER,
-    name: "Inbound gate officer"
-  },
-  {
-    value: WAREHOUSE_LOADER,
-    name: "Warehouse loader"
-  },
-  {
-    value: WAREHOUSE_DISPATCHER,
-    name: "Warehouse dispatcher"
-  },
-  {
-    value: EXTERNAL_AUDITORS,
-    name: "External auditor"
-  }
-];
 
 class LoginPage extends Component {
   constructor(props) {
@@ -60,11 +20,10 @@ class LoginPage extends Component {
   }
   submitFormLogin = (ev) => {
     ev.preventDefault();
-    let { userTypes, email, password } = this.state;
-    axios.post("http://localhost:8080/login", {
-      userType: userTypes,
-      email: email,
-      password: password
+    let { email, password } = this.state;
+    axios.post("http://localhost:8000/login", {
+      email: this.state.email,
+      password: this.state.password
     })
     .then(response => console.log("login__response: ", response))
     .catch(error => console.log("login__error: ", error));
@@ -86,18 +45,6 @@ class LoginPage extends Component {
             <div className="login__forms--wrapper">
               <h2>Login</h2>
               <form onSubmit={this.submitFormLogin}>
-                <label htmlFor="userTypes">User types:</label>
-                <select 
-                  name="userTypes" 
-                  id="userTypes"
-                  onChange={this.getLoginValue}
-                >
-                  {
-                    userTypes.map((user, index) => {
-                      return <option value={user.value} key={index}>{user.name}</option>
-                    })
-                  }
-                </select>
                 <input 
                   type="text" 
                   placeholder="email" 

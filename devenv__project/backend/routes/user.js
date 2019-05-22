@@ -37,14 +37,25 @@ exports.userRoutes = (app, db) => {
   });
 
   app.post('/user', (req, res) => {
-    const { password, email, user_role_id } = req.body;
+    const {
+      name, password, email, phone, country, birthdate, role,
+    } = req.body;
 
     bcrypt.hash(password, 8, async (error, hash) => {
-      console.log(hash)
       if (error) {
         console.log('Error hashing the password: ', error);
       }
-      const userCreated = await db.User.query().insert({ email, password: hash, user_role_id: Number(user_role_id) });
+      const newUser = {
+        name,
+        birthdate,
+        country,
+        password: hash,
+        phone,
+        email,
+        user_role_id: Number(role),
+      };
+      const userCreated = await db.User.query().insert(newUser);
+      delete userCreated.password;
       res.status(200).send(userCreated);
     });
   });

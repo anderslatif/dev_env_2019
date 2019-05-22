@@ -31,7 +31,7 @@ exports.up = function (knex, Promise) {
       table.string('country');
       table.string('active_status');
       table.dateTime('timestamp');
-      // table.unique(['email']);
+      table.unique(['email']);
     })
     .createTable('order_status', (table) => {
       table.increments('id').primary();

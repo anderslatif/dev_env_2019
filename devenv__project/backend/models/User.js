@@ -6,6 +6,16 @@ class User extends Model {
     return 'users';
   }
 
+  $beforeInsert() {
+    // this.timestamp = new Date().toISOString();
+    // delete this.updated_at;
+  }
+
+  /*$beforeUpdate() {
+    this.updated_at = new Date().toISOString();
+    delete this.created_at;
+  }*/
+
   static get relationMappings() {
     return {
       userRole: {

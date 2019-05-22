@@ -200,6 +200,17 @@ html {
       height: 0.95rem;
       background-color: limegreen;
       border-radius: 50%; }
+    .sidebar__header--userrelated .signOutButton {
+      margin-left: 0.45rem;
+      color: #ffffff;
+      background-color: #0079ef;
+      cursor: pointer;
+      border-radius: 0.45rem;
+      border: none;
+      padding: 0.45rem 1.2rem 0.45rem 1.2rem;
+      transition: all 0.22s ease-in-out; }
+      .sidebar__header--userrelated .signOutButton:hover {
+        background-color: #0058ad; }
 
 .sidebar__navigation {
   margin-top: 4.5rem;

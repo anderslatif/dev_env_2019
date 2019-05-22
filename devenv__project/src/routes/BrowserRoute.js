@@ -37,7 +37,7 @@ class BrowserRoute extends Component {
                 <Route exact={true} path="/inbound-gate-officer" component={InboundGateOfficerPage} />
                 <Route exact={true} path="/main-ticket" component={MainTicket} />
                 <Route exact={true} path="/warehouse-loader" component={WarehouseLoaderPage} />
-                <Route exact={true} path="/external-audior" component={ExternalAuditor} />
+                {/* <Route exact={true} path="/external-audior" component={ExternalAuditor} /> */}
                 {/* <Route exact={true} path="/administration" component={AdministrationPage} />
                 <Route exact={true} path="/administration/register" component={RegisterPage} />
                 <Route exact={true} path="/dashboard" component={DashboardPage} /> */}

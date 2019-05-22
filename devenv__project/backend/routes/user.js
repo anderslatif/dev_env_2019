@@ -47,7 +47,6 @@ exports.userRoutes = (app, db) => {
       }
       const newUser = {
         name,
-        birthdate,
         country,
         password: hash,
         phone,

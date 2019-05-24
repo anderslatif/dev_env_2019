@@ -1,7 +1,7 @@
 /*eslint-disable*/
-import MainTicket from "./pages/MainTicket";
-import TicketComponent from "./components/TicketComponent";
-import GeneratedQRBlockComponent from "./components/GeneratedQRBlockComponent";
+// import MainTicket from "./pages/MainTicket";
+// import TicketComponent from "./components/TicketComponent";
+// import GeneratedQRBlockComponent from "./components/GeneratedQRBlockComponent";
 // import { shallow } from "enzyme";
 // import React from 'react';
 // import ReactDOM from 'react-dom';
@@ -17,18 +17,19 @@ import GeneratedQRBlockComponent from "./components/GeneratedQRBlockComponent";
 //   expect(true).toBeTruthy()
 // })
 
-// it('should render the GeneratedQRBlockComponent when the qrblock state changes to true', () => {
-//   const mainTicket = shallow(<MainTicket />);
-//   const qrBlock = swallow(<GeneratedQRBlockComponent />);
-//   mainTicket.setState({ qrblock: true });
-//   expect(mainTicket.find(qrBlock).length).toBe(1);
+  // it('should render the GeneratedQRBlockComponent when the qrblock state changes to true', () => {
+  //   const mainTicket = shallow(<MainTicket />);
+  //   const qrBlockElement = shallow(<GeneratedQRBlockComponent />);
+  //   mainTicket.setState({ qrblock: true });
+  //   expect(mainTicket.find(qrBlockElement).length).toBe(1);
+  // });
+
+// describe('Test Button component', () => {
+//   it('Test click event', () => {
+//     const mockCallBack = jest.fn();
+//     const button = shallow((<button onClick={mockCallBack}>Generate QR</button>));
+//     button.find('button').simulate('click');
+//     expect(mockCallBack.mock.calls.length).toEqual(1);
+//   });
 // });
 
-describe('Test Button component', () => {
-  it('Test click event', () => {
-    const mockCallBack = jest.fn();
-    const button = shallow((<button onClick={mockCallBack}>Generate QR</button>));
-    button.find('button').simulate('click');
-    expect(mockCallBack.mock.calls.length).toEqual(1);
-  });
-});

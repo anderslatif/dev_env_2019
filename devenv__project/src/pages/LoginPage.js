@@ -5,7 +5,6 @@ class LoginPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      userTypes: "admin",
       email: "",
       password: ""
     }
@@ -20,12 +19,16 @@ class LoginPage extends Component {
   }
   submitFormLogin = (ev) => {
     ev.preventDefault();
-    let { email, password } = this.state;
     axios.post("http://localhost:8000/login", {
       email: this.state.email,
       password: this.state.password
     })
-    .then(response => console.log("login__response: ", response))
+    .then(response => {
+      console.log("login__response: ", response)
+      if(response.status === 200) {
+        this.props.history.push('/admin')
+      }
+    })
     .catch(error => console.log("login__error: ", error));
   }
   render() {

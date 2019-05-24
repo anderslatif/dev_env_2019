@@ -1,18 +1,23 @@
 /*eslint-disable*/
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+
 import LoginPage from "../pages/LoginPage";
 import AdminPage from '../pages/AdminPage';
+
 import AdminCreateUsers from '../pages/AdminCreateUsers';
 import AdminCreateSite from "../pages/AdminCreateSite";
+import AdminViewOrdersPage from '../pages/AdminViewOrdersPage';
+import AdminViewUsersProfilesPage from '../pages/AdminViewUsersProfilesPage';
+import AdminUpdateUsersPage from '../pages/AdminUpdateUsersPage';
+
 import SalesDistributorPage from '../pages/SalesDistributorPage';
 import SalesDistributorCreateOrderPage from '../pages/SalesDistributorCreateOrderPage';
 import InboundGateOfficerPage from '../pages/InboundGateOfficerPage';
 import MainTicket from '../pages/MainTicket';
 import WarehouseLoaderPage from '../pages/WarehouseLoaderPage';
-import AdminViewOrdersPage from '../pages/AdminViewOrdersPage';
-import AdminViewUsersProfilesPage from '../pages/AdminViewUsersProfilesPage';
-import AdminUpdateUsersPage from '../pages/AdminUpdateUsersPage';
+import WarehouseDispatcherPage from "../pages/WarehouseDispatcherPage";
+import AuditorPage from "../pages/AuditorPage";
 // import ExternalAuditor from '../pages/ExternalAuditor';
 // import AdministrationPage from "../pages/AdministrationPage";
 // import RegisterPage from "../pages/RegisterPage";
@@ -37,6 +42,8 @@ class BrowserRoute extends Component {
                 <Route exact={true} path="/inbound-gate-officer" component={InboundGateOfficerPage} />
                 <Route exact={true} path="/main-ticket" component={MainTicket} />
                 <Route exact={true} path="/warehouse-loader" component={WarehouseLoaderPage} />
+                <Route exact={true} path="/warehouse-dispatcher" component={WarehouseDispatcherPage} />
+                <Route exact={true} path="/external-auditor" component={AuditorPage} />
                 {/* <Route exact={true} path="/external-audior" component={ExternalAuditor} /> */}
                 {/* <Route exact={true} path="/administration" component={AdministrationPage} />
                 <Route exact={true} path="/administration/register" component={RegisterPage} />

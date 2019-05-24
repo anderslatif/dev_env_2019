@@ -1,0 +1,9 @@
+{
+    email:  email,
+    password: password,
+    name: name,
+    birthdate: birthdate,
+    country: country,
+    phone: phone,
+    role: role
+}

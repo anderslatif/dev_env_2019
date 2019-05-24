@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
@@ -14,11 +15,11 @@ class AdminSelectComponent extends Component {
                     </svg>
                     <p>Create users</p>
                 </Link>
-                <Link to="/admin/view-products">
+                <Link to="/admin/view-orders">
                     <svg>
                         <use href="./image/sprite.svg#icon-eye"></use>
                     </svg>
-                    <p>View products</p>
+                    <p>View orders</p>
                 </Link>
             </div>
             {/* admin__select         */}

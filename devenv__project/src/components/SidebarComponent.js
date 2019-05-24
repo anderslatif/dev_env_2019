@@ -4,9 +4,17 @@ import { Link, NavLink } from "react-router-dom";
 import axios from 'axios';
 
 class SidebarComponent extends Component {
+  constructor(props) {
+    super(props)
+  }
   signOutUsers = () => {
     axios.get("http://localhost:8000/logout", {})
-         .then(response => console.log("response: ", response))
+         .then(response => {
+           console.log("response: ", response.status)
+           if(response.status === 200) {
+            this.props.history.push('/login')
+           }
+          })
          .catch(error => console.log("error: ", error))
   }
   render() {

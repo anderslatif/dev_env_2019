@@ -38,7 +38,7 @@ exports.userRoutes = (app, db) => {
 
   app.post('/user', (req, res) => {
     const {
-      name, password, email, phone, country, birthdate, role,
+      name, password, email, phone, country, role,
     } = req.body;
 
     bcrypt.hash(password, 8, async (error, hash) => {

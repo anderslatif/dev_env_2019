@@ -5,6 +5,7 @@ import AdminCreateUsersTracker from '../components/AdminCreateUsersTracker';
 import AdminCreateCredentialsComponent from '../components/AdminCreateCredentialsComponent';
 import AdminCreatePersonalComponent from '../components/AdminCreatePersonalComponent';
 import AdminCreateRoleComponent from '../components/AdminCreateRoleComponent';
+import axios from "axios";
 
 class AdminCreateUsers extends Component {
   constructor(props) {
@@ -19,7 +20,6 @@ class AdminCreateUsers extends Component {
         email: "",
         password: "",
         name: "",
-        birthdate: "",
         country: "",
         phone: "",
         role: ""
@@ -74,20 +74,24 @@ class AdminCreateUsers extends Component {
 
 // submit create a new profile
   submitCreateUsers = () => {
-      let { email, password, name, birthdate, country, phone, role } = this.state;
+      let { email, password, name, country, phone, role } = this.state;
       const userDatas = {
           email:  email,
           password: password,
           name: name,
-          birthdate: birthdate,
           country: country,
           phone: phone,
           role: role
       }
-      console.log(userDatas)
       axios.post("http://localhost:8000/user", userDatas)
-           .then(response => console.log("register__response: ", response))
-           .catch(error => console.log("register__error: ", error));
+      .then(response => {
+        console.log("register__response: ", response.status)
+        if(response.status === 200) {
+          this.props.history.push('/admin')
+        }
+      })
+      .catch(error => console.log("register__error: ", error));
+      // console.log(userDatas)
   }
   render() {
     let {

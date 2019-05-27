@@ -43,11 +43,12 @@ class AdminViewOrdersPage extends Component {
                 <div className="adminViewOrdersPage--wrapper">
                     <SidebarComponent />
                     <div className="display__orders">
+                        <h2 className="category__title">Admin Orders</h2>
                         <div className="display__orders--wrapper">
-                            <h2 className="category__title">Admin Orders</h2>
                             {
                                 orders.map((order) => {
-                                    return <AdminViewOrderElements 
+                                    return <AdminViewOrderElements
+                                                key={order.sales_id} 
                                                 order={order}
                                            />
                                 })

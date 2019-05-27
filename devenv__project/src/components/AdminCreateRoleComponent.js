@@ -11,28 +11,34 @@ import {
   
   const userTypes = [
     {
-      value: HR,
-      name: "HR"
+      value: 2,
+      name: "HR",
+      id: 2
     },
     {
-      value: SALES,
-      name: "Sales"
+      value: 3,
+      name: "Sales",
+      id: 3
     },
     {
-      value: GATE_OFFICER,
-      name: "Gate officer"
+      value: 4,
+      name: "Gate officer",
+      id: 4
     },
     {
-      value: WAREHOUSE_LOADER,
-      name: "Warehouse loader"
+      value: 5,
+      name: "Warehouse loader",
+      id: 5
     },
     {
-      value: WAREHOUSE_DISPATCHER,
-      name: "Warehouse dispatcher"
+      value: 6,
+      name: "Warehouse dispatcher",
+      id: 6
     },
     {
-      value: AUDITOR,
-      name: "Auditor"
+      value: 7,
+      name: "Auditor",
+      id: 7
     }
   ];
 

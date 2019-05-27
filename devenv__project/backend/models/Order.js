@@ -1,6 +1,7 @@
 const { Model } = require('objection');
 const User = require('./User');
 const Site = require('./Site');
+const OrdersChemicals = require('./OrderChemical');
 
 class Order extends Model {
   static get tableName() {
@@ -17,6 +18,14 @@ class Order extends Model {
           to: 'users.id',
         },
       },
+      orderChemicals: {
+        relation: Model.BelongsToOneRelation,
+        modelClass: OrdersChemicals,
+        join: {
+          from: 'orders.id',
+          to: 'order_chemicals.order_id',
+        },
+      },
       siteSource: {
         relation: Model.BelongsToOneRelation,
         modelClass: Site,
@@ -26,6 +35,14 @@ class Order extends Model {
         },
       },
       siteDestination: {
+        relation: Model.BelongsToOneRelation,
+        modelClass: Site,
+        join: {
+          from: 'orders.site_destination_id',
+          to: 'sites.id',
+        },
+      },
+      orders_chemicals: {
         relation: Model.BelongsToOneRelation,
         modelClass: Site,
         join: {

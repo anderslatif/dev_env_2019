@@ -1,21 +1,21 @@
 const { Model } = require('objection');
 const UserRole = require('./UserRole');
 const Order = require('./Order');
+const GateScans = require('./GateScan');
 
 class User extends Model {
   static get tableName() {
     return 'users';
   }
 
-  $beforeInsert() {
-    // this.timestamp = new Date().toISOString();
-    // delete this.updated_at;
-  }
+  /*  $beforeInsert() {
+    this.timestamp = new Date().toISOString();
+    delete this.updated_at;
+  } */
 
-  /*$beforeUpdate() {
+  /*  $beforeUpdate() {
     this.updated_at = new Date().toISOString();
-    delete this.created_at;
-  }*/
+  } */
 
   static get relationMappings() {
     return {
@@ -26,12 +26,20 @@ class User extends Model {
           from: 'users.user_role_id',
           to: 'user_roles.id',
         },
-        orders: {
-          relation: Model.HasManyRelation,
-          modelClass: Order,
+        gateScans: {
+          relation: Model.BelongsToOneRelation,
+          modelClass: GateScans,
           join: {
             from: 'users.id',
-            to: 'orders.created_by',
+            to: 'gate_scans.scanned_by',
+          },
+          orders: {
+            relation: Model.HasManyRelation,
+            modelClass: Order,
+            join: {
+              from: 'users.id',
+              to: 'orders.created_by',
+            },
           },
         },
       },

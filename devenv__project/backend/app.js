@@ -28,6 +28,10 @@ const db = {
   User: require('./models/User.js'),
   UserRole: require('./models/UserRole.js'),
   Order: require('./models/Order.js'),
+  OrderChemical: require('./models/OrderChemical.js'),
+  GateScan: require('./models/GateScan.js'),
+  Warehouse: require('./models/Warehouse.js'),
+  Chemical: require('./models/Chemical.js'),
 };
 
 const session = require('express-session');
@@ -62,10 +66,12 @@ const customAuthMiddleware = (req, res, next) => {
 const userRoutes = require('./routes/user');
 const orderRoutes = require('./routes/order');
 const siteRoutes = require('./routes/site');
+const orderActions = require('./routes/order_actions');
 
 userRoutes.userRoutes(app, db);
 orderRoutes.orderRoutes(app, db);
 siteRoutes.siteRoutes(app, db);
+orderActions.orderActions(app, db);
 
 module.exports = app; // for testing
 
@@ -73,9 +79,9 @@ const config = {
   appRoot: __dirname, // required config
 };
 
-app.listen(8000, (error) => {
+const server = app.listen(8000, (error) => {
   if (error) {
     console.log('Error starting the server: ', error);
   }
-  console.log('Server is running');
+  console.log('Server is running on port', server.address().port);
 });

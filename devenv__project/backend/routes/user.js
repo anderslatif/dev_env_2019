@@ -15,7 +15,8 @@ exports.userRoutes = (app, db) => {
           console.log(userArray[0]);
           req.session.userId = userArray[0].id;
           req.session.userRoleId = userArray[0].user_role_id;
-          res.status(200).send({});
+          delete userArray[0].password;
+          res.status(200).send(userArray[0]);
         } else {
           res.status(403).send({ response: 'Wrong password' });
         }
@@ -37,7 +38,7 @@ exports.userRoutes = (app, db) => {
     }
   });
 
-  app.get('/users', async (req,res) => {
+  app.get('/users', async (req, res) => {
     if (/* userRoleId === 1 || userRoleId === 4 */ true) {
       const userArray = await db.User.query().column('id', 'name', 'email', 'country', 'phone', 'user_role_id').select();
       res.send(userArray);

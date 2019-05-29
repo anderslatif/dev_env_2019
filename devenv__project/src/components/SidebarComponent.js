@@ -30,9 +30,9 @@ class SidebarComponent extends Component {
                 </div>
             </div>
             <div className="sidebar__navigation">
-                <NavLink to="/admin/create-users">Create Profile</NavLink>
-                <NavLink to="/admin/view-orders">View Orders</NavLink>
+                <NavLink to="/admin/create-users">Create Users</NavLink>
                 <NavLink to="/admin/view-users">View Users</NavLink>
+                <NavLink to="/admin/view-orders">View Orders</NavLink>
                 <NavLink to="/admin/create-site">Create Site</NavLink>
             </div>
         </div>

@@ -37,9 +37,9 @@ class LoginPage extends Component {
         <div className="login__page--wrapper">
           <div className="login__details">
             <div className="login__details--wrapper">
-              <h2>Welcome to system</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ex ea commodo consequat.</p>
-              <button>Know more</button>
+              <h2>Welcome to Toxic</h2>
+              <p>This is a system that provides services for delievering and storing, orders that contain chemicals.</p>
+              {/* <button>Know more</button> */}
             </div>
             <img src="./image/circle.svg" alt="login__circle" />
           </div>
@@ -47,7 +47,7 @@ class LoginPage extends Component {
           <img src="./image/square.svg" alt="login__square" />
             <div className="login__forms--wrapper">
               <h2>Login</h2>
-              <form onSubmit={this.submitFormLogin}>
+              <form className="form__login" onSubmit={this.submitFormLogin}>
                 <input 
                   type="text" 
                   placeholder="email" 

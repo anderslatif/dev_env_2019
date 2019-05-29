@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import SidebarComponent from "../components/SidebarComponent";
 import EmployeesFilters from "../components/EmployeesFilters";
 import IndividualUserComponentElement from "../components/IndividualUserComponentElement";
+import axios from "axios";
 
 const employeesDataTests = [
     {
@@ -26,7 +27,22 @@ const employeesDataTests = [
 ];
 
 class AdminViewUsersProfilesPage extends Component {
-    render() {
+    constructor(props) {
+        super(props)
+        this.state = {
+            users: []
+        }
+    }
+
+    componentDidMount() {
+        axios.get("http://localhost:8000/users")
+             .then(response => {
+                 console.log("get_usesr_success: ", response)
+                 this.setState({users: response.data})
+                })
+             .catch(error => console.log("get_users_error:", error))
+    }
+    render(props) {
         return(
             <div className="adminViewUsersProfilePage">
                 <div className="adminViewUsersProfilePage--wrapper">
@@ -44,10 +60,10 @@ class AdminViewUsersProfilesPage extends Component {
                                 <div>Role</div>
                             </div>
                                 {
-                                    employeesDataTests.map((users) => {
+                                    this.state.users.map((user, index) => {
                                         return <IndividualUserComponentElement
-                                                    key={users.id}
-                                                    users={users}
+                                                    key={index}
+                                                    user={user}
                                                />
                                     })
                                 }

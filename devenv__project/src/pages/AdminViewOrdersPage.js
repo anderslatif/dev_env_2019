@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import SidebarComponent from "../components/SidebarComponent";
 import AdminViewOrderElements from "../components/AdminViewOrderElements";
+import axios from "axios";
 
 const orders = [
     {
@@ -37,6 +38,21 @@ const orders = [
 ];
 
 class AdminViewOrdersPage extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            orders: []
+        }
+    }
+
+    componentDidMount() {
+        axios.get("http://localhost:8000/orders")
+             .then(response => {
+                 console.log("view_orders_success: ", response)
+                 this.setState({orders: response.data})
+             })
+             .catch(error => console.log("view_orders_error: ", error))
+    }
     render() {
         return(
             <div className="adminViewOrdersPage">
@@ -46,7 +62,7 @@ class AdminViewOrdersPage extends Component {
                         <h2 className="category__title">Admin Orders</h2>
                         <div className="display__orders--wrapper">
                             {
-                                orders.map((order) => {
+                                this.state.orders.map((order) => {
                                     return <AdminViewOrderElements
                                                 key={order.sales_id} 
                                                 order={order}

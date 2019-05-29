@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const bcrypt = require('bcryptjs');
 
 exports.userRoutes = (app, db) => {
@@ -38,7 +39,7 @@ exports.userRoutes = (app, db) => {
 
   app.get('/users', async (req,res) => {
     if (/* userRoleId === 1 || userRoleId === 4 */ true) {
-      const userArray = await db.User.query().column('name', 'email', 'country', 'phone', 'user_role_id').select();
+      const userArray = await db.User.query().column('id', 'name', 'email', 'country', 'phone', 'user_role_id').select();
       res.send(userArray);
     } else {
       res.status(403).send();

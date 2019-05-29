@@ -2,19 +2,22 @@
 import React, { Component } from 'react';
 import SidebarComponent from '../components/SidebarComponent';
 import SalesDistributorCreateOrderComponent from '../components/SalesDistributorCreateOrderComponent';
+import axios from "axios";
 
 class SalesDistributorCreateOrderPage extends Component {
   constructor(props) {
       super(props)
       this.state = {
-        order_name: "",
-        order_description: "",
+        // chemicals: [],
+        // order_name: "",
+        // order_description: "",
         order_quantity: "",
         order_departure_location: "",
         order_arival_location: "",
         order_departure_date: "",
         order_arival_date: "",
         chemical_type: "",
+        chemical_weight: "",
         order_chemical_types: [],
         chemicals_tracker: 0
       }
@@ -39,6 +42,36 @@ class SalesDistributorCreateOrderPage extends Component {
     console.log(this.state.order_chemical_types);
     // this.setState({chemical_type: ""});
   }
+
+  // register chemical types object datas
+  getChemicalValue = (ev) => {
+    let name = ev.target.name;
+    let value = ev.target.value;
+
+    this.setState({[name]: value})
+  }
+
+  getChemicalDatas = (ev) => {
+    const newChemicalOrder = {
+      // id: "",
+      chemical: this.state.chemical_type,
+      weight: this.state.chemical_weight
+    };
+    
+    this.setState({order_chemical_types: [...this.state.order_chemical_types, newChemicalOrder]})
+    console.log(this.state.order_chemical_types)
+  }
+
+  postChemicalOrder = () => {
+    let order = {
+      other_source: this.state.order_departure_location,
+      other_destination: this.state.order_arival_location
+    }
+
+    axios.post("http://localhost:8000/orders", order)
+         .then(response => console.log("create__order__response: ", response))
+         .catch(error => console.log("create__order__error: ", error))
+    }
   render() {
     return (
       <div className="salesDistributorCreateOrderPage">
@@ -49,6 +82,10 @@ class SalesDistributorCreateOrderPage extends Component {
                 getDistributorChemicals={this.getDistributorChemicals} //get chemicals
                 stateChemicalsTypes={this.state.order_chemical_types} //state chemicals
                 order_quantity={this.state.order_quantity} //state quantity
+                getChemicalValue={this.getChemicalValue}
+                getChemicalDatas={this.getChemicalDatas}
+                ordersState={this.state}
+                postChemicalOrder={this.postChemicalOrder}
             />
         </div>
         {/* SalesDistributorCreateOrderPage */}

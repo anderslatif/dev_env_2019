@@ -11,6 +11,11 @@ import {
   
   const userTypes = [
     {
+      value: 1,
+      name: "Admin",
+      id: 1
+    },
+    {
       value: 2,
       name: "HR",
       id: 2

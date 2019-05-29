@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import SidebarComponent from '../components/SidebarComponent';
+import axios from 'axios';
 
 const warehouses = [
     {
@@ -223,6 +224,16 @@ class AdminCreateSite extends Component {
     if(check) {
         this.setState({warehousesLists: [...this.state.warehousesLists, value]})
     }
+  }
+
+// make post request create sites
+  createSitesRequest = () => {
+      let sitesObjectElement = {
+
+      }
+      axios.post("http://localhost:8000/create_sites_backend_api_route", sitesObjectElement)
+           .then(response => console.log("create_sites_succcess: ", response))
+           .catch(error => console.log("create_sites_error: ", error))
   }
   render() {
     let {

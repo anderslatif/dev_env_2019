@@ -14,7 +14,8 @@ exports.userRoutes = (app, db) => {
           console.log(userArray[0]);
           req.session.userId = userArray[0].id;
           req.session.userRoleId = userArray[0].user_role_id;
-          res.status(200).send({});
+          delete userArray[0].password;
+          res.status(200).send(userArray[0]);
         } else {
           res.status(403).send({ response: 'Wrong password' });
         }

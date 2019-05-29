@@ -26,7 +26,23 @@ class LoginPage extends Component {
     .then(response => {
       console.log("login__response: ", response)
       if(response.status === 200) {
-        this.props.history.push('/admin')
+        switch(response.data.user_role_id) {
+          case 1:
+            return this.props.history.push("/admin")
+          case 2:
+            return this.props.history.push("/hr")
+          case 3: 
+            return this.props.history.push("/sales-distributor")
+          case 4:
+            return this.props.history.push("/inbound-gate-officer")
+          case 5:
+            return this.props.history.push("/warehouse-loader")
+          case 6:
+            return this.props.history.push("/warehouse-dispatcher")
+          case 7:
+            return this.props.history.push("/external-auditor")
+        }
+        // this.props.history.push('/admin')
       }
     })
     .catch(error => console.log("login__error: ", error));
@@ -72,5 +88,13 @@ class LoginPage extends Component {
     )
   }
 }
+
+// {
+//   name: "",
+//   country: "",
+//   phone_number: "",
+//   address: "",
+//   zip_code: "",
+// }
 
 export default LoginPage;

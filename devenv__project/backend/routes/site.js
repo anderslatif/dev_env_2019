@@ -1,13 +1,10 @@
 exports.siteRoutes = (app, db) => {
-  app.get('orders', (req, res) => {
+  app.get('sites', (req, res) => {
 
   });
 
-  app.get('orders/:orderId', (req, res) => {
-
-  });
-
-  app.post('/orders', (req, res) => {
-
+  app.post('/sites', async (req, res) => {
+    const siteCreated = await db.Site.query().insert(req.body);
+    res.status(200).send(siteCreated);
   });
 };

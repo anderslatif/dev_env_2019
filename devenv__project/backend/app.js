@@ -32,6 +32,7 @@ const db = {
   GateScan: require('./models/GateScan.js'),
   Warehouse: require('./models/Warehouse.js'),
   Chemical: require('./models/Chemical.js'),
+  Site: require('./models/Site.js'),
 };
 
 const session = require('express-session');

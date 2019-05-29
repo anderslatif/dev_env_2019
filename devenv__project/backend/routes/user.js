@@ -36,10 +36,10 @@ exports.userRoutes = (app, db) => {
     }
   });
 
-  app.get('/users', async (req,res) => {
+  app.get('/users', async (req, res) => {
     if (/* userRoleId === 1 || userRoleId === 4 */ true) {
-      const userArray = await db.User.query().column('name', 'email', 'country', 'phone', 'user_role_id').select();
-      res.send(userArray);
+      const users = await db.User.query().column('name', 'email', 'country', 'phone', 'user_role_id').select();
+      res.send(users);
     } else {
       res.status(403).send();
     }

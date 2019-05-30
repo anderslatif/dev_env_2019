@@ -9,6 +9,10 @@ class IndividualUserComponentElement extends Component {
             name: this.props.user.name
         }
     }
+    generateNameShortcut = () => {
+        let nameValues = this.state.name.charAt(0);
+        return nameValues;
+    }
     render(props) {
         let {
             id,
@@ -18,7 +22,7 @@ class IndividualUserComponentElement extends Component {
             phone,
             user_role_id
         } = this.props.user;
-        // let nameValues = this.state.name.charAt(0)
+        // let nameValues = this.props.user.name.charAt(0);
         return(
             <div className="individualUserComponentElement">
                 <div className="individualUserComponentElement--wrapper">

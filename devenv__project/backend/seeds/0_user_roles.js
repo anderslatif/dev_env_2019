@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const roles = require('../../roles');
 
 exports.seed = function (knex, Promise) {

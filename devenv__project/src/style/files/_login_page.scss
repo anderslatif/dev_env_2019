@@ -161,6 +161,7 @@
 
                 @media screen and(max-width:$sm) {
                     height:4.5rem;
+                    margin-bottom:2.2rem;
 
                     &:focus {
                         transform:scale(1.1);
@@ -182,6 +183,16 @@
 
                 &:hover {
                     background-color:darken(dodgerblue, 22%);
+                }
+
+                @media screen and(max-width:$sm) {
+                    height:4.5rem;
+                    width:100%;
+                    margin-top:2.2rem;
+
+                    &:focus {
+                        transform:scale(1.1);
+                    }
                 }
             }
         }

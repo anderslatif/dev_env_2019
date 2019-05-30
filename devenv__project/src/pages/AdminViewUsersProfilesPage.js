@@ -53,11 +53,11 @@ class AdminViewUsersProfilesPage extends Component {
                             <div className="employees__lists">
                             <div className="employees__lists--upper">
                                 <div>Name</div>
-                                <div>Birthday</div>
                                 <div>Email</div>
                                 <div>Country</div>
                                 <div>Phone</div>
                                 <div>Role</div>
+                                {/* <div>Birthday</div> */}
                             </div>
                                 {
                                     this.state.users.map((user, index) => {

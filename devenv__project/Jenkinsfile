@@ -12,13 +12,23 @@ pipeline {
         
     stage('Install dependencies') {
       steps {
-        sh 'npm install --prefix ./devenv__project'
+        sh 'npm install --prefix ./devenv__project --production'
       }
     }
      
     stage('Tests') {
       steps {
          sh 'CI=true npm test --prefix ./devenv__project -- -u'
+      }
+    }
+    stage('Build') {
+      steps {
+         sh 'npm run-script build'
+      }
+    }
+    stage('Deploy') {
+      steps {
+         sh './deploy.sh'
       }
     }
   }

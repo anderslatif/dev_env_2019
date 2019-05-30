@@ -1,6 +1,6 @@
 exports.siteRoutes = (app, db) => {
   app.get('sites', (req, res) => {
-
+    res.send('not implemented yet');
   });
 
   app.post('/sites', async (req, res) => {

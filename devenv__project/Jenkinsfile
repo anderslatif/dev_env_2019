@@ -18,8 +18,9 @@ pipeline {
      
      stage('Remove snapshot'){
          steps{
-             dir './devenv__project/src/__tests__/__snapshots__'
+           dir('./devenv__project/src/__tests__/__snapshots__') {
              deleteDir()
+           }
          }
      }
     stage('Test login') {

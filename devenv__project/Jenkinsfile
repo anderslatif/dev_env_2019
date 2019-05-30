@@ -16,15 +16,22 @@ pipeline {
       }
     }
      
+     stage("Remove snapshot"){
+         steps{
+             dir './devenv__project/src/__tests__/__snapshots__'
+             deleteDir()
+         }
+     }
     stage('Test login') {
       steps {
-         sh 'CI=true npm test login.spec.js --prefix ./devenv__project -u'
+         sh 'CI=true npm test login.spec.js --prefix ./devenv__project'
       }
     }
 
     stage('Test admin') {
       steps {
-         sh 'CI=true npm test admin.spec.js --prefix ./devenv__project -u'
+         sh 'CI=true npm test admin.spec.js --prefix ./devenv__project'
+         
       }
     }      
   }

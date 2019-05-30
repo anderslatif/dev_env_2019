@@ -14,6 +14,12 @@
         grid-template-columns:repeat(2, 1fr);
         background-color:$color__white;
         box-shadow:$box__shadow;
+
+        @media screen and(max-width:$sm) {
+            width:100%;
+            height:100vh;
+            grid-template-columns:0 1fr;
+        }
     }
 }
 
@@ -147,9 +153,19 @@
                 height:3.5rem;
                 border:none;
                 border-bottom:1.4px solid darkgrey;
+                transition:all 0.22s ease-in-out;
 
                 &:not(:first-child) {
                     margin-top:2rem;
+                }
+
+                @media screen and(max-width:$sm) {
+                    height:4.5rem;
+                    margin-bottom:2.2rem;
+
+                    &:focus {
+                        transform:scale(1.1);
+                    }
                 }
             }
             
@@ -167,6 +183,16 @@
 
                 &:hover {
                     background-color:darken(dodgerblue, 22%);
+                }
+
+                @media screen and(max-width:$sm) {
+                    height:4.5rem;
+                    width:100%;
+                    margin-top:2.2rem;
+
+                    &:focus {
+                        transform:scale(1.1);
+                    }
                 }
             }
         }

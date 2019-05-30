@@ -3,29 +3,38 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
 class IndividualUserComponentElement extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            name: this.props.user.name
+        }
+    }
+    generateNameShortcut = () => {
+        let nameValues = this.state.name.charAt(0);
+        return nameValues;
+    }
     render(props) {
         let {
             id,
-            name,
-            email,
             country,
-            birthday,
+            email,
+            name,
             phone,
-            role
-        } = this.props.users;
-        let nameValue = name.charAt(0)
+            user_role_id
+        } = this.props.user;
+        // let nameValues = this.props.user.name.charAt(0);
         return(
             <div className="individualUserComponentElement">
                 <div className="individualUserComponentElement--wrapper">
                     <div className="userblock adminUserName">
-                        <div className="adminUserName--initials">{nameValue}</div>
+                        <div className="adminUserName--initials"></div>
                         <div className="adminUserName--value">
                             <p>{name}</p>
                         </div>
                     </div>
-                    <div className="userblock adminBirthDay">
+                    {/* <div className="userblock adminBirthDay">
                         <p>{birthday}</p>
-                    </div>
+                    </div> */}
                     <div className="userblock adminEmail">
                         <p>{email}</p>
                     </div>
@@ -36,7 +45,7 @@ class IndividualUserComponentElement extends Component {
                         <p>{phone}</p>
                     </div>
                     <div className="userblock adminRole">
-                        <p>{role}</p>
+                        <p>{user_role_id}</p>
                     </div>
                     <div className="updateUserButton">
                         <NavLink to={`/admin/update-user/${id}`}>Update</NavLink>

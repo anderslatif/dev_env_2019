@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import SidebarComponent from "../components/SidebarComponent";
 import AuditOrder from "../components/AuditOrder";
+import axios from "axios";
 
 const auditOrderTests = [
     {
@@ -27,6 +28,25 @@ const auditOrderTests = [
 ];
 
 class AuditorPage extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            users: [],
+            active__page: "HR",
+            sortBy: "",
+            searchInputValue: "" ,
+            filteredUsers: []
+        }
+    }
+
+    componentDidMount() {
+        axios.get("http://localhost:8000/users")
+             .then(response => {
+                 console.log("get_usesr_success: ", response)
+                 this.setState({users: response.data})
+                })
+             .catch(error => console.log("get_users_error:", error))
+    }
     render() {
         return(
             <div className="auditor__page">

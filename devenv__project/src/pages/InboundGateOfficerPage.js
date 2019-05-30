@@ -9,6 +9,7 @@ import {
     isBrowser,
     isMobile
   } from "react-device-detect";
+import axios from "axios";
 
 const testOrdersLists = [
     {
@@ -42,7 +43,8 @@ class InboundGateOfficerPage extends Component {
             qrblock: false,
             delay: 100,
             result: "No Results",
-            responese: "Pending"
+            responese: "Pending",
+            facingMode: "environment"
         }
     }
 
@@ -54,8 +56,12 @@ class InboundGateOfficerPage extends Component {
         }
     }
     
-      handleError = err => {
-        console.error(err)
+    handleError = err => {
+        console.log(err)
+    }
+
+    sendRequestOrder = () => {
+        
     }
     render() {
         const previewStyle = {

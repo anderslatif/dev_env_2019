@@ -2,6 +2,9 @@
 import React, { Component } from "react";
 
 class AdminViewOrderElements extends Component {
+    constructor(props) {
+        super(props)
+    }
     render() {
         let { order } = this.props;
         return(

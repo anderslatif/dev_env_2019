@@ -3,8 +3,7 @@ pipeline {
     
   tools {nodejs "node"}
     
-  stages {
-        
+  stages { 
     stage('Cloning Git') {
       steps {
         git 'https://github.com/anderslatif/dev_env_2019'
@@ -17,9 +16,15 @@ pipeline {
       }
     }
      
-    stage('Test') {
+    stage('Test login') {
       steps {
-         sh 'CI=true npm test --prefix ./devenv__project -u'
+         sh 'CI=true npm test login.spec.js --prefix ./devenv__project'
+      }
+    }
+
+    stage('Test admin') {
+      steps {
+         sh 'CI=true npm test admin.spec.js --prefix ./devenv__project'
       }
     }      
   }

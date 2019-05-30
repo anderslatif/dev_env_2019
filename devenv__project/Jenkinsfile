@@ -13,13 +13,13 @@ pipeline {
         
     stage('Install dependencies') {
       steps {
-        sh 'npm install'
+        sh 'npm install --prefix ./devenv__project'
       }
     }
      
     stage('Test') {
       steps {
-         sh 'npm test'
+         sh 'npm test --prefix ./devenv__project'
       }
     }      
   }

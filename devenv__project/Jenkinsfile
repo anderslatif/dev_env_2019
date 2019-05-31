@@ -31,8 +31,8 @@ pipeline {
       steps {
          sh './devenv__project/deploy.sh'
          //sh 'pm2 delete all'
-         sh 'pm2 start ./devenv__project/backend/app.js'
-         sh 'pm2 list'
+         sh 'sudo runas toxic -c "pm2 start ./devenv__project/backend/app.js"'
+         sh 'sudo runas toxic -c "pm2 list"'
          echo 'Woohoo'
       }
     }

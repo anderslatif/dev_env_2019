@@ -13,6 +13,7 @@ pipeline {
     stage('Install dependencies') {
       steps {
         sh 'npm install --prefix ./devenv__project --production'
+        sh 'npm install --prefix ./devenv__project/backend --production'
       }
     }
      

@@ -32,6 +32,7 @@ pipeline {
          sh './devenv__project/deploy.sh'
          sh 'pm2 delete all'
          sh 'pm2 start ./devenv__project/backend/app.js'
+         echo 'Woohoo'
       }
     }
   }

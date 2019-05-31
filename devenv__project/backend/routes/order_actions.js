@@ -2,6 +2,9 @@ exports.orderActions = (app, db) => {
   app.post('/gatescanner/:orderId', async (req, res) => {
     const { userRoleId } = req.session;
     const { siteId } = req.body;
+    if (!siteId) {
+      res.status(404).send('Missing siteId');
+    }
     if (/* userRoleId === 1 || userRoleId === 4 */ true) {
       const order = await db.Order.query().findById(req.params.orderId);
       const warehouse = await db.Warehouse.query().where('site_id', siteId).eager('warehouseChemicals');

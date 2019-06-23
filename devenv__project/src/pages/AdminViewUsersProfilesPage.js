@@ -35,7 +35,7 @@ class AdminViewUsersProfilesPage extends Component {
     }
 
     componentDidMount() {
-        axios.get("https://toxic.pedros.tech/users")
+        axios.get("https://toxic.pedros.tech:8000/users")
              .then(response => {
                  console.log("get_usesr_success: ", response)
                  this.setState({users: response.data})

@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const credentials = require('./mysql_config/mysql-credentials-local.js');
 
 module.exports = {

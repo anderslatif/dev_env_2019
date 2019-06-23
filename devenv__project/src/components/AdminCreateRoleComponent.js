@@ -49,7 +49,6 @@ import {
 
 class AdminCreateRoleComponent extends Component {
   render(props) {
-    // let { getUserDatas } = this.props;
     return (
       <div className="adminCreateRoleComponent">
         <div className="adminCreateRoleComponent--wrapper">
@@ -79,7 +78,6 @@ class AdminCreateRoleComponent extends Component {
                 </div>
             }
         </div>
-        {/* AdminCreatePersonalComponent */}
       </div>
     )
   }

@@ -15,7 +15,5 @@ describe("Login", () => {
         const formEvent = { preventDefault: () => console.log('preventDefault') };
         const loginComponent = shallow(<LoginPage />);
         expect(loginComponent.find('.form__login').length).toBe(1);
-        // loginComponent.find('.form__login').simulate('submit', formEvent);
-        // expect(loginComponent.find(AdminPage).length).toBe(1);
     });
 });

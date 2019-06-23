@@ -45,7 +45,6 @@ class AdminCreateUsersTracker extends Component {
             </div>
             </div>
         </div>
-        {/* AdminCreateUsersTracker */}
       </div>
     )
   }

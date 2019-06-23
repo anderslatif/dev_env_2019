@@ -1,4 +1,4 @@
-
+/*eslint-disable*/
 exports.up = function(knex, Promise) {
   
 };

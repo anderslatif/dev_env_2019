@@ -48,9 +48,8 @@ class IndividualUserComponentElement extends Component {
                         <p>{user_role_id}</p>
                     </div>
                     <div className="updateUserButton">
-                        <NavLink to={`/admin/update-user/${id}`}>Update</NavLink>
+                        <NavLink to={`/hr/update-user/${id}`}>Update</NavLink>
                     </div>
-                    {/* {name} */}
                 </div>
             </div>
         );

@@ -24,7 +24,7 @@ class SidebarComponent extends Component {
             <div className="sidebar__header">
                 <Link to="/admin" className="sidebar__header--logos">ToxicApp</Link>
                 <div className="sidebar__header--userrelated">
-                    <Link to="/admin" className="sidebar__header--userrelated--usertype">Admin</Link>
+                    <Link to="/admin" className="sidebar__header--userrelated--usertype"></Link>
                     <div className="userStateStatus"></div>
                     <button className="signOutButton" onClick={this.signOutUsers}>SignOut</button>
                 </div>
@@ -44,7 +44,6 @@ class SidebarComponent extends Component {
                 }
             </div>
         </div>
-        {/* sidebar__component */}
       </div>
     )
   }

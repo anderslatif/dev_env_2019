@@ -35,7 +35,8 @@ class AuditorPage extends Component {
             active__page: "HR",
             sortBy: "",
             searchInputValue: "" ,
-            filteredUsers: []
+            filteredUsers: [],
+            orders: []
         }
     }
 
@@ -44,6 +45,15 @@ class AuditorPage extends Component {
              .then(response => {
                  console.log("get_usesr_success: ", response)
                  this.setState({users: response.data})
+                })
+             .catch(error => console.log("get_users_error:", error))
+    }
+
+    componentDidMount() {
+        axios.get("http://localhost:8000/orders")
+             .then(response => {
+                 console.log("get_usesr_success: ", response)
+                 this.setState({orders: response.data})
                 })
              .catch(error => console.log("get_users_error:", error))
     }
@@ -57,7 +67,7 @@ class AuditorPage extends Component {
                             <h2 className="category__title">Auditor Orders (Only read access)</h2>
                             <div className="display__content">
                                 {
-                                    auditOrderTests.map((order) => {
+                                    this.state.orders.map((order) => {
                                         return <AuditOrder
                                                 key={order.id}
                                                 order={order}

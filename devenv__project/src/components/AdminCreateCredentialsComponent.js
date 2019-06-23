@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 
 class AdminCreateCredentialsComponent extends Component {
   render(props) {
-    // let { getUserDatas } = this.props;
     return (
       <div className="adminCreateCredentialsComponent">
         <div className="adminCreateCredentialsComponent--wrapper">
@@ -17,7 +16,6 @@ class AdminCreateCredentialsComponent extends Component {
                 <button className="next__stage--button" onClick={this.props.nextStageToPersonal}>Next Stage</button>
             </div>
         </div>
-        {/* AdminCreateCredentialsComponent */}
       </div>
     )
   }

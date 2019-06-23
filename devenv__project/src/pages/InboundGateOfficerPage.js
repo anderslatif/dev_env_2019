@@ -42,7 +42,7 @@ class InboundGateOfficerPage extends Component {
             activeReference: "",
             qrblock: false,
             delay: 100,
-            result: "No Results",
+            result: "",
             responese: "Pending",
             facingMode: "environment"
         }
@@ -51,7 +51,8 @@ class InboundGateOfficerPage extends Component {
     handleScan = data => {
         if (data) {
           this.setState({
-            result: data
+            result: data,
+            siteId: 1
           })
         }
     }
@@ -61,7 +62,11 @@ class InboundGateOfficerPage extends Component {
     }
 
     sendRequestOrder = () => {
-        
+        axios.post(`http://localhost:8000/gatescanner/${this.state.result}`, this.state.siteId)
+             .then(response => {
+                 console.log("gate_scanner_success: ", response)
+             })
+             .catch(error => console.log(error))
     }
     render() {
         const previewStyle = {
@@ -86,9 +91,18 @@ class InboundGateOfficerPage extends Component {
                         onScan={this.handleScan}
                         style={{ width: '100%' }}
                     />
-                    <p className="refCodeDecoded">{this.state.result}</p>
+                    <p className="refCodeDecoded">
+                        {
+                            this.state.result
+                            ?
+                            `#REF-0${this.state.result}`
+                            :
+                            "No result"
+                            // `#REF-${this.state.result}`
+                        }
+                    </p>
                     <p className="orderStatusStage">{this.state.responese}</p>
-                    <button className="button__gateQR">Check Availability</button>
+                    <button className="button__gateQR" onClick={this.sendRequestOrder}>Check Availability</button>
                     </div>
                 </div>
                 {/* InboundGateOfficerPage */}

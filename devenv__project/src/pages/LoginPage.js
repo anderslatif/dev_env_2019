@@ -19,7 +19,7 @@ class LoginPage extends Component {
   }
   submitFormLogin = (ev) => {
     ev.preventDefault();
-    axios.post("http://localhost:8000/login", {
+    axios.post("https://toxic.pedros.tech/login", {
       email: this.state.email,
       password: this.state.password
     })
@@ -42,7 +42,6 @@ class LoginPage extends Component {
           case 7:
             return this.props.history.push("/external-auditor")
         }
-        // this.props.history.push('/admin')
       }
     })
     .catch(error => console.log("login__error: ", error));
@@ -55,7 +54,6 @@ class LoginPage extends Component {
             <div className="login__details--wrapper">
               <h2>Welcome to Toxic</h2>
               <p>This is a system that provides services for delievering and storing, orders that contain chemicals.</p>
-              {/* <button>Know more</button> */}
             </div>
             <img src="./image/circle.svg" alt="login__circle" />
           </div>
@@ -83,18 +81,9 @@ class LoginPage extends Component {
             </div>
           </div>
         </div>
-        {/* login__page */}
       </div>
     )
   }
 }
-
-// {
-//   name: "",
-//   country: "",
-//   phone_number: "",
-//   address: "",
-//   zip_code: "",
-// }
 
 export default LoginPage;

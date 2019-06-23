@@ -76,7 +76,7 @@ class SalesDistributorCreateOrderPage extends Component {
     return (
       <div className="salesDistributorCreateOrderPage">
         <div className="salesDistributorCreateOrderPage--wrapper">
-            <SidebarComponent />
+            <SidebarComponent activePageStatus="SALES_DISTRIBUTOR" />
             <SalesDistributorCreateOrderComponent
                 getDistributorDatas={this.getDistributorDatas} //get datas
                 getDistributorChemicals={this.getDistributorChemicals} //get chemicals
@@ -88,7 +88,6 @@ class SalesDistributorCreateOrderPage extends Component {
                 postChemicalOrder={this.postChemicalOrder}
             />
         </div>
-        {/* SalesDistributorCreateOrderPage */}
       </div>
     )
   }

@@ -21,7 +21,6 @@ class SalesDistributorViewComponent extends Component {
                     })
                 }
             </div>
-            {/* SalesDistributorViewComponent */}
         </div>
       </div>
     )

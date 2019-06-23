@@ -272,10 +272,8 @@ class AdminCreateSite extends Component {
                                 getAvailableWarehouses={this.getAvailableWarehouses}
                             />
                         }
-                        {/* create__sites */}
                     </div>
                 </div>
-                {/* admin__create */}
             </div>
       </div>
     )

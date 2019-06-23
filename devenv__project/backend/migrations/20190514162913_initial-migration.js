@@ -46,7 +46,7 @@ exports.up = function (knex, Promise) {
       table.string('country');
       table.string('active_status');
       table.dateTime('timestamp').defaultTo(knex.fn.now());
-      table.unique(['email']);
+      // table.unique(['email']);
     })
     .createTable('loader_assignments', (table) => {
       table.increments('id').primary();

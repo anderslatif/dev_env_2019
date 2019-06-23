@@ -19,10 +19,7 @@ import WarehouseLoaderPage from '../pages/WarehouseLoaderPage';
 import WarehouseDispatcherPage from "../pages/WarehouseDispatcherPage";
 import AuditorPage from "../pages/AuditorPage";
 import HRPage from '../pages/HRPage';
-// import ExternalAuditor from '../pages/ExternalAuditor';
-// import AdministrationPage from "../pages/AdministrationPage";
-// import RegisterPage from "../pages/RegisterPage";
-// import DashboardPage from '../pages/DashboardPage';
+import HrUpdateUsersPage from '../pages/HrUpdatePage';
 
 class BrowserRoute extends Component {
   render() {
@@ -46,10 +43,7 @@ class BrowserRoute extends Component {
                 <Route exact={true} path="/warehouse-dispatcher" component={WarehouseDispatcherPage} />
                 <Route exact={true} path="/external-auditor" component={AuditorPage} />
                 <Route exact={true} path="/hr" component={HRPage} />
-                {/* <Route exact={true} path="/external-audior" component={ExternalAuditor} /> */}
-                {/* <Route exact={true} path="/administration" component={AdministrationPage} />
-                <Route exact={true} path="/administration/register" component={RegisterPage} />
-                <Route exact={true} path="/dashboard" component={DashboardPage} /> */}
+                <Route exact={true} path="/hr/update-user/:id" component={HrUpdateUsersPage} />
             </Switch>
         </BrowserRouter>
       </div>

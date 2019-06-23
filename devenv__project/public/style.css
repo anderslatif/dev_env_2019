@@ -11,6 +11,13 @@ html {
   .cc-bottom {
     left: 0 !important; } }
 
+.orderStatusStage {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: dodgerblue;
+  font-family: sans-serif; }
+
 @keyframes animationDisplayExtend {
   from {
     opacity: 0; }

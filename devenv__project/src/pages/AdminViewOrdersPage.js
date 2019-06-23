@@ -48,7 +48,7 @@ class AdminViewOrdersPage extends Component {
     componentDidMount() {
         axios.get("http://localhost:8000/orders")
              .then(response => {
-                 console.log("view_orders_success: ", response)
+                 console.log("view_orders_success: ", response.data)
                  this.setState({orders: response.data})
              })
              .catch(error => console.log("view_orders_error: ", error))

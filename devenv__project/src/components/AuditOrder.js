@@ -16,10 +16,16 @@ class AuditOrder extends Component {
     }
     render(props) {
         let {
-            departure_location,
-            arrival_location,
-            code_reference,
-            global_status
+            id,
+            site_source_id,
+            site_destination,
+            order_status,
+            other_source,
+            other_destination
+            // departure_location,
+            // arrival_location,
+            // code_reference,
+            // global_status
         } = this.props.order;
         // const extended = {
         //     departure_location: this.props.departure_location,
@@ -30,10 +36,10 @@ class AuditOrder extends Component {
         return(
             <div className="audit__orderElement">
                 <div className="audit__orderElement--wrapper">
-                    <div className="audit__block code_reference">{code_reference}</div>
-                    <div className="audit__block">{departure_location}</div>
-                    <div className="audit__block">{arrival_location}</div>
-                    <div className="audit__block global__stauts">{global_status}</div>
+                    <div className="audit__block code_reference">{`#REF-0${id}`}</div>
+                    <div className="audit__block">{other_source}</div>
+                    <div className="audit__block">{other_destination}</div>
+                    <div className="audit__block global__stauts">{order_status}</div>
                     <button onClick={this.extendedAuditorOrder}>Audit</button>
                 </div>
                 {

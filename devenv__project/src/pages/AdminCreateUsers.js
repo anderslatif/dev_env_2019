@@ -83,7 +83,7 @@ class AdminCreateUsers extends Component {
           phone: phone,
           role: role
       }
-      axios.post("http://localhost:8000/user", userDatas)
+      axios.post("https://toxic.pedros.tech/user", userDatas)
       .then(response => {
         console.log("register__response: ", response.status)
         if(response.status === 200) {
@@ -146,7 +146,6 @@ class AdminCreateUsers extends Component {
                         }
                     </div>
                 </div>
-                {/* admin__create */}
             </div>
       </div>
     )

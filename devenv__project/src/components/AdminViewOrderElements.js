@@ -12,7 +12,7 @@ class AdminViewOrderElements extends Component {
                     <div className="salesDistributorViewIndividualComponent--upper">
                     <div className="salesDistributorViewIndividualComponent--upper--reference">
                         <p>Reference #</p>
-                        <h2>{order.reference_code}</h2>
+                        <h2>{`REF-0${order.id}`}</h2>
                     </div>
                     <div className="salesDistributorViewIndividualComponent--upper--kilounits">
                         <p>Distributed kilo-units</p>
@@ -23,8 +23,8 @@ class AdminViewOrderElements extends Component {
                     <div className="salesDistributorViewIndividualComponent--innercontent--blockFirst">
                         <div className="block__marks"><p>A</p></div>
                         <div className="block__content">
-                            <h2>{order.sale_name}</h2>
-                            <p>{order.departure_location} <span>Date Departure:{order.departure_date}</span></p>
+                            <h2>{`Order-REF-0${order.id}`}</h2>
+                            <p>1 <span>Date Departure:{order.site_source_id}</span></p>
                         </div>
                     </div>
 
@@ -63,7 +63,7 @@ class AdminViewOrderElements extends Component {
                         <div className="block__marks"><p>E</p></div>
                         <div className="block__content">
                             <h2>{order.sale_name}</h2>
-                            <p>{order.arival_location} <span>Expected Arival:{order.expected_arival}</span></p>
+                            <p>2 <span>Expected Arival:{order.site_destination_id}</span></p>
                         </div>
                         {/* <button onClick={handleExpandOrder}>{expansionOrderState.expansionOrderState ? "Minimize" : "Expand"}</button> */}
                     </div>

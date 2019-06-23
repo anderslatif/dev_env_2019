@@ -4,6 +4,7 @@ import React, { Component } from "react";
 class TicketComponent extends Component {
     render(props) {
         let {
+            orderId,
             ticket, 
             qrAction
         } = this.props;
@@ -27,7 +28,7 @@ class TicketComponent extends Component {
                     <div className="generate__qrdivision">
                         <button 
                             className="ticket__generateqr" 
-                            name={ticket.reference}
+                            name={orderId}
                             onClick={qrAction}
                         >
                         Generate QR

@@ -19,7 +19,6 @@ class AdminCreatePersonalComponent extends Component {
                 <button className="next__stage--button" onClick={this.props.nextStageToRole}>Next Stage</button>
             </div>
         </div>
-        {/* AdminCreatePersonalComponent */}
       </div>
     )
   }

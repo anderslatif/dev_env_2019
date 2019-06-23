@@ -8,6 +8,8 @@ import {
     isBrowser,
     isMobile
   } from "react-device-detect";
+import axios from "axios";
+
 
 const testOrdersLists = [
     {
@@ -39,7 +41,9 @@ class MainTicket extends Component {
         super(props)
         this.state = {
             activeReference: "",
-            qrblock: false
+            qrblock: false,
+            order: [],
+            orderId: ""
         }
     }
     
@@ -65,6 +69,20 @@ class MainTicket extends Component {
     closeQR = () => {
         this.setState({qrblock: false})
     }
+
+    componentDidMount() {
+        axios.get("http://localhost:8000/orders")
+             .then(response => {
+                    console.log("main_ticket_response: ", response.data[0].id)
+                    this.setState(() => {
+                        return {
+                            orderId: response.data[0].id,
+                            order: response.data
+                        }
+                    })
+             })
+             .catch(error => console.log("main_ticket_error: ", error))
+    }
     render() {
         return(
             <MobileView>
@@ -78,11 +96,12 @@ class MainTicket extends Component {
 
                     <div className="orders__wrapperMobile">
                         {
-                            testOrdersLists.map((ticket) => {
+                            this.state.order.map((ticket) => {
                                 return <TicketComponent
                                             key={ticket.id}
                                             ticket={ticket}
                                             qrAction={this.qrAction}
+                                            orderId={this.state.orderId}
                                        />
                             })
                         }

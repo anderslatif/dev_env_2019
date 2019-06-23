@@ -65,20 +65,6 @@ class SalesDistributorViewIndividualComponent extends Component {
                 <button onClick={handleExpandOrder}>{expansionOrderState.expansionOrderState ? "Minimize" : "Expand"}</button>
             </div>
         </div>
-        {/* SalesDistributorViewIndividualComponent
-        {order.sales_id}
-        {order.sale_name}
-        {order.sales_description}
-        {order.shipment_quantity}
-        {order.departure_location}
-        {order.arival_location}
-        {order.departure_date}
-        {order.expected_arival}
-        {order.chimical_types}
-        {order.reference_code}
-        {order.gate_inbound_status}
-        {order.warehouse_loader_status}
-        {order.warehouse_dispatcher_status} */}
       </div>
     )
   }

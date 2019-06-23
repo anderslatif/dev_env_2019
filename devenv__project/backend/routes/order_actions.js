@@ -1,3 +1,4 @@
+/*eslint-disable*/
 exports.orderActions = (app, db) => {
   app.post('/gatescanner/:orderId', async (req, res) => {
     const { userRoleId } = req.session;

@@ -53,7 +53,6 @@ class WarehouseLoaderPage extends Component {
                     <button className="button__gateQR">Check Availability</button>
                     </div>
                 </div>
-                {/* WarehouseLoaderPage */}
             </div>
             </MobileView>
         );

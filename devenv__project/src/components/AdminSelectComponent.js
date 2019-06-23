@@ -22,7 +22,6 @@ class AdminSelectComponent extends Component {
                     <p>View orders</p>
                 </Link>
             </div>
-            {/* admin__select         */}
         </div>
       </div>
     )

@@ -26,7 +26,6 @@ class EmployeesFilters extends Component {
                         </div>
                     </div>
                 </div>
-                {/* EmployeesFilters */}
             </div>
         );
     }

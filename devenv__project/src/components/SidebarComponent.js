@@ -8,7 +8,7 @@ class SidebarComponent extends Component {
     super(props)
   }
   signOutUsers = () => {
-    axios.get("http://localhost:8000/logout", {})
+    axios.get("https://localhost:8000/logout", {})
          .then(response => {
            console.log("response: ", response.status)
            if(response.status === 200) {

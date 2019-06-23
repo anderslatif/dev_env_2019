@@ -31,7 +31,7 @@ class HrUpdateUsersPage extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://localhost:8000/users")
+        axios.get("https://localhost:8000/users")
         .then(response => {
             console.log("get_usesr_success: ", response)
             this.setState({users: response.data})

@@ -62,7 +62,7 @@ class InboundGateOfficerPage extends Component {
     }
 
     sendRequestOrder = () => {
-        axios.post(`http://localhost:8000/gatescanner/${this.state.result}`, this.state.siteId)
+        axios.post(`https://localhost:8000/gatescanner/${this.state.result}`, this.state.siteId)
              .then(response => {
                  console.log("gate_scanner_success: ", response)
              })

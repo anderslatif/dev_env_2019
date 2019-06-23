@@ -68,7 +68,7 @@ class SalesDistributorCreateOrderPage extends Component {
       other_destination: this.state.order_arival_location
     }
 
-    axios.post("http://localhost:8000/orders", order)
+    axios.post("https://localhost:8000/orders", order)
          .then(response => console.log("create__order__response: ", response))
          .catch(error => console.log("create__order__error: ", error))
     }

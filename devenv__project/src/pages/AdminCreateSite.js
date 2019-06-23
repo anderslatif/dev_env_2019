@@ -231,7 +231,7 @@ class AdminCreateSite extends Component {
       let sitesObjectElement = {
 
       }
-      axios.post("http://localhost:8000/create_sites_backend_api_route", sitesObjectElement)
+      axios.post("https://localhost:8000/create_sites_backend_api_route", sitesObjectElement)
            .then(response => console.log("create_sites_succcess: ", response))
            .catch(error => console.log("create_sites_error: ", error))
   }

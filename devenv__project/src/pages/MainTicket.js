@@ -71,7 +71,7 @@ class MainTicket extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://localhost:8000/orders")
+        axios.get("https://localhost:8000/orders")
              .then(response => {
                     console.log("main_ticket_response: ", response.data[0].id)
                     this.setState(() => {

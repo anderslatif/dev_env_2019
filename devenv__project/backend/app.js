@@ -80,7 +80,7 @@ const config = {
   appRoot: __dirname, // required config
 };
 
-const server = app.listen(8000, (error) => {
+const server = app.listen(8000, '0.0.0.0', (error) => {
   if (error) {
     console.log('Error starting the server: ', error);
   }

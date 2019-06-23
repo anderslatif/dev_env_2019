@@ -30,8 +30,10 @@ pipeline {
     stage('Deploy') {
       steps {
          sh './devenv__project/deploy.sh'
-         sh 'pm2 delete *'
-         sh 'pm2 start ./devenv__project/backend/app.js'
+         sh 'sudo runuser toxic -c "pm2 delete all"'
+         sh 'sudo runuser toxic -c "pm2 start ./devenv__project/backend/app.js"'
+         sh 'sudo runuser toxic -c "pm2 list"'
+         echo 'Woohoo'
       }
     }
   }
